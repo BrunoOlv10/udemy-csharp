@@ -6,42 +6,87 @@ namespace projeto_teste
     {
         static void Main(string[] args)
         {
-            Console.Write("Insira o primeiro valor: ");
-            string valor1 = Console.ReadLine();
-            int numero1 = int.Parse(valor1);
+            // Calculadora
+            //Console.Write("Digite o primeiro valor: ");
+            //int valor1 = Convert.ToInt16(Console.ReadLine());
+            //Console.WriteLine();
 
+            //Console.Write("Digite o segundo valor: ");
+            //int valor2 = Convert.ToInt16(Console.ReadLine());
+            //Console.WriteLine();
+
+            //Console.Write("Digite um operador (+ - * /): ");
+            //string operador = Console.ReadLine();
+            //Console.WriteLine();
+
+            //decimal resultado = 0;
+            //Boolean resposta = true;
+            //if (valor1 == 0 || valor2 == 0 && operador == "/")
+            //{
+            //    Console.Write("Não é possível fazer divisão por zero");
+            //    resposta = false;
+            //} else
+            //{
+            //    if (operador == "+")
+            //    {
+            //        resultado = valor1 + valor2;
+            //    }
+            //    if (operador == "-")
+            //    {
+            //        resultado = valor1 - valor2;
+            //    }
+            //    if (operador == "*")
+            //    {
+            //        resultado = valor1 * valor2;
+            //    }
+            //    if (operador == "/")
+            //    {
+            //        resultado = valor1 / valor2;
+            //    }
+            //}
+
+            //if (resposta == true)
+            //{
+            //    Console.Write("O resultado é " + resultado);
+            //}
+
+            // Sistema Login
+            string user = "Bruno";
+            string password = "teste";
+
+            Console.Write("User: ");
+            string userInsert = Console.ReadLine();
+            Console.WriteLine();
+                
+            Console.Write("Password: ");
+            string passwordInsert = Console.ReadLine();
             Console.WriteLine();
 
-            Console.Write("Insira o segundo valor: ");
-            string valor2 = Console.ReadLine();
-            int numero2 = int.Parse(valor2);
-
-            Console.WriteLine();
-
-            int soma = numero1 + numero2;
-            Console.WriteLine("Soma: " + soma);
-
-            int subtracao = numero1 - numero2;
-            Console.WriteLine("Subtração: " + subtracao);
-
-            int multiplicacao = numero1 * numero2;
-            Console.WriteLine("Multiplicação: " + multiplicacao);
-
-            int divisao = numero1 / numero2;
-            Console.WriteLine("Divisão: " + divisao);
-
-            int modulo = numero1 % numero2;
-            Console.WriteLine("Modulo: " + modulo);
-
-            Boolean igual = numero1 == numero2;
-            Console.WriteLine("Iguais? " + igual);
-
-            Boolean diferentes = numero1 != numero2;
-            Console.WriteLine("Diferentes? " + diferentes);
-
-            Boolean comparacaoMaior = numero1 > numero2;
-            Console.WriteLine("Valor 1 é maior que valor 2? " + comparacaoMaior);
-
+            Boolean resposta = false;
+            if (user == userInsert && password == passwordInsert)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Seja bem-vindo!");
+                resposta = true;
+            } if (user != userInsert && password != passwordInsert)
+            {
+                Console.ForegroundColor= ConsoleColor.Red;
+                Console.Write("Usuário e senha incorretas!");
+                resposta = true;
+            }
+            if (resposta == false)
+            {
+                if (user != userInsert)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Usuário incorreto!");
+                }
+                if (password != passwordInsert)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Senha incorreta!");
+                }
+            }
             Console.ReadKey();
         }
     }
