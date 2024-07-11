@@ -51,42 +51,80 @@ namespace projeto_teste
             //}
 
             // Sistema Login
-            string user = "Bruno";
-            string password = "teste";
+            //string user = "Bruno";
+            //string password = "teste";
 
-            Console.Write("User: ");
-            string userInsert = Console.ReadLine();
-            Console.WriteLine();
-                
-            Console.Write("Password: ");
-            string passwordInsert = Console.ReadLine();
-            Console.WriteLine();
+            //Console.Write("User: ");
+            //string userInsert = Console.ReadLine();
+            //Console.WriteLine();
 
-            Boolean resposta = false;
-            if (user == userInsert && password == passwordInsert)
+            //Console.Write("Password: ");
+            //string passwordInsert = Console.ReadLine();
+            //Console.WriteLine();
+
+            //Boolean resposta = false;
+            //if (user == userInsert && password == passwordInsert)
+            //{
+            //    Console.ForegroundColor = ConsoleColor.Green;
+            //    Console.Write("Seja bem-vindo!");
+            //    resposta = true;
+            //}
+            //if (user != userInsert && password != passwordInsert)
+            //{
+            //    Console.ForegroundColor = ConsoleColor.Red;
+            //    Console.Write("Usuário e senha incorretas!");
+            //    resposta = true;
+            //}
+            //if (resposta == false)
+            //{
+            //    if (user != userInsert)
+            //    {
+            //        Console.ForegroundColor = ConsoleColor.Red;
+            //        Console.Write("Usuário incorreto!");
+            //    }
+            //    if (password != passwordInsert)
+            //    {
+            //        Console.ForegroundColor = ConsoleColor.Red;
+            //        Console.Write("Senha incorreta!");
+            //    }
+            //}
+
+            // Idade Mínima
+            int IdadeMinima = 18;
+
+            Console.Write("Insira a sua idade: ");
+            int idadeUsuario = Convert.ToInt16(Console.ReadLine());
+
+            if (idadeUsuario >= IdadeMinima)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("Seja bem-vindo!");
-                resposta = true;
-            } if (user != userInsert && password != passwordInsert)
-            {
-                Console.ForegroundColor= ConsoleColor.Red;
-                Console.Write("Usuário e senha incorretas!");
-                resposta = true;
+                Console.WriteLine("Você tem a idade mínima para usar o sistema!");
             }
-            if (resposta == false)
+            else if (idadeUsuario >= 13 && idadeUsuario < IdadeMinima)
             {
-                if (user != userInsert)
+                Console.Write("O usuário tem o consetimento dos pais? (S/N) ");
+                string consentimento = Console.ReadLine();
+
+                if (consentimento == "S" || consentimento == "s")
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("Usuário incorreto!");
+                    if (idadeUsuario == 15)
+                    {
+                        Console.WriteLine("Bem vindo ao sistema. Você tem a melhor idade!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Você pode ter acesso ao sistema");
+                    }
                 }
-                if (password != passwordInsert)
+                else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("Senha incorreta!");
+                    Console.WriteLine("Você NÃO pode ter acesso ao sistema");
                 }
             }
+            else
+            {
+                Console.WriteLine("Você NÃO tem a idade certa para usar o sistema!");
+            }
+
             Console.ReadKey();
         }
     }
