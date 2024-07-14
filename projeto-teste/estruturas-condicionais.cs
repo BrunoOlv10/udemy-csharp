@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Diagnostics.Eventing.Reader;
 
 namespace estruturas_condicionais
 {
     internal class Program
     {
-        //static void Main(string[] args)
-        //{
+        static void Main(string[] args)
+        {
             // Calculadora
             //Console.Write("Digite o primeiro valor: ");
             //int valor1 = Convert.ToInt16(Console.ReadLine());
@@ -89,43 +90,53 @@ namespace estruturas_condicionais
             //    }
             //}
 
-            // Idade Mínima
-        //    int IdadeMinima = 18;
+            // idade mínima
+            int idadeMinima = 18;
 
-        //    Console.Write("Insira a sua idade: ");
-        //    int idadeUsuario = Convert.ToInt16(Console.ReadLine());
+            do
+            {
+                Console.Write("insira a sua idade (ou 'Sair' para sair do programa): ");
+                string input = Console.ReadLine();
 
-        //    if (idadeUsuario >= IdadeMinima)
-        //    {
-        //        Console.WriteLine("Você tem a idade mínima para usar o sistema!");
-        //    }
-        //    else if (idadeUsuario >= 13 && idadeUsuario < IdadeMinima)
-        //    {
-        //        Console.Write("O usuário tem o consetimento dos pais? (S/N) ");
-        //        string consentimento = Console.ReadLine();
+                if (input == "Sair" || input == "sair")
+                {
+                    break;
+                }
 
-        //        if (consentimento == "S" || consentimento == "s")
-        //        {
-        //            if (idadeUsuario == 15)
-        //            {
-        //                Console.WriteLine("Bem vindo ao sistema. Você tem a melhor idade!");
-        //            }
-        //            else
-        //            {
-        //                Console.WriteLine("Você pode ter acesso ao sistema");
-        //            }
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Você NÃO pode ter acesso ao sistema");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Você NÃO tem a idade certa para usar o sistema!");
-        //    }
+                int idadeUsuario = Convert.ToInt16(input);
 
-        //    Console.ReadKey();
-        //}
+                if (idadeUsuario >= idadeMinima)
+                {
+                    Console.WriteLine("você tem a idade mínima para usar o sistema!");
+                }
+                else if (idadeUsuario >= 13 && idadeUsuario < idadeMinima)
+                {
+                    Console.Write("o usuário tem o consetimento dos pais? (s/n) ");
+                    string consentimento = Console.ReadLine();
+
+                    if (consentimento == "S" || consentimento == "s")
+                    {
+                        if (idadeUsuario == 15)
+                        {
+                            Console.WriteLine("bem vindo ao sistema. você tem a melhor idade!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("você pode ter acesso ao sistema");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("você não pode ter acesso ao sistema");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("você não tem a idade certa para usar o sistema!");
+                }
+
+                Console.ReadKey();
+            } while (true);
+         }
     }
 }
