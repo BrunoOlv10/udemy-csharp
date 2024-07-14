@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace projeto_teste
+namespace estruturas_condicionais
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
+        //static void Main(string[] args)
+        //{
             // Calculadora
             //Console.Write("Digite o primeiro valor: ");
             //int valor1 = Convert.ToInt16(Console.ReadLine());
@@ -90,42 +90,42 @@ namespace projeto_teste
             //}
 
             // Idade Mínima
-            int IdadeMinima = 18;
+        //    int IdadeMinima = 18;
 
-            Console.Write("Insira a sua idade: ");
-            int idadeUsuario = Convert.ToInt16(Console.ReadLine());
+        //    Console.Write("Insira a sua idade: ");
+        //    int idadeUsuario = Convert.ToInt16(Console.ReadLine());
 
-            if (idadeUsuario >= IdadeMinima)
-            {
-                Console.WriteLine("Você tem a idade mínima para usar o sistema!");
-            }
-            else if (idadeUsuario >= 13 && idadeUsuario < IdadeMinima)
-            {
-                Console.Write("O usuário tem o consetimento dos pais? (S/N) ");
-                string consentimento = Console.ReadLine();
+        //    if (idadeUsuario >= IdadeMinima)
+        //    {
+        //        Console.WriteLine("Você tem a idade mínima para usar o sistema!");
+        //    }
+        //    else if (idadeUsuario >= 13 && idadeUsuario < IdadeMinima)
+        //    {
+        //        Console.Write("O usuário tem o consetimento dos pais? (S/N) ");
+        //        string consentimento = Console.ReadLine();
 
-                if (consentimento == "S" || consentimento == "s")
-                {
-                    if (idadeUsuario == 15)
-                    {
-                        Console.WriteLine("Bem vindo ao sistema. Você tem a melhor idade!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Você pode ter acesso ao sistema");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Você NÃO pode ter acesso ao sistema");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Você NÃO tem a idade certa para usar o sistema!");
-            }
+        //        if (consentimento == "S" || consentimento == "s")
+        //        {
+        //            if (idadeUsuario == 15)
+        //            {
+        //                Console.WriteLine("Bem vindo ao sistema. Você tem a melhor idade!");
+        //            }
+        //            else
+        //            {
+        //                Console.WriteLine("Você pode ter acesso ao sistema");
+        //            }
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Você NÃO pode ter acesso ao sistema");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Você NÃO tem a idade certa para usar o sistema!");
+        //    }
 
-            Console.ReadKey();
-        }
+        //    Console.ReadKey();
+        //}
     }
 }

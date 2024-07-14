@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F444FE5E-A926-4D64-9A3F-4FBD0E78622D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>projeto_teste</RootNamespace>
-    <AssemblyName>projeto-teste</AssemblyName>
+    <RootNamespace>curso_udemy</RootNamespace>
+    <AssemblyName>curso_udemy</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="estruturas-condicionais.cs" />
+    <Compile Include="estruturas-repeticao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
