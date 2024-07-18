@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="array.cs" />
     <Compile Include="conversao-tipos-dados.cs" />
     <Compile Include="estruturas-condicionais.cs" />
     <Compile Include="estruturas-repeticao.cs" />
