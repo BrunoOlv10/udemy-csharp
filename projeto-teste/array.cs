@@ -8,10 +8,10 @@ namespace curso_udemy
 {
     internal class array
     {
-        static void Main(string[] args)
-        {
-            string[] nomes = new string[] { "bruno", "vilma", "pablo", "joão", "carlos", 
-                                            "pedro" };
+        //static void Main(string[] args)
+        //{
+        //    string[] nomes = new string[] { "bruno", "vilma", "pablo", "joão", "carlos", 
+        //                                    "pedro" };
 
             //Console.WriteLine($"Tamanho do array: { nomes.Length }");
 
@@ -20,9 +20,9 @@ namespace curso_udemy
             //    Console.WriteLine($"Nome: { nomes[i] } está na posição { i }");
             //}
 
-            Console.WriteLine();
-            Console.Write("Buscar um nome: ");
-            string nomeBuscar = Console.ReadLine();
+            //Console.WriteLine();
+            //Console.Write("Buscar um nome: ");
+            //string nomeBuscar = Console.ReadLine();
 
             // int cont = 0;
             //foreach (string nome in nomes)
@@ -43,14 +43,14 @@ namespace curso_udemy
             //    }
             //}
 
-            int posicao = Array.IndexOf(nomes, nomeBuscar.ToLower());
+        //    int posicao = Array.IndexOf(nomes, nomeBuscar.ToLower());
 
-            if (posicao > 0)
-                Console.WriteLine($"Achei o nome: {nomes[posicao]} na posição: {posicao}");
-            else
-                Console.WriteLine("Não achei o elemento");
+        //    if (posicao > 0)
+        //        Console.WriteLine($"Achei o nome: {nomes[posicao]} na posição: {posicao}");
+        //    else
+        //        Console.WriteLine("Não achei o elemento");
 
-            Console.ReadKey();
-        }
+        //    Console.ReadKey();
+        //}
     }
 }

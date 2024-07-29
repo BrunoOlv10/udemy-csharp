@@ -50,6 +50,7 @@
     <Compile Include="funcoes.cs" />
     <Compile Include="operacoes-strings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="try-catch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
