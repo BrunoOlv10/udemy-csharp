@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="algoritmo-ordenacao.cs" />
     <Compile Include="array.cs" />
     <Compile Include="conversao-tipos-dados.cs" />
     <Compile Include="estruturas-condicionais.cs" />
