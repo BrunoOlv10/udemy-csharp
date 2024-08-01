@@ -53,9 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="algoritmo-corte-controle.cs" />
     <Compile Include="algoritmo-ordenacao.cs" />
     <Compile Include="array.cs" />
-    <Compile Include="busca-binaria.cs" />
+    <Compile Include="algoritmo-busca-binaria.cs" />
     <Compile Include="conversao-tipos-dados.cs" />
     <Compile Include="estruturas-condicionais.cs" />
     <Compile Include="estruturas-repeticao.cs" />
