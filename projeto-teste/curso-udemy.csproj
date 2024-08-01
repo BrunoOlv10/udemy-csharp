@@ -63,6 +63,7 @@
     <Compile Include="funcoes.cs" />
     <Compile Include="operacoes-strings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="trocar-numeros-entre-variaveis.cs" />
     <Compile Include="try-catch.cs" />
   </ItemGroup>
   <ItemGroup>
