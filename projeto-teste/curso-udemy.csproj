@@ -61,6 +61,7 @@
     <Compile Include="estruturas-condicionais.cs" />
     <Compile Include="estruturas-repeticao.cs" />
     <Compile Include="exercicio2-multiplicao.cs" />
+    <Compile Include="exercicio3-retangulo-numeros.cs" />
     <Compile Include="funcoes.cs" />
     <Compile Include="operacoes-strings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
