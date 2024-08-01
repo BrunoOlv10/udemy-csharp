@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curso_udemy
 {
-    class trocar_numeros_entre_variaveis
+    class exercicio_multiplicao
     {
         static void Main(string[] args)
         {
@@ -16,14 +16,14 @@ namespace curso_udemy
             Console.Write("Digite o segundo número: ");
             int numero2 = Convert.ToInt16(Console.ReadLine());
 
-            var aux = 0;
-            aux = numero1;
-            numero1 = numero2;
-            numero2 = aux;
+            Console.Write("Digite o terceiro número: ");
+            int numero3 = Convert.ToInt16(Console.ReadLine());
+
+            var multiplicacao = numero1 * numero2 * numero3;
 
             Console.WriteLine();
-            Console.WriteLine($"Número 1: {numero1}");
-            Console.WriteLine($"Número 2: {numero2}");
+            Console.Write($"O resultado da multiplicação entre {numero1}, {numero2} e {numero3} é: {multiplicacao}");
+
             Console.ReadKey();
         }
     }
