@@ -29,17 +29,21 @@ namespace curso_udemy
             string idProdutoAtual = "";
             string idProdutoAnterior = "";
             int linha = 0;
+            int numLinhas = dadosProdutos.GetLength(0);
             Console.WriteLine("Id - Produto - Data - Qnd");
-            while (linha < 12)
+            while (linha < numLinhas)
             {
                 idProdutoAtual = idProdutoAnterior = dadosProdutos[linha, 0];
-                while (linha < 12 && idProdutoAnterior == idProdutoAtual)
+                while (linha < numLinhas && idProdutoAnterior == idProdutoAtual)
                 {
                     Console.WriteLine($"{dadosProdutos[linha, 0]} - {dadosProdutos[linha, 1]} - {dadosProdutos[linha, 2]} " +
                         $"- {dadosProdutos[linha, 3]}");
-                    totalProduto += Convert.ToInt16(dadosProdutos[linha, 3]);
+                    if (int.TryParse(dadosProdutos[linha, 3], out int quantidade))
+                    {
+                        totalProduto += quantidade;
+                    }
                     linha++;
-                    if (linha < 12)
+                    if (linha < numLinhas)
                         idProdutoAtual = dadosProdutos[linha, 0];
                 }
                 Console.WriteLine($"Total do Produto: { totalProduto }");
