@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace curso_udemy
 {
@@ -24,36 +21,61 @@ namespace curso_udemy
                 { "5", "pas", "02/2019", "50" },
                 { "5", "pas", "03/2019", "150" },
             };
+
             int totalProduto = 0;
             int totalGeral = 0;
             string idProdutoAtual = "";
             string idProdutoAnterior = "";
             int linha = 0;
             int numLinhas = dadosProdutos.GetLength(0);
+
+            Dictionary<string, int> vendasPorData = new Dictionary<string, int>();
+
             Console.WriteLine("Id - Produto - Data - Qnd");
             while (linha < numLinhas)
             {
-                idProdutoAtual = idProdutoAnterior = dadosProdutos[linha, 0];
-                while (linha < numLinhas && idProdutoAnterior == idProdutoAtual)
+                idProdutoAtual = dadosProdutos[linha, 0];
+                idProdutoAnterior = idProdutoAtual;
+
+                totalProduto = 0;
+
+                while (linha < numLinhas && dadosProdutos[linha, 0] == idProdutoAtual)
                 {
-                    Console.WriteLine($"{dadosProdutos[linha, 0]} - {dadosProdutos[linha, 1]} - {dadosProdutos[linha, 2]} " +
-                        $"- {dadosProdutos[linha, 3]}");
-                    if (int.TryParse(dadosProdutos[linha, 3], out int quantidade))
+                    string dataVendaAtual = dadosProdutos[linha, 2];
+
+                    Console.WriteLine($"{dadosProdutos[linha, 0]} - {dadosProdutos[linha, 1]} - {dadosProdutos[linha, 2]} - {dadosProdutos[linha, 3]}");
+
+                    if (int.TryParse(dadosProdutos[linha, 3], out int quantidadeProdutos))
                     {
-                        totalProduto += quantidade;
+                        totalProduto += quantidadeProdutos;
+
+                        if (vendasPorData.ContainsKey(dataVendaAtual))
+                            vendasPorData[dataVendaAtual] += quantidadeProdutos;
+
+                        else
+                            vendasPorData[dataVendaAtual] = quantidadeProdutos;
                     }
+
                     linha++;
-                    if (linha < numLinhas)
-                        idProdutoAtual = dadosProdutos[linha, 0];
                 }
-                Console.WriteLine($"Total do Produto: { totalProduto }");
+
+                Console.WriteLine($"Total do Produto: {totalProduto}");
                 Console.WriteLine();
                 totalGeral += totalProduto;
-                totalProduto = 0;
             }
-            Console.WriteLine($"Total Geral: { totalGeral }");
+
+            Console.WriteLine($"Total Geral: {totalGeral}");
+            Console.WriteLine();
+
+            Console.WriteLine("Total de vendas por data:");
+            foreach (var data in vendasPorData)
+            {
+                Console.WriteLine($"{data.Key}: {data.Value}");
+            }
 
             Console.ReadKey();
         }
     }
 }
+
+
