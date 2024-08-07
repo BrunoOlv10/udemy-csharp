@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using curso_udemy.recuperar_instituicao_ano;
 using DocumentFormat.OpenXml.Drawing;
 using DocumentFormat.OpenXml.EMMA;
+using DocumentFormat.OpenXml.Office.CustomUI;
 using DocumentFormat.OpenXml.Office2016.Drawing.Command;
 using HtmlAgilityPack;
 using OfficeOpenXml;
@@ -28,33 +30,34 @@ namespace curso_udemy.recuperar_nome_ano
             var enunciados = ReadCSVFile();
             var resultados = new List<InfosBuscadasModel>();
 
-            foreach (var enunciado in enunciados)
+            var tasks = enunciados.Select(async enunciado =>
             {
                 var doc = new HtmlDocument();
                 doc.LoadHtml(enunciado.Conteudo);
                 var enunciadoLimpo = doc.DocumentNode.InnerText;
 
-                Console.WriteLine($"Enunciado limpo: {enunciadoLimpo}");
+                var infosCodigo = await BuscarInfosCodigo(enunciadoLimpo);              
 
-                var infosCodigo = await BuscarInfosCodigo(enunciadoLimpo);
-
-                resultados.Add(new InfosBuscadasModel
+                return new InfosBuscadasModel
                 {
                     Id = enunciado.Id,
                     Codigo = enunciado.Codigo,
                     Conteudo = enunciado.Conteudo,
-                    NovoCodigo = infosCodigo.NovoCodigo,
-                    NomeInstituicao = infosCodigo.NomeInstituicao,
-                    Ano = infosCodigo.Ano
-                });
-            }
+                    CodigoNovo = infosCodigo.CodigoNovo,
+                    NomeInstituicaoAtual = enunciado.NomeInstituicaoAtual,
+                    NomeInstituicaoNovo = infosCodigo.NomeInstituicaoNovo,
+                    AnoAtual = enunciado.AnoAtual,
+                    AnoNovo = infosCodigo.AnoNovo
+                };
+            });
+            resultados = (await Task.WhenAll(tasks)).ToList();
 
             WriteExcelFile(resultados);
         }
 
         static List<InfosBaseModel> ReadCSVFile()
         {
-            string inputFilePath = @"C:\Users\bruno\source\repos\projeto-teste\projeto-teste\recuperar-instituicao-ano\lapalace-publicos-inicial.csv";
+            string inputFilePath = @"C:\Users\bruno\source\repos\projeto-teste\projeto-teste\recuperar-instituicao-ano\lapalace-publicos-recuperar-dados.csv";
 
             var enunciados = new List<InfosBaseModel>();
 
@@ -66,11 +69,13 @@ namespace curso_udemy.recuperar_nome_ano
                 {
                     var values = line.Split(';');
 
-                    if (values.Length >= 3)
+                    if (values.Length >= 5)
                     {
                         string id = values[0];
                         string codigo = values[1];
                         string conteudo = values[2];
+                        string nomeInstituicaoAtual = values[3];
+                        string anoAtual = values[4];
 
                         conteudo = conteudo.Replace("\\", "");
                         conteudo = conteudo.Trim('"');
@@ -79,7 +84,9 @@ namespace curso_udemy.recuperar_nome_ano
                         {
                             Id = id,
                             Codigo = codigo,
-                            Conteudo = conteudo
+                            Conteudo = conteudo,
+                            NomeInstituicaoAtual = nomeInstituicaoAtual,
+                            AnoAtual = anoAtual
                         });
                     }
                 }
@@ -146,17 +153,17 @@ namespace curso_udemy.recuperar_nome_ano
                 partes[0] = partes[0].ToUpper();
                 return new InfosBuscadasModel
                 {
-                    NovoCodigo = $"PUBLICA_{partes[0]}_{partes[1]}_{partes[2]}",
-                    NomeInstituicao = partes[0],
-                    Ano = partes[1]
+                    CodigoNovo = $"PUBLICA_{partes[0]}_{partes[1]}_{partes[2]}",
+                    NomeInstituicaoNovo = partes[0],
+                    AnoNovo = partes[1]
                 };
             }
 
             return new InfosBuscadasModel
             {
-                NovoCodigo = "Erro ao processar o código",
-                NomeInstituicao = "Erro ao processar o nome da instituição",
-                Ano = "Erro ao processar o ano"
+                CodigoNovo = "Erro ao processar o código",
+                NomeInstituicaoNovo = "Erro ao processar o nome da instituição",
+                AnoNovo = "Erro ao processar o ano"
             };
         }
 
@@ -172,18 +179,33 @@ namespace curso_udemy.recuperar_nome_ano
 
                 foreach (var item in resultados)
                 {
-                    int row = worksheet.Dimension?.Rows + 1 ?? 2;
+                    if (item.Codigo == item.CodigoNovo && item.NomeInstituicaoAtual == item.NomeInstituicaoNovo &&
+                        item.AnoAtual == item.AnoNovo)
+                        Console.WriteLine("Todos as colunas já estão atualizadas");
 
-                    worksheet.Cells[row, 1].Value = item.Id;
-                    if (item.NovoCodigo != item.Codigo)
-                        worksheet.Cells[row, 2].Value = item.NovoCodigo;
                     else
-                        Console.WriteLine("Código já está presente na planilha");
-                    worksheet.Cells[row, 3].Value = item.Conteudo;
-                    worksheet.Cells[row, 4].Value = item.NomeInstituicao;
-                    worksheet.Cells[row, 5].Value = item.Ano;
-                }
+                    {
+                        int row = 2;
+                        bool encontrado = false;
 
+                        for (; row <= worksheet.Dimension.Rows; row++)
+                        {
+                            if (worksheet.Cells[row, 1].Text == item.Id)
+                            {
+                                encontrado = true;
+                                break;
+                            }
+                        }
+
+                        if (encontrado)
+                        {
+                            worksheet.Cells[row, 2].Value = item.CodigoNovo != item.Codigo ? item.CodigoNovo : worksheet.Cells[row, 2].Value;
+                            worksheet.Cells[row, 4].Value = item.NomeInstituicaoNovo != item.NomeInstituicaoAtual ? item.NomeInstituicaoNovo : worksheet.Cells[row, 4].Value;
+                            worksheet.Cells[row, 5].Value = item.AnoNovo != item.AnoAtual ? item.AnoNovo : worksheet.Cells[row, 5].Value;
+                        }
+                    }
+                    
+                }
                 package.SaveAs(new FileInfo(outputFilePath));
             }
         }
