@@ -11,11 +11,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            string palavra = ex18_polindromo.ObterPalavra();
-
-            bool palindromo = ex18_polindromo.Palindromo(palavra);
-
-            ex18_polindromo.ExibirResultado(palavra, palindromo);
+            int idade = ex20_ano_nascimento.ObterIdade();
+            
+            int anoNascimento = ex20_ano_nascimento.CalcularAnoNascimento(idade);
         }
     }
 }

@@ -199,7 +199,9 @@
     <Compile Include="ex13-maiuscula-minuscula.cs" />
     <Compile Include="ex15-soma-matriz.cs" />
     <Compile Include="ex16-girar-matriz-esquerda.cs" />
+    <Compile Include="ex19-conversao-graus-fahrenheit.cs" />
     <Compile Include="ex2-multiplicao.cs" />
+    <Compile Include="ex20-ano-nascimento.cs" />
     <Compile Include="ex3-media.cs" />
     <Compile Include="ex4-retangulo-numeros.cs" />
     <Compile Include="ex6-mudar-caractere-posicao.cs" />
@@ -213,11 +215,13 @@
     <Compile Include="ex1-trocar-numeros-variaveis.cs" />
     <Compile Include="ex5-remover-caractere-especifico.cs" />
     <Compile Include="recuperar-instituicao-ano\codigo-refatorado-api-gpt.cs" />
+    <Compile Include="ex18-palindromo.cs" />
     <Compile Include="recuperar-instituicao-ano\GptModel.cs" />
     <Compile Include="recuperar-instituicao-ano\InfosBaseModel.cs" />
     <Compile Include="recuperar-instituicao-ano\InfosBuscadasModel.cs" />
     <Compile Include="recuperar-instituicao-ano\teste-api-gpt.cs" />
     <Compile Include="recuperar-instituicao-ano\teste-codigo.cs" />
+    <Compile Include="testar-exs.cs" />
     <Compile Include="try-catch.cs" />
   </ItemGroup>
   <ItemGroup>
