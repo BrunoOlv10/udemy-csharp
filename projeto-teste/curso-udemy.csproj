@@ -202,6 +202,7 @@
     <Compile Include="ex19-conversao-graus-fahrenheit.cs" />
     <Compile Include="ex2-multiplicao.cs" />
     <Compile Include="ex20-ano-nascimento.cs" />
+    <Compile Include="ex21-dias-mes.cs" />
     <Compile Include="ex3-media.cs" />
     <Compile Include="ex4-retangulo-numeros.cs" />
     <Compile Include="ex6-mudar-caractere-posicao.cs" />

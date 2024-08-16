@@ -11,9 +11,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int idade = ex20_ano_nascimento.ObterIdade();
-            
-            int anoNascimento = ex20_ano_nascimento.CalcularAnoNascimento(idade);
+            int mes = ex21_dias_mes.obterMes();
+
+            bool diasMes = ex21_dias_mes.obterDiasMes(mes);
         }
     }
 }
