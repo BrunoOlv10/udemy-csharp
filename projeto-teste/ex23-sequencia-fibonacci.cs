@@ -11,8 +11,16 @@ namespace curso_udemy
     {
         public static int obterNumeroTermos()
         {
-            Console.Write("Digite o número de termos a ser exibidos: ");
+            Console.Write("Digite o número de termos a ser exibidos (maior que 0): ");
             int numeroTermos = Convert.ToInt32(Console.ReadLine());
+
+            while (numeroTermos < 1)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Número de termos inválido!");
+                Console.Write("Digite o número de termos a ser exibidos (maior que 0): ");
+                numeroTermos = Convert.ToInt32(Console.ReadLine());
+            }
 
             return numeroTermos;
         }
@@ -21,6 +29,8 @@ namespace curso_udemy
         {
             List<int> sequencia = new List<int>();
             int primeiroNumero = 0, segundoNumero = 1, proximoNumero;
+
+            Console.WriteLine();
 
             if (numeroTermos >= 1)
                 Console.Write($"{primeiroNumero}, ");
