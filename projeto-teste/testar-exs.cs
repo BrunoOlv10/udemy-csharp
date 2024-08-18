@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using curso_udemy.recuperar_instituicao_ano;
+using DocumentFormat.OpenXml.ExtendedProperties;
 
 namespace curso_udemy
 {
@@ -11,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int mes = ex21_dias_mes.obterMes();
+            (string caractere, int numeroLinhas) elemento = ex22_piramide_caracteres.obterElementoUtilizado();
 
-            bool diasMes = ex21_dias_mes.obterDiasMes(mes);
+            bool montarPirâmide = ex22_piramide_caracteres.MontarPiramidade(elemento.caractere, elemento.numeroLinhas);
         }
     }
 }

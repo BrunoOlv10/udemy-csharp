@@ -12,13 +12,24 @@ namespace curso_udemy
     {
         public static int obterMes()
         {
-            Console.Write("Digite o número do mês que deseja: ");
-            int numeroMes = Convert.ToInt32(Console.ReadLine());
+            int numeroMes = 0;
 
-            while (numeroMes < 1 || numeroMes > 12)
+            try
             {
-                Console.Write($"Mês {numeroMes} inválido, digite um número entre 1 e 12: ");
-                numeroMes = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Digite o número do mês que deseja: ");
+            numeroMes = Convert.ToInt32(Console.ReadLine());
+
+                while (numeroMes < 1 || numeroMes > 12)
+                {
+                    Console.Write($"Mês {numeroMes} inválido, digite um número entre 1 e 12: ");
+                    numeroMes = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            catch (System.FormatException ex)
+            {
+                Console.Write("É necessário inserir o número do mês, não é permitido qualquer outro elemento");
+                Console.ReadKey();
+                Environment.Exit(1);
             }
 
             return numeroMes;
