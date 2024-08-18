@@ -204,6 +204,7 @@
     <Compile Include="ex20-ano-nascimento.cs" />
     <Compile Include="ex21-dias-mes.cs" />
     <Compile Include="ex22-piramide-caracteres.cs" />
+    <Compile Include="ex23-sequencia-fibonacci.cs" />
     <Compile Include="ex3-media.cs" />
     <Compile Include="ex4-retangulo-numeros.cs" />
     <Compile Include="ex6-mudar-caractere-posicao.cs" />

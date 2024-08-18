@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (string caractere, int numeroLinhas) elemento = ex22_piramide_caracteres.obterElementoUtilizado();
+            int numeroTermos = ex23_sequencia_fibonacci.obterNumeroTermos();
 
-            bool montarPirâmide = ex22_piramide_caracteres.MontarPiramidade(elemento.caractere, elemento.numeroLinhas);
+            List<int> sequenciaFibonacci = ex23_sequencia_fibonacci.gerarSequenciaFibonacci(numeroTermos);
         }
     }
 }
