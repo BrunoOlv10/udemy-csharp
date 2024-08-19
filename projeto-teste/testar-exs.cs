@@ -12,11 +12,11 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int[] tamanhoMatriz = ex28_ocorrencias_matriz.ObterTamanhoMatriz();
+            int[] tamanhoMatriz = ex29_maior_menor_valor_matriz.ObterTamanhoMatriz();
 
-            int[] elementosMatriz = ex28_ocorrencias_matriz.ObterElementosMatriz(tamanhoMatriz);
+            int[] elementosMatriz = ex29_maior_menor_valor_matriz.ObterElementosMatriz(tamanhoMatriz);
 
-            Dictionary<int, int> elementosRepetidos = ex28_ocorrencias_matriz.ElementosRepetidos(elementosMatriz);
+            int[] maiorMenorMatriz = ex29_maior_menor_valor_matriz.MaiorMenorMatriz(elementosMatriz);
         }
     }
 }

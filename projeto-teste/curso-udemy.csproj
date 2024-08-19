@@ -210,6 +210,7 @@
     <Compile Include="ex26-soma-elementos-matriz.cs" />
     <Compile Include="ex27-elementos-trocados-matriz.cs" />
     <Compile Include="ex28-ocorrencias-matriz.cs" />
+    <Compile Include="ex29-maior-menor-valor-matriz.cs" />
     <Compile Include="ex3-media.cs" />
     <Compile Include="ex4-retangulo-numeros.cs" />
     <Compile Include="ex6-mudar-caractere-posicao.cs" />
