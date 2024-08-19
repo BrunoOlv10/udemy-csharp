@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int numeroTermos = ex23_sequencia_fibonacci.obterNumeroTermos();
+            char limiteLetras = ex24_letras_alfabeto.obterNumeroLetras();
 
-            List<int> sequenciaFibonacci = ex23_sequencia_fibonacci.gerarSequenciaFibonacci(numeroTermos);
+            List<char> alfabeto = ex24_letras_alfabeto.exibirAlfabeto(limiteLetras);
         }
     }
 }
