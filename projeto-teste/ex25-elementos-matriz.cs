@@ -10,18 +10,38 @@ namespace curso_udemy
     {
         public static int[] obterElementosMatriz()
         {
-            Console.Write("Escreva os números para compor a matriz (separados por vírgula): ");
-            string numeros = Console.ReadLine();
-            string[] numerosDivididos = numeros.Split(',');
+            int[] matrizNumeros = new int[0];
 
-            int[] matrizNumeros = new int[numerosDivididos.Length];
-
-            for (int i = 0; i < numerosDivididos.Length; i++)
+            while (true)
             {
-                matrizNumeros[i] = int.Parse(numerosDivididos[i].Trim());
-            }
+                try
+                {
+                    Console.Write("Escreva os números para compor a matriz (separados por vírgula): ");
+                    string numeros = Console.ReadLine();
+                    string[] numerosDivididos = numeros.Split(',');
 
-            return matrizNumeros;
+                    matrizNumeros = new int[numerosDivididos.Length];
+
+                    for (int i = 0; i < numerosDivididos.Length; i++)
+                    {
+                        string numeroAtual = numerosDivididos[i].Trim();
+
+                        if (!int.TryParse(numeroAtual, out matrizNumeros[i]))
+                        {
+                            throw new System.FormatException();
+                        }
+
+                        matrizNumeros[i] = int.Parse(numerosDivididos[i]);
+                    }
+                    
+                    return matrizNumeros;
+                }
+                catch (System.FormatException)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Digite um número válido!");
+                }
+            }
         }
 
         public static int[] exibirNumerosMatriz(int[] matrizNumeros)

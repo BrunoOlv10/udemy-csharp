@@ -9,7 +9,7 @@ namespace curso_udemy
 {
     public class ex24_letras_alfabeto
     {
-
+        // por referencia de letra
         //public static char obterLimite()
         //{
         //    char limiteLetras = 'a';
@@ -17,7 +17,6 @@ namespace curso_udemy
 
         //    while (true)
         //    {
-        //        // por letra
         //        try
         //        {
         //            Console.Write("Digite a letra limite para exibir o alfabeto: ");
@@ -39,13 +38,14 @@ namespace curso_udemy
         //    }
         //}
 
+        
+        // por posição da letra
         public static char obterLimite()
         {
             int limiteLetras = 1;
 
             while (true)
             {
-                // por posição da letra
                 try
                 {
                     Console.Write("Digite o limite a ser exibido do alfabeto (1-26): ");

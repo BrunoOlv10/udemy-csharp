@@ -12,9 +12,11 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int[] numerosMatriz = ex25_elementos_matriz.obterElementosMatriz();
+            int[] tamanhoMatriz = ex26_soma_elementos_matriz.TamanhoMatriz();
 
-            int[] matrizGerada = ex25_elementos_matriz.exibirNumerosMatriz(numerosMatriz);
+            int[] elementosMatriz = ex26_soma_elementos_matriz.ElementosMatriz(tamanhoMatriz);
+
+            int somaElementos = ex26_soma_elementos_matriz.SomarElementosMatriz(elementosMatriz);
         }
     }
 }
