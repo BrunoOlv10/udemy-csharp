@@ -10,34 +10,41 @@ namespace curso_udemy
     public class ex24_letras_alfabeto
     {
 
-        public static char obterNumeroLetras()
+        //public static char obterLimite()
+        //{
+        //    char limiteLetras = 'a';
+        //    char limiteValidado = 'a';
+
+        //    while (true)
+        //    {
+        //        // por letra
+        //        try
+        //        {
+        //            Console.Write("Digite a letra limite para exibir o alfabeto: ");
+        //            limiteLetras = Convert.ToChar(Console.ReadLine());
+        //            limiteValidado = char.ToLower(limiteLetras);
+
+        //            if (!char.IsLetter(limiteValidado))
+        //            {
+        //                throw new FormatException();
+        //            }
+
+        //            break;
+        //        }
+        //        catch (System.FormatException)
+        //        {
+        //            Console.WriteLine();
+        //            Console.WriteLine("Entrada inválida. Digite apenas uma letra válida!");
+        //        }
+        //    }
+        //}
+
+        public static char obterLimite()
         {
-            //char limiteLetras = 'a';
-            //char limiteValidado = 'a';
             int limiteLetras = 1;
 
             while (true)
             {
-                // por letra
-                //try
-                //{
-                //    Console.Write("Digite a letra limite para exibir o alfabeto: ");
-                //    limiteLetras = Convert.ToChar(Console.ReadLine());
-                //    limiteValidado = char.ToLower(limiteLetras);
-
-                //    if (!char.IsLetter(limiteValidado))
-                //    {
-                //        throw new FormatException();
-                //    }
-
-                //    break;
-                //}
-                //catch(System.FormatException)
-                //{
-                //Console.WriteLine();
-                //Console.WriteLine("Entrada inválida. Digite apenas uma letra válida!");
-                //}
-
                 // por posição da letra
                 try
                 {

@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            char limiteLetras = ex24_letras_alfabeto.obterNumeroLetras();
+            int[] numerosMatriz = ex25_elementos_matriz.obterElementosMatriz();
 
-            List<char> alfabeto = ex24_letras_alfabeto.exibirAlfabeto(limiteLetras);
+            int[] matrizGerada = ex25_elementos_matriz.exibirNumerosMatriz(numerosMatriz);
         }
     }
 }
