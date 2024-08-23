@@ -12,11 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int[] tamanhoMatriz = ex30_excluir_valor_matriz.ObterTamanhoMatriz();
+            char[] palavra = ex31_ordenar_matriz_string.ObterPalavra();
 
-            int[] elementosMatriz = ex30_excluir_valor_matriz.ObterElementosMatriz(tamanhoMatriz);
-
-            int[] excluirElementoMatriz = ex30_excluir_valor_matriz.ExcluirValorMatriz(elementosMatriz);
+            string palavraOrdenada = ex31_ordenar_matriz_string.OrdenarPalavra(palavra);
         }
     }
 }

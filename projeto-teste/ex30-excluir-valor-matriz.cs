@@ -8,7 +8,7 @@ namespace curso_udemy
 {
     public class ex30_excluir_valor_matriz
     {
-        public static int[] ObterTamanhoMatriz()
+        public static int ObterTamanhoMatriz()
         {
             while (true)
             {
@@ -16,28 +16,40 @@ namespace curso_udemy
                 {
                     Console.Write("Insira o tamanho da matriz: ");
                     int tamanhoMatriz = Convert.ToInt32(Console.ReadLine());
-                    int[] numerosMatriz = new int[tamanhoMatriz];
+                    Console.WriteLine();
 
-                    return numerosMatriz;
+                    if (tamanhoMatriz > 0)
+                    {
+                        return tamanhoMatriz;
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
                 }
                 catch (System.FormatException)
                 {
                     Console.WriteLine();
                     Console.WriteLine("Insira um formato de tamanho válido!");
                 }
+                catch (Exception)
+                {
+                    Console.WriteLine("Insira um tamanho maior que 0");
+                }
             }
         }
 
-        public static int[] ObterElementosMatriz(int[] numerosMatriz)
+        public static int[] ObterElementosMatriz(int tamanhoMatriz)
         {
+            int[] numerosMatriz = new int[tamanhoMatriz];
+
             while (true)
             {
                 try
                 {
                     string[] numeros = new string[numerosMatriz.Length];
 
-                    Console.WriteLine();
-                    Console.WriteLine("Insira os elementos da matriz:");
+                    Console.WriteLine($"Insira os {tamanhoMatriz} elementos da matriz:");
                     for (int i = 0; i < numerosMatriz.Length; i++)
                     {
                         Console.Write($"Digite o elemento {i}: ");
@@ -94,8 +106,6 @@ namespace curso_udemy
                     }
 
                     Console.WriteLine();
-                    Console.WriteLine($"O número na posição '{posicao}' é {numeroExcluido}");
-                    
                     Console.Write($"Após excluir o {numeroExcluido}, a matriz ficou assim: ");
                     Console.Write(String.Join(", ", matrizAtualizada));
                     Console.ReadKey();
