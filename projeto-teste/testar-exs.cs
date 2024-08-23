@@ -12,9 +12,7 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            string[] strings = ex32_ordenar_strings_buble_sort.ObterStrings();
-
-            string[] bubleSort = ex32_ordenar_strings_buble_sort.BubbleSort(strings);
+            repeticao_exs.ex1_trocar_numeros_variaveis.InverterNumeros();
         }
     }
 }
