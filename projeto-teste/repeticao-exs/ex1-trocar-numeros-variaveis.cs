@@ -8,7 +8,7 @@ namespace curso_udemy.repeticao_exs
 {
     public class ex1_trocar_numeros_variaveis
     {
-        public static void InverterNumeros()
+        public static (int, int) ObterNumeros()
         {
             Console.Write("Digite o primeiro número: ");
             int numero1 = Convert.ToInt32(Console.ReadLine());
@@ -16,6 +16,11 @@ namespace curso_udemy.repeticao_exs
             Console.Write("Digite o segundo número: ");
             int numero2 = Convert.ToInt32(Console.ReadLine());
 
+            return (numero1, numero2);
+        }
+
+        public static bool InverterNumeros(int numero1, int numero2)
+        {
             int aux = numero1;
             numero1 = numero2;
             numero2 = aux;
@@ -24,6 +29,8 @@ namespace curso_udemy.repeticao_exs
             Console.WriteLine($"Primeiro número: {numero1}");
             Console.WriteLine($"Segundo número: {numero2}");
             Console.ReadKey();
+
+            return true;
         }
     }
 }

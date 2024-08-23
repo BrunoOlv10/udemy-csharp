@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int[] numeros = repeticao_exs.ex2_multiplicao.ObterNumeros();
+            (int numero1, int numero2) = repeticao_exs.ex1_trocar_numeros_variaveis.ObterNumeros();
 
-            int multiplicacao = repeticao_exs.ex2_multiplicao.ResultadoMultiplicacao(numeros);
+            bool inverterNumeros = repeticao_exs.ex1_trocar_numeros_variaveis.InverterNumeros(numero1, numero2);
         }
     }
 }
