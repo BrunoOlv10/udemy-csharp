@@ -214,6 +214,7 @@
     <Compile Include="ex3-media.cs" />
     <Compile Include="ex30-excluir-valor-matriz.cs" />
     <Compile Include="ex31-ordenar-matriz-string.cs" />
+    <Compile Include="ex32-ordenar-strings-bubble-sort.cs" />
     <Compile Include="ex4-retangulo-numeros.cs" />
     <Compile Include="ex6-mudar-caractere-posicao.cs" />
     <Compile Include="ex7-numero-positivo-negativo.cs" />

@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            char[] palavra = ex31_ordenar_matriz_string.ObterPalavra();
+            string[] strings = ex32_ordenar_strings_buble_sort.ObterStrings();
 
-            string palavraOrdenada = ex31_ordenar_matriz_string.OrdenarPalavra(palavra);
+            string[] bubleSort = ex32_ordenar_strings_buble_sort.BubbleSort(strings);
         }
     }
 }
