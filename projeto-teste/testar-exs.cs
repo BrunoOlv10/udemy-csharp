@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int[] numeros = repeticao_exs.ex3_media.ObterNumeros();
+            (int largura, int altura, string elemento) = repeticao_exs.ex4_retangulo_numero.InfosRetangulo();
 
-            int media = repeticao_exs.ex3_media.MediaNumeros(numeros);
+            repeticao_exs.ex4_retangulo_numero.MontarRetangulo(largura, altura, elemento);
         }
     }
 }

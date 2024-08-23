@@ -236,6 +236,7 @@
     <Compile Include="repeticao-exs\ex1-trocar-numeros-variaveis.cs" />
     <Compile Include="repeticao-exs\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs\ex3-media.cs" />
+    <Compile Include="repeticao-exs\ex4-retangulo.cs" />
     <Compile Include="testar-exs.cs" />
     <Compile Include="try-catch.cs" />
   </ItemGroup>
