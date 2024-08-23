@@ -234,6 +234,7 @@
     <Compile Include="recuperar-instituicao-ano\teste-api-gpt.cs" />
     <Compile Include="recuperar-instituicao-ano\teste-codigo.cs" />
     <Compile Include="repeticao-exs\ex1-trocar-numeros-variaveis.cs" />
+    <Compile Include="repeticao-exs\ex2-multiplicao.cs" />
     <Compile Include="testar-exs.cs" />
     <Compile Include="try-catch.cs" />
   </ItemGroup>
