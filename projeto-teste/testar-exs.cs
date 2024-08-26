@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            string[] frase = repeticao_exs.ex8_palavra_longa.ObterFrase();
+            int limite = repeticao_exs.ex9_soma_numeros_primos.ObterLimite();
 
-            List<string> maiorPalavra = repeticao_exs.ex8_palavra_longa.MaiorPalavra(frase);
+            int encontrarPrimos = repeticao_exs.ex9_soma_numeros_primos.EncontrarNumerosPrimos(limite);
         }
     }
 }

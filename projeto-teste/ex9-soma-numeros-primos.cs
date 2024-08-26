@@ -33,7 +33,7 @@ namespace curso_udemy
         //        }
 
         //        numeroAtual++;
-                
+
         //    }
 
         //    Console.WriteLine($"A soma dos primeiros 1000 números primos é: {somaPrimos}");
