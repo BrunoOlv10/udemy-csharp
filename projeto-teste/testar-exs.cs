@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            string palavra = repeticao_exs.ex5_remover_caractere_especifico.ObterString();
+            (string palavra, char[] palavraCaracteres) = repeticao_exs.ex6_mudar_caractere_posicao.ObterString();
 
-            string palavraSemCaractere = repeticao_exs.ex5_remover_caractere_especifico.ExcluirCaractere(palavra);
+            string mudarCaractere = repeticao_exs.ex6_mudar_caractere_posicao.MudarCaracterePosicao(palavra, palavraCaracteres);
         }
     }
 }
