@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (int largura, int altura, string elemento) = repeticao_exs.ex4_retangulo_numero.InfosRetangulo();
+            string palavra = repeticao_exs.ex5_remover_caractere_especifico.ObterString();
 
-            repeticao_exs.ex4_retangulo_numero.MontarRetangulo(largura, altura, elemento);
+            string palavraSemCaractere = repeticao_exs.ex5_remover_caractere_especifico.ExcluirCaractere(palavra);
         }
     }
 }
