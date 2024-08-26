@@ -239,6 +239,7 @@
     <Compile Include="repeticao-exs\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs\ex5-remover-caractere-especifico.cs" />
     <Compile Include="repeticao-exs\ex6-mudar-caractere-posicao.cs" />
+    <Compile Include="repeticao-exs\ex7-numero-positivo-negativo.cs" />
     <Compile Include="testar-exs.cs" />
     <Compile Include="try-catch.cs" />
   </ItemGroup>

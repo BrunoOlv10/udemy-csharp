@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (string palavra, char[] palavraCaracteres) = repeticao_exs.ex6_mudar_caractere_posicao.ObterString();
+            (int numero1, int numero2) = repeticao_exs.ex7_numero_positivo_negativo.ObterNumeros();
 
-            string mudarCaractere = repeticao_exs.ex6_mudar_caractere_posicao.MudarCaracterePosicao(palavra, palavraCaracteres);
+            bool objetivo = repeticao_exs.ex7_numero_positivo_negativo.ObterResultado(numero1, numero2);
         }
     }
 }
