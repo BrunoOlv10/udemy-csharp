@@ -240,6 +240,7 @@
     <Compile Include="repeticao-exs\ex5-remover-caractere-especifico.cs" />
     <Compile Include="repeticao-exs\ex6-mudar-caractere-posicao.cs" />
     <Compile Include="repeticao-exs\ex7-numero-positivo-negativo.cs" />
+    <Compile Include="repeticao-exs\ex8-palavra-longa.cs" />
     <Compile Include="testar-exs.cs" />
     <Compile Include="try-catch.cs" />
   </ItemGroup>

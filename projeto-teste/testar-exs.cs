@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (int numero1, int numero2) = repeticao_exs.ex7_numero_positivo_negativo.ObterNumeros();
+            string[] frase = repeticao_exs.ex8_palavra_longa.ObterFrase();
 
-            bool objetivo = repeticao_exs.ex7_numero_positivo_negativo.ObterResultado(numero1, numero2);
+            List<string> maiorPalavra = repeticao_exs.ex8_palavra_longa.MaiorPalavra(frase);
         }
     }
 }
