@@ -12,9 +12,7 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int limite = repeticao_exs.ex9_soma_numeros_primos.ObterLimite();
-
-            int encontrarPrimos = repeticao_exs.ex9_soma_numeros_primos.EncontrarNumerosPrimos(limite);
+            string inverterfrase = repeticao_exs.ex10_frase_invertida.InverterFrase();
         }
     }
 }
