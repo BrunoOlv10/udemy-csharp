@@ -12,7 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            string inverterfrase = repeticao_exs.ex10_frase_invertida.InverterFrase();
+            (string[] frase, string palavraBuscada) = repeticao_exs.ex11_contem_palavra.ObterInfos();
+
+            bool encontrarPalavra = repeticao_exs.ex11_contem_palavra.EncontrarPalavra(frase, palavraBuscada);
         }
     }
 }

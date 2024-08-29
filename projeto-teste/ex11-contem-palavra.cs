@@ -33,7 +33,7 @@ namespace curso_udemy
 
         //    if (palavraEncontrada)
         //        Console.WriteLine($"A palavra '{palavra}' está presente na frase: {fraseOriginal}");
-            
+
         //    else
         //        Console.WriteLine($"A palavra '{palavra}' NÃO está presente na frase: {fraseOriginal}");
 
