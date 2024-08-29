@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (string[] frase, string palavraBuscada) = repeticao_exs.ex11_contem_palavra.ObterInfos();
+            (int numero1, int numero2, int referencia) = repeticao_exs.ex12_valor_mais_proximo.Numeros();
 
-            bool encontrarPalavra = repeticao_exs.ex11_contem_palavra.EncontrarPalavra(frase, palavraBuscada);
+            int numeroProximo = repeticao_exs.ex12_valor_mais_proximo.NumeroProximo(numero1, numero2, referencia); 
         }
     }
 }
