@@ -82,6 +82,7 @@ namespace curso_udemy
                 alfabeto.Add(letra);
             }
 
+            Console.WriteLine();
             Console.WriteLine(string.Join(", ", alfabeto));
             Console.ReadKey();
 

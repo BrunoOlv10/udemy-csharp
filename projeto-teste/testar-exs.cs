@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int numeroTermos = repeticao_exs.ex23_sequencia_fibonacci.ObterNumerosTermos();
+            char limite = repeticao_exs.ex24_letras_alfabeto.ObterLimite();
 
-            List<int> gerarSequencia = repeticao_exs.ex23_sequencia_fibonacci.GerarSequencia(numeroTermos);
+            List<char> alfabeto = repeticao_exs.ex24_letras_alfabeto.ExibirAlfabeto(limite);
         }
     }
 }

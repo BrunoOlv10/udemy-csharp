@@ -248,6 +248,7 @@
     <Compile Include="repeticao-exs\ex21-dias-mes.cs" />
     <Compile Include="repeticao-exs\ex22-piramide-caracteres.cs" />
     <Compile Include="repeticao-exs\ex23-sequencia-fibonacci.cs" />
+    <Compile Include="repeticao-exs\ex24-letras-alfabeto.cs" />
     <Compile Include="repeticao-exs\ex3-media.cs" />
     <Compile Include="repeticao-exs\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs\ex5-remover-caractere-especifico.cs" />
