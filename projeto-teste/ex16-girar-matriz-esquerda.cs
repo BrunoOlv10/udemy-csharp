@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curso_udemy
 {
-    class ex16_girar_matriz_esquerda
+    class ex16_girar_array
     {
         //static void Main(string[] args)
         //{
@@ -17,7 +17,7 @@ namespace curso_udemy
 
         //    int[] numerosConvertidos = numerosString.Select(int.Parse).ToArray();
 
-        //    int[] numerosRotacionado = numerosSeparados.Skip(1).Concat(numerosSeparados.Take(1)).ToArray();
+        //    int[] numerosRotacionado = numerosConvertidos.Skip(1).Concat(numerosConvertidos.Take(1)).ToArray();
 
         //    Console.WriteLine("Vetor rotacionado: [" + string.Join(", ", numerosRotacionado) + "]");
         //    Console.ReadKey();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curso_udemy.repeticao_exs
 {
-    public class ex15_soma_matriz
+    public class ex16_girar_array
     {
         public static int[] ObterNumeros()
         {
@@ -14,7 +14,7 @@ namespace curso_udemy.repeticao_exs
             {
                 try
                 {
-                    Console.Write("Digite os números que serão inseridos na matriz (separe por vírgula): ");
+                    Console.Write("Insira os números que irão para o array: ");
                     string entrada = Console.ReadLine();
                     string[] numerosDivididos = entrada.Split(',');
                     int[] numerosValidados = new int[numerosDivididos.Length];
@@ -29,25 +29,20 @@ namespace curso_udemy.repeticao_exs
                 catch (System.FormatException)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Insira apenas números e separe por vírgula!");
+                    Console.WriteLine("Insira apenas números!");
                 }
             }
         }
 
-        public static int SomarNumeros(int[] numerosValidados)
+        public static int[] RotacionarMatriz(int[] numerosValidados)
         {
-            int resultadoSoma = 0;
-
-            for (int i = 0; i < numerosValidados.Length; i++)
-            {
-                resultadoSoma += numerosValidados[i];
-            }
+            int[] numerosRotacionado = numerosValidados.Skip(1).Concat(numerosValidados.Take(1)).ToArray();
 
             Console.WriteLine();
-            Console.WriteLine($"O resultado da soma entre os números inseridos é {resultadoSoma}");
+            Console.WriteLine($"O vetor inicial é [" + string.Join(", ", numerosValidados) + "], depois de rotacionado ele ficou: [" + string.Join(", ", numerosRotacionado) + "]");
             Console.ReadKey();
 
-            return resultadoSoma;
+            return numerosRotacionado;
         }
     }
 }

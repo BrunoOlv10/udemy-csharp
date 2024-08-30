@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int[] numeros = repeticao_exs.ex15_soma_matriz.ObterNumeros();
+            int[] numeros = repeticao_exs.ex16_girar_array.ObterNumeros();
 
-            int resultadoSoma = repeticao_exs.ex15_soma_matriz.SomarNumeros(numeros);
+            int[] numerosRotacionado = repeticao_exs.ex16_girar_array.RotacionarMatriz(numeros);
         }
     }
 }
