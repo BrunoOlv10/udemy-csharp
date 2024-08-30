@@ -244,6 +244,7 @@
     <Compile Include="repeticao-exs\ex18-palindromo.cs" />
     <Compile Include="repeticao-exs\ex19-conversao-graus-fahrenheit.cs" />
     <Compile Include="repeticao-exs\ex2-multiplicao.cs" />
+    <Compile Include="repeticao-exs\ex20-ano-nascimento.cs" />
     <Compile Include="repeticao-exs\ex3-media.cs" />
     <Compile Include="repeticao-exs\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs\ex5-remover-caractere-especifico.cs" />

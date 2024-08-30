@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (int temperatura, string unidadeMedida) = repeticao_exs.ex19_conversao_graus_fahrenheit.ObterInfosTemperatura();
+            int idade = repeticao_exs.ex20_ano_nascimento.ObterIdade();
 
-            int converterTemperatura = repeticao_exs.ex19_conversao_graus_fahrenheit.ConverterTemperatura(temperatura, unidadeMedida);
+            int anoNascimento = repeticao_exs.ex20_ano_nascimento.CalcularAnoNascimento(idade);
         }
     }
 }
