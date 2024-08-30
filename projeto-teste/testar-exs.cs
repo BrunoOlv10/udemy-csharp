@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int idade = repeticao_exs.ex20_ano_nascimento.ObterIdade();
+            int mes = repeticao_exs.ex21_dias_mes.ObterMes();
 
-            int anoNascimento = repeticao_exs.ex20_ano_nascimento.CalcularAnoNascimento(idade);
+            int diasMes = repeticao_exs.ex21_dias_mes.ObterDias(mes);
         }
     }
 }
