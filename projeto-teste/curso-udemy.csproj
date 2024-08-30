@@ -246,6 +246,7 @@
     <Compile Include="repeticao-exs\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs\ex20-ano-nascimento.cs" />
     <Compile Include="repeticao-exs\ex21-dias-mes.cs" />
+    <Compile Include="repeticao-exs\ex22-piramide-caracteres.cs" />
     <Compile Include="repeticao-exs\ex3-media.cs" />
     <Compile Include="repeticao-exs\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs\ex5-remover-caractere-especifico.cs" />

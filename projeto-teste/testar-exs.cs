@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int mes = repeticao_exs.ex21_dias_mes.ObterMes();
+            (string elemento, int numeroLinhas) = repeticao_exs.ex22_piramide_caracteres.ObterInfosPiramide();
 
-            int diasMes = repeticao_exs.ex21_dias_mes.ObterDias(mes);
+            repeticao_exs.ex22_piramide_caracteres.MontarPiramide(elemento, numeroLinhas);
         }
     }
 }
