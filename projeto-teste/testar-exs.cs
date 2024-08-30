@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (int numero1, int numero2, int referencia) = repeticao_exs.ex12_valor_mais_proximo.Numeros();
+            string palavra = repeticao_exs.ex13_maiuscula_minuscula.ObterPalavra();
 
-            int numeroProximo = repeticao_exs.ex12_valor_mais_proximo.NumeroProximo(numero1, numero2, referencia); 
+            string palavraFinal = repeticao_exs.ex13_maiuscula_minuscula.PalavraFinal(palavra);
         }
     }
 }
