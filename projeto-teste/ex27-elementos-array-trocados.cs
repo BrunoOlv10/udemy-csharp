@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace curso_udemy
 {
-    public class ex27_elementos_trocados_matriz
+    public class ex27_elementos_array_trocados
     {
-        public static int[] ObterTamanhoMatriz()
+        public static int[] ObterTamanhoArray()
         {
             while (true)
             {
                 try
                 {
-                    Console.Write("Digite o tamanho da matriz: ");
-                    int tamanhoMatriz = Convert.ToInt32(Console.ReadLine());
-                    int[] matrizNumeros = new int[tamanhoMatriz];
+                    Console.Write("Digite o tamanho do array: ");
+                    int tamanhoArray = Convert.ToInt32(Console.ReadLine());
+                    int[] arrayNumeros = new int[tamanhoArray];
 
-                    return matrizNumeros;
+                    return arrayNumeros;
                 }
                 catch (System.FormatException)
                 {
@@ -28,30 +28,30 @@ namespace curso_udemy
             }
         }
 
-        public static int[] ObterElementosMatriz(int[] matrizNumeros)
+        public static int[] ObterElementosArray(int[] arrayNumeros)
         {
             while (true)
             {
                 try
                 {
-                    string[] numeros = new string[matrizNumeros.Length];
+                    string[] numeros = new string[arrayNumeros.Length];
 
                     Console.WriteLine();
-                    Console.WriteLine("Digite os elementos da matriz: ");
+                    Console.WriteLine("Digite os elementos do array: ");
 
-                    for (int i = 0; i < matrizNumeros.Length; i++)
+                    for (int i = 0; i < arrayNumeros.Length; i++)
                     {
-                        Console.Write($"Digite o elemento {i} da matriz: ");
+                        Console.Write($"Digite o elemento {i} do array: ");
                         string numero = Console.ReadLine();
                         numeros[i] = numero;
                     }
 
-                    for (int i = 0; i < matrizNumeros.Length; i++)
+                    for (int i = 0; i < arrayNumeros.Length; i++)
                     {
-                        matrizNumeros[i] = int.Parse(numeros[i]);
+                        arrayNumeros[i] = int.Parse(numeros[i]);
                     }
 
-                    return matrizNumeros;
+                    return arrayNumeros;
                 }
                 catch (System.FormatException)
                 {
@@ -61,23 +61,23 @@ namespace curso_udemy
             }
         }
 
-        public static int[] TransferirMatriz(int[] matrizNumeros)
+        public static int[] TransferirArray(int[] arrayNumeros)
         {
-            int[] numerosNovos = new int[matrizNumeros.Length];
+            int[] numerosNovos = new int[arrayNumeros.Length];
 
-            for (int i = 0; i < matrizNumeros.Length; i++)
+            for (int i = 0; i < arrayNumeros.Length; i++)
             {
-                numerosNovos[i] = matrizNumeros[i];
+                numerosNovos[i] = arrayNumeros[i];
             }
 
             return numerosNovos;
         }
 
-        public static int[] ExibirMatrizes(int[] matrizNumeros, int[] numerosNovos)
+        public static int[] ExibirArrays(int[] arrayNumeros, int[] numerosNovos)
         {
             Console.WriteLine();
             Console.Write("Os elementos da primeira matriz são: ");
-            Console.WriteLine(String.Join(",", matrizNumeros));
+            Console.WriteLine(String.Join(",", arrayNumeros));
             Console.Write("Os elementos da segunda matriz são: ");
             Console.WriteLine(String.Join(",", numerosNovos));
             Console.ReadKey();

@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int[] arrayNumeros = repeticao_exs.ex26_soma_elementos_matriz.ArrayNumeros();
+            int[] array = repeticao_exs.ex27_elementos_array_trocados.ObterArray();
 
-            int somarNumeros = repeticao_exs.ex26_soma_elementos_matriz.SomarNumeros(arrayNumeros);
+            int[] inverterArray = repeticao_exs.ex27_elementos_array_trocados.InverterArray(array);
         }
     }
 }
