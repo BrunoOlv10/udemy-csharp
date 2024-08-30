@@ -6,35 +6,35 @@ using System.Threading.Tasks;
 
 namespace curso_udemy
 {
-    public class ex25_elementos_matriz
+    public class ex25_elementos_array
     {
-        public static int[] obterElementosMatriz()
+        public static int[] ObterElementosArray()
         {
-            int[] matrizNumeros = new int[0];
+            int[] arrayNumeros = new int[0];
 
             while (true)
             {
                 try
                 {
-                    Console.Write("Escreva os números para compor a matriz (separados por vírgula): ");
+                    Console.Write("Escreva os números para compor o array (separados por vírgula): ");
                     string numeros = Console.ReadLine();
                     string[] numerosDivididos = numeros.Split(',');
 
-                    matrizNumeros = new int[numerosDivididos.Length];
+                    arrayNumeros = new int[numerosDivididos.Length];
 
                     for (int i = 0; i < numerosDivididos.Length; i++)
                     {
                         string numeroAtual = numerosDivididos[i].Trim();
 
-                        if (!int.TryParse(numeroAtual, out matrizNumeros[i]))
+                        if (!int.TryParse(numeroAtual, out arrayNumeros[i]))
                         {
                             throw new System.FormatException();
                         }
 
-                        matrizNumeros[i] = int.Parse(numerosDivididos[i]);
+                        arrayNumeros[i] = int.Parse(numerosDivididos[i]);
                     }
                     
-                    return matrizNumeros;
+                    return arrayNumeros;
                 }
                 catch (System.FormatException)
                 {
@@ -44,18 +44,18 @@ namespace curso_udemy
             }
         }
 
-        public static int[] exibirNumerosMatriz(int[] matrizNumeros)
+        public static int[] ExibirNumerosMatriz(int[] arrayNumeros)
         {
             Console.WriteLine();
 
-            for (int i = 0; i < matrizNumeros.Length; i++)
+            for (int i = 0; i < arrayNumeros.Length; i++)
             {
-                Console.WriteLine($"Elemento {i}: {matrizNumeros[i]}");
+                Console.WriteLine($"Elemento {i}: {arrayNumeros[i]}");
             }
             
             Console.ReadKey();
 
-            return matrizNumeros;
+            return arrayNumeros;
         }
     }
 }

@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            char limite = repeticao_exs.ex24_letras_alfabeto.ObterLimite();
+            int[] numeros = repeticao_exs.ex25_elementos_array.Numeros();
 
-            List<char> alfabeto = repeticao_exs.ex24_letras_alfabeto.ExibirAlfabeto(limite);
+            repeticao_exs.ex25_elementos_array.ExibirNumeros(numeros);
         }
     }
 }
