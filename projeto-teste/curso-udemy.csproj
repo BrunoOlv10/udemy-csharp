@@ -207,7 +207,7 @@
     <Compile Include="ex23-sequencia-fibonacci.cs" />
     <Compile Include="ex24-letras-alfabeto.cs" />
     <Compile Include="ex25-elementos-array.cs" />
-    <Compile Include="ex26-soma-elementos-matriz.cs" />
+    <Compile Include="ex26-soma-elementos-array.cs" />
     <Compile Include="ex27-elementos-trocados-matriz.cs" />
     <Compile Include="ex28-ocorrencias-matriz.cs" />
     <Compile Include="ex29-maior-menor-valor-matriz.cs" />
@@ -250,6 +250,7 @@
     <Compile Include="repeticao-exs\ex23-sequencia-fibonacci.cs" />
     <Compile Include="repeticao-exs\ex24-letras-alfabeto.cs" />
     <Compile Include="repeticao-exs\ex25-elementos-array.cs" />
+    <Compile Include="repeticao-exs\ex26-soma-elementos-array.cs" />
     <Compile Include="repeticao-exs\ex3-media.cs" />
     <Compile Include="repeticao-exs\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs\ex5-remover-caractere-especifico.cs" />
