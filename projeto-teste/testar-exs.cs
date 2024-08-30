@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (string elemento, int numeroLinhas) = repeticao_exs.ex22_piramide_caracteres.ObterInfosPiramide();
+            int numeroTermos = repeticao_exs.ex23_sequencia_fibonacci.ObterNumerosTermos();
 
-            repeticao_exs.ex22_piramide_caracteres.MontarPiramide(elemento, numeroLinhas);
+            List<int> gerarSequencia = repeticao_exs.ex23_sequencia_fibonacci.GerarSequencia(numeroTermos);
         }
     }
 }
