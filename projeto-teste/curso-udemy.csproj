@@ -241,6 +241,7 @@
     <Compile Include="repeticao-exs\ex15-soma-array.cs" />
     <Compile Include="repeticao-exs\ex16-girar-array.cs" />
     <Compile Include="repeticao-exs\ex17-maior-valor-array.cs" />
+    <Compile Include="repeticao-exs\ex18-palindromo.cs" />
     <Compile Include="repeticao-exs\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs\ex3-media.cs" />
     <Compile Include="repeticao-exs\ex4-retangulo.cs" />

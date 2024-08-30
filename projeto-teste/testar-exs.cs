@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int[] numeros = repeticao_exs.ex17_maior_valor_array.ObterNumeros();
+            (string palavra, string reverso) = repeticao_exs.ex18_palindromo.ObterPalavra();
 
-            int maiorNumero = repeticao_exs.ex17_maior_valor_array.MaiorNumero(numeros);
+            bool verificarPalindromo = repeticao_exs.ex18_palindromo.VerificarPalindromo(palavra, reverso);
         }
     }
 }
