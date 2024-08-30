@@ -197,8 +197,8 @@
     <Compile Include="ex11-contem-palavra.cs" />
     <Compile Include="ex12-valor-mais-proximo.cs" />
     <Compile Include="ex13-maiuscula-minuscula.cs" />
-    <Compile Include="ex15-soma-matriz.cs" />
-    <Compile Include="ex16-girar-matriz-esquerda.cs" />
+    <Compile Include="ex15-soma-array.cs" />
+    <Compile Include="ex16-girar-array.cs" />
     <Compile Include="ex19-conversao-graus-fahrenheit.cs" />
     <Compile Include="ex2-multiplicao.cs" />
     <Compile Include="ex20-ano-nascimento.cs" />
@@ -221,7 +221,7 @@
     <Compile Include="ex8-palavra-longa.cs" />
     <Compile Include="ex9-soma-numeros-primos.cs" />
     <Compile Include="funcoes.cs" />
-    <Compile Include="ex17-maior-valor-matriz.cs" />
+    <Compile Include="ex17-maior-valor-array.cs" />
     <Compile Include="operacoes-strings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ex1-trocar-numeros-variaveis.cs" />
@@ -240,6 +240,7 @@
     <Compile Include="repeticao-exs\ex13-maiuscula-minuscula.cs" />
     <Compile Include="repeticao-exs\ex15-soma-array.cs" />
     <Compile Include="repeticao-exs\ex16-girar-array.cs" />
+    <Compile Include="repeticao-exs\ex17-maior-valor-array.cs" />
     <Compile Include="repeticao-exs\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs\ex3-media.cs" />
     <Compile Include="repeticao-exs\ex4-retangulo.cs" />
