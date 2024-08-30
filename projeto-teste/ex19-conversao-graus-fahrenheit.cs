@@ -26,7 +26,7 @@ namespace curso_udemy
 
             if (escalaTemp == "c")
             {
-                converterTemp = ConverterGraus(converterTemp);
+                converterTemp = ConverterCelsius(converterTemp);
                 Console.WriteLine($"A temperatura inserida foi {temp} e convertida ficou {converterTemp}{escalaTemp}");
             }
             else if (escalaTemp == "f")
@@ -44,7 +44,7 @@ namespace curso_udemy
             return converterTemp;
         }
 
-        public static int ConverterGraus(int converterTemp)
+        public static int ConverterCelsius(int converterTemp)
         {
             return (converterTemp - 32) * 5 / 9;
         }

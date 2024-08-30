@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (string palavra, string reverso) = repeticao_exs.ex18_palindromo.ObterPalavra();
+            (int temperatura, string unidadeMedida) = repeticao_exs.ex19_conversao_graus_fahrenheit.ObterInfosTemperatura();
 
-            bool verificarPalindromo = repeticao_exs.ex18_palindromo.VerificarPalindromo(palavra, reverso);
+            int converterTemperatura = repeticao_exs.ex19_conversao_graus_fahrenheit.ConverterTemperatura(temperatura, unidadeMedida);
         }
     }
 }
