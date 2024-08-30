@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            string palavra = repeticao_exs.ex13_maiuscula_minuscula.ObterPalavra();
+            int[] numeros = repeticao_exs.ex15_soma_matriz.ObterNumeros();
 
-            string palavraFinal = repeticao_exs.ex13_maiuscula_minuscula.PalavraFinal(palavra);
+            int resultadoSoma = repeticao_exs.ex15_soma_matriz.SomarNumeros(numeros);
         }
     }
 }
