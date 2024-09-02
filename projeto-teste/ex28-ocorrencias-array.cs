@@ -7,19 +7,19 @@ using DocumentFormat.OpenXml.Office.CustomUI;
 
 namespace curso_udemy
 {
-    public class ex28_ocorrencias_matriz
+    public class ex28_ocorrencias_array
     {
-        public static int[] ObterTamanhoMatriz()
+        public static int[] ObterTamanhoArray()
         {
             while (true)
             {
                 try
                 {
-                    Console.Write("Digite o tamanho desejado para a matriz: ");
-                    int tamanhoMatriz = Convert.ToInt32(Console.ReadLine());
-                    int[] matrizNumeros = new int[tamanhoMatriz];
+                    Console.Write("Digite o tamanho desejado para o array: ");
+                    int tamanhoArray = Convert.ToInt32(Console.ReadLine());
+                    int[] arrayNumeros = new int[tamanhoArray];
 
-                    return matrizNumeros;
+                    return arrayNumeros;
                 }
                 catch (System.FormatException)
                 {
@@ -29,28 +29,30 @@ namespace curso_udemy
             }
         }
 
-        public static int[] ObterElementosMatriz(int[] matrizNumeros)
+        public static int[] ObterElementosArray(int[] arrayNumeros)
         {
+            Console.WriteLine();
+
             while (true)
             {
                 try
                 {
-                    string[] numeros = new string[matrizNumeros.Length];
+                    string[] numeros = new string[arrayNumeros.Length];
 
                     Console.WriteLine("Insira os elementos da matriz: ");
-                    for (int i = 0; i < matrizNumeros.Length; i++)
+                    for (int i = 0; i < arrayNumeros.Length; i++)
                     {
                         Console.Write($"Digite o {i}º elemento: ");
                         string numero = Console.ReadLine();
                         numeros[i] = numero;
                     }
 
-                    for (int i = 0; i < matrizNumeros.Length; i++)
+                    for (int i = 0; i < arrayNumeros.Length; i++)
                     {
-                        matrizNumeros[i] = int.Parse(numeros[i]);
+                        arrayNumeros[i] = int.Parse(numeros[i]);
                     }
 
-                    return matrizNumeros;
+                    return arrayNumeros;
                 }
                 catch (System.FormatException)
                 {
@@ -60,11 +62,11 @@ namespace curso_udemy
             }
         }
 
-        public static Dictionary<int, int> ElementosRepetidos(int[] matrizNumeros)
+        public static Dictionary<int, int> ElementosRepetidos(int[] arrayNumeros)
         {
             Dictionary<int, int> ocorrencias = new Dictionary<int, int>();
 
-            foreach (int numero in matrizNumeros)
+            foreach (int numero in arrayNumeros)
             {
                 if (ocorrencias.ContainsKey(numero))
                 {
@@ -79,15 +81,10 @@ namespace curso_udemy
             Console.WriteLine();
             foreach (var num in ocorrencias)
             {
-                if (num.Value > 1)
-                {
-                    Console.WriteLine($"O {num.Key} tem {num.Value} ocorrências");
-                }
-                else
-                {
-                    Console.WriteLine($"O {num.Key} tem apenas {num.Value} ocorrência");
-                }
+                Console.WriteLine($"O {num.Key} tem {num.Value} ocorrência(s)");
             }
+
+            Console.ReadKey();
 
             return ocorrencias;
         }
