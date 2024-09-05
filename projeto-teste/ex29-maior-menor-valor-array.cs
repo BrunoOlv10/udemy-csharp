@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace curso_udemy
 {
-    public class ex29_maior_menor_valor_matriz
+    public class ex29_maior_menor_valor_array
     {
-        public static int[] ObterTamanhoMatriz()
+        public static int[] ObterTamanhoArray()
         {
             while (true)
             {
                 try
                 {
-                    Console.Write("Digite o tamanho da matriz a ser construída: ");
-                    int tamanhoMatriz = Convert.ToInt32(Console.ReadLine());
-                    int[] matrizNumeros = new int[tamanhoMatriz];
+                    Console.Write("Digite o tamanho do array a ser construída: ");
+                    int tamanhoArray = Convert.ToInt32(Console.ReadLine());
+                    int[] arrayNumeros = new int[tamanhoArray];
 
-                    return matrizNumeros;
+                    return arrayNumeros;
                 }
                 catch (System.FormatException)
                 {
@@ -28,28 +28,28 @@ namespace curso_udemy
             }
         }
 
-        public static int[] ObterElementosMatriz(int[] matrizNumeros)
+        public static int[] ObterElementosArray(int[] arrayNumeros)
         {
             while (true)
             {
                 try
                 {
-                    string[] numeros = new string[matrizNumeros.Length];
+                    string[] numeros = new string[arrayNumeros.Length];
 
                     Console.WriteLine("Insira os elementos: ");
-                    for (int i = 0; i < matrizNumeros.Length; i++)
+                    for (int i = 0; i < arrayNumeros.Length; i++)
                     {
                         Console.Write($"Insira o elemento {i}: ");
                         string numero = Console.ReadLine();
                         numeros[i] = numero;
                     }
 
-                    for (int i = 0; i < matrizNumeros.Length; i++)
+                    for (int i = 0; i < arrayNumeros.Length; i++)
                     {
-                        matrizNumeros[i] = int.Parse(numeros[i]);
+                        arrayNumeros[i] = int.Parse(numeros[i]);
                     }
 
-                    return matrizNumeros;
+                    return arrayNumeros;
                 }
                 catch (System.FormatException)
                 {
@@ -59,12 +59,12 @@ namespace curso_udemy
             }
         }
 
-        public static int[] MaiorMenorMatriz(int[] matrizNumeros)
+        public static int[] MaiorMenorArray(int[] arrayNumeros)
         {
-            int maiorValor = matrizNumeros[0];
-            int menorValor = matrizNumeros[0];
+            int maiorValor = arrayNumeros[0];
+            int menorValor = arrayNumeros[0];
 
-            foreach (int numero in matrizNumeros)
+            foreach (int numero in arrayNumeros)
             {
                 if (numero > maiorValor)
                     maiorValor = numero;
@@ -72,10 +72,10 @@ namespace curso_udemy
                     menorValor = numero;
             }
 
-            Console.WriteLine($"O maior número da matriz é {maiorValor} e o menor número da matriz é {menorValor}");
+            Console.WriteLine($"O maior número do array é {maiorValor} e o menor número do array é {menorValor}");
             Console.ReadKey();
 
-            return matrizNumeros;
+            return arrayNumeros;
         }
     }
 }

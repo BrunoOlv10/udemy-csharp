@@ -210,7 +210,7 @@
     <Compile Include="ex26-soma-elementos-array.cs" />
     <Compile Include="ex27-elementos-array-trocados.cs" />
     <Compile Include="ex28-ocorrencias-array.cs" />
-    <Compile Include="ex29-maior-menor-valor-matriz.cs" />
+    <Compile Include="ex29-maior-menor-valor-array.cs" />
     <Compile Include="ex3-media.cs" />
     <Compile Include="ex30-excluir-valor-matriz.cs" />
     <Compile Include="ex31-ordenar-matriz-string.cs" />
@@ -253,6 +253,7 @@
     <Compile Include="repeticao-exs\ex26-soma-elementos-array.cs" />
     <Compile Include="repeticao-exs\ex27-elementos-array-trocados.cs" />
     <Compile Include="repeticao-exs\ex28-ocorrencias-array.cs" />
+    <Compile Include="repeticao-exs\ex29-maior-menor-valor-array.cs" />
     <Compile Include="repeticao-exs\ex3-media.cs" />
     <Compile Include="repeticao-exs\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs\ex5-remover-caractere-especifico.cs" />
