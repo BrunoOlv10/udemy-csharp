@@ -212,7 +212,7 @@
     <Compile Include="ex28-ocorrencias-array.cs" />
     <Compile Include="ex29-maior-menor-valor-array.cs" />
     <Compile Include="ex3-media.cs" />
-    <Compile Include="ex30-excluir-valor-matriz.cs" />
+    <Compile Include="ex30-excluir-valor-array.cs" />
     <Compile Include="ex31-ordenar-matriz-string.cs" />
     <Compile Include="ex32-ordenar-strings-bubble-sort.cs" />
     <Compile Include="ex4-retangulo-numeros.cs" />
@@ -255,6 +255,7 @@
     <Compile Include="repeticao-exs\ex28-ocorrencias-array.cs" />
     <Compile Include="repeticao-exs\ex29-maior-menor-valor-array.cs" />
     <Compile Include="repeticao-exs\ex3-media.cs" />
+    <Compile Include="repeticao-exs\ex30-excluir-valor-array.cs" />
     <Compile Include="repeticao-exs\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs\ex5-remover-caractere-especifico.cs" />
     <Compile Include="repeticao-exs\ex6-mudar-caractere-posicao.cs" />

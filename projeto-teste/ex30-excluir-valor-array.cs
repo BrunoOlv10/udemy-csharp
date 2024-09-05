@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace curso_udemy
 {
-    public class ex30_excluir_valor_matriz
+    public class ex30_excluir_valor_array
     {
-        public static int ObterTamanhoMatriz()
+        public static int ObterTamanhoArray()
         {
             while (true)
             {
                 try
                 {
-                    Console.Write("Insira o tamanho da matriz: ");
-                    int tamanhoMatriz = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Insira o tamanho da array: ");
+                    int tamanhoArray = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine();
 
-                    if (tamanhoMatriz > 0)
+                    if (tamanhoArray > 0)
                     {
-                        return tamanhoMatriz;
+                        return tamanhoArray;
                     }
                     else
                     {
@@ -39,30 +39,30 @@ namespace curso_udemy
             }
         }
 
-        public static int[] ObterElementosMatriz(int tamanhoMatriz)
+        public static int[] ObterElementosArray(int tamanhoArray)
         {
-            int[] numerosMatriz = new int[tamanhoMatriz];
+            int[] numerosArray = new int[tamanhoArray];
 
             while (true)
             {
                 try
                 {
-                    string[] numeros = new string[numerosMatriz.Length];
+                    string[] numeros = new string[numerosArray.Length];
 
-                    Console.WriteLine($"Insira os {tamanhoMatriz} elementos da matriz:");
-                    for (int i = 0; i < numerosMatriz.Length; i++)
+                    Console.WriteLine($"Insira os {tamanhoArray} elementos da matriz:");
+                    for (int i = 0; i < numerosArray.Length; i++)
                     {
                         Console.Write($"Digite o elemento {i}: ");
                         string numero = Console.ReadLine();
                         numeros[i] = numero;
                     }
 
-                    for (int i = 0; i < numerosMatriz.Length; i++)
+                    for (int i = 0; i < numerosArray.Length; i++)
                     {
-                        numerosMatriz[i] = int.Parse(numeros[i]);
+                        numerosArray[i] = int.Parse(numeros[i]);
                     }
 
-                    return numerosMatriz;
+                    return numerosArray;
                 }
                 catch (System.FormatException)
                 {
@@ -72,7 +72,7 @@ namespace curso_udemy
             }
         }
 
-        public static int[] ExcluirValorMatriz(int[] numerosMatriz)
+        public static int[] ExcluirValorMatriz(int[] numerosArray)
         {
             while (true)
             {
@@ -82,40 +82,40 @@ namespace curso_udemy
                     Console.Write("Qual a posição do valor que deseja excluir? ");
                     int posicao = Convert.ToInt32(Console.ReadLine());
 
-                    if (posicao < 0 || posicao >= numerosMatriz.Length)
+                    if (posicao < 0 || posicao >= numerosArray.Length)
                     {
                         throw new Exception();
                     }
 
                     int numeroExcluido = 0;
-                    for (int i = 0; i < numerosMatriz.Length; i++)
+                    for (int i = 0; i < numerosArray.Length; i++)
                     {
                         if (posicao == i)
                         {
-                            numeroExcluido = numerosMatriz[i];
+                            numeroExcluido = numerosArray[i];
                         }
                     }
 
-                    int[] matrizAtualizada = new int [numerosMatriz.Length - 1];
-                    for (int i = 0, j = 0; i < numerosMatriz.Length; i++)
+                    int[] arrayAtualizado = new int [numerosArray.Length - 1];
+                    for (int i = 0, j = 0; i < numerosArray.Length; i++)
                     {
                         if (i != posicao)
                         {
-                            matrizAtualizada[j++] = numerosMatriz[i];
+                            arrayAtualizado[j++] = numerosArray[i];
                         }
                     }
 
                     Console.WriteLine();
-                    Console.Write($"Após excluir o {numeroExcluido}, a matriz ficou assim: ");
-                    Console.Write(String.Join(", ", matrizAtualizada));
+                    Console.Write($"Após excluir o {numeroExcluido}, o array ficou assim: ");
+                    Console.Write(String.Join(", ", arrayAtualizado));
                     Console.ReadKey();
 
-                    return numerosMatriz;
+                    return numerosArray;
                 }
                 catch (Exception)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Escolha uma posição que exista dentro da matriz!");
+                    Console.WriteLine("Escolha uma posição que exista dentro do array!");
                 }
             }
         }

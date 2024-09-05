@@ -12,9 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int[] array = repeticao_exs.ex29_maior_menor_valor_array.ObterArray();
+            (int[] array, int posicaoExcluida) = repeticao_exs.ex30_excluir_valor_array.ObterArray();
 
-            (int maiorNumero, int menorNumero) = repeticao_exs.ex29_maior_menor_valor_array.MaiorMenorValor(array);
+            int[] novoArray = repeticao_exs.ex30_excluir_valor_array.ArrayNovo(array, posicaoExcluida);
         }
     }
 }
