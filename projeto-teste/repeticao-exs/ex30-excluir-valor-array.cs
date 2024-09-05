@@ -8,7 +8,7 @@ namespace curso_udemy.repeticao_exs
 {
     public class ex30_excluir_valor_array
     {
-        public static (int[], int) ObterArray()
+        public static int[] ObterArray()
         {
             while (true)
             {
@@ -24,16 +24,42 @@ namespace curso_udemy.repeticao_exs
                         arrayNumeros[i] = int.Parse(numerosDivididos[i]);
                     }
 
-                    Console.WriteLine();
-                    Console.Write("Qual a posição do número deseja excluir? ");
-                    int posicaoExcluida = Convert.ToInt32(Console.ReadLine());
-
-                    return (arrayNumeros, posicaoExcluida);
+                    return (arrayNumeros);
                 }
                 catch (System.FormatException)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Insira apenas valores para o array e a posição a ser excluída!");
+                    Console.WriteLine("Insira apenas valores para o array");
+                }
+            }
+        }
+
+        public static int PosicaoExcluida(int[] arrayNumeros)
+        {
+            Console.WriteLine();
+            while (true)
+            {
+                try
+                {
+                    Console.Write("Qual a posição do número deseja excluir? ");
+                    int posicaoExcluida = Convert.ToInt32(Console.ReadLine());
+
+                    if (posicaoExcluida < 0 || posicaoExcluida > arrayNumeros.Length)
+                    {
+                        throw new Exception();
+                    }
+
+                    return posicaoExcluida;
+                }
+                catch (System.FormatException)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Insira apenas valores para a posição a ser excluída!");
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Coloque uma posição dentro do limite do array!");
                 }
             }
         }
@@ -53,7 +79,7 @@ namespace curso_udemy.repeticao_exs
             }
 
             Console.WriteLine();   
-            Console.WriteLine($"O array inicialmente inserido era ["+ String.Join(",", arrayNumeros) +"] " + $", mas após apagar o numero da posição {posicaoExcluida}, o array ficou [" + String.Join(",", novoArray) + "]");
+            Console.WriteLine($"O array inicialmente inserido era ["+ String.Join(",", arrayNumeros) +"]"+ $", mas após apagar o numero da posição {posicaoExcluida}, o array ficou [" + String.Join(",", novoArray) + "]");
             Console.ReadKey();
 
             return novoArray;

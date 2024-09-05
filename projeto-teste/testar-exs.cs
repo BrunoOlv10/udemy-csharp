@@ -12,7 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (int[] array, int posicaoExcluida) = repeticao_exs.ex30_excluir_valor_array.ObterArray();
+            int[] array = repeticao_exs.ex30_excluir_valor_array.ObterArray();
+
+            int posicaoExcluida = repeticao_exs.ex30_excluir_valor_array.PosicaoExcluida(array);
 
             int[] novoArray = repeticao_exs.ex30_excluir_valor_array.ArrayNovo(array, posicaoExcluida);
         }
