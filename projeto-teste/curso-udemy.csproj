@@ -190,6 +190,9 @@
     <Compile Include="algoritmo-ordenacao.cs" />
     <Compile Include="array.cs" />
     <Compile Include="algoritmo-busca-binaria.cs" />
+    <Compile Include="classes\classesAbstratas\Pessoa.cs" />
+    <Compile Include="classes\PessoaFisica.cs" />
+    <Compile Include="classes\PessoaJuridica.cs" />
     <Compile Include="conversao-tipos-dados.cs" />
     <Compile Include="estruturas-condicionais.cs" />
     <Compile Include="estruturas-repeticao.cs" />
