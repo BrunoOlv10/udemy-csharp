@@ -29,6 +29,6 @@ namespace curso_udemy.repeticao_exs2
             return (numeros, posicaoNumero, posicaoDestino);
         }
 
-        public static (int[], int, int) Mudar
+        //public static (int[], int, int) Mudar
     }
 }

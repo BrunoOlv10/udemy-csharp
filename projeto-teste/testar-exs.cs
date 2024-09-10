@@ -12,9 +12,7 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            (int[] array, int posicao) = repeticao_exs2.ex5_remover_caractere_especifico.ObterInfosArray();
-
-            repeticao_exs2.ex5_remover_caractere_especifico.ArrayAlterado(array, posicao);
+            metodos.ObterResultado();
         }
     }
 }

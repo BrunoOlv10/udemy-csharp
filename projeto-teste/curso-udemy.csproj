@@ -190,7 +190,9 @@
     <Compile Include="algoritmo-ordenacao.cs" />
     <Compile Include="array.cs" />
     <Compile Include="algoritmo-busca-binaria.cs" />
+    <Compile Include="classes\Carro.cs" />
     <Compile Include="classes\classesAbstratas\Pessoa.cs" />
+    <Compile Include="classes\classesAbstratas\Veiculo.cs" />
     <Compile Include="classes\PessoaFisica.cs" />
     <Compile Include="classes\PessoaJuridica.cs" />
     <Compile Include="conversao-tipos-dados.cs" />
@@ -225,6 +227,7 @@
     <Compile Include="ex9-soma-numeros-primos.cs" />
     <Compile Include="funcoes.cs" />
     <Compile Include="ex17-maior-valor-array.cs" />
+    <Compile Include="metodos.cs" />
     <Compile Include="operacoes-strings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ex1-trocar-numeros-variaveis.cs" />
