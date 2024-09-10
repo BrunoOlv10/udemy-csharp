@@ -12,11 +12,9 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            int[] array = repeticao_exs.ex30_excluir_valor_array.ObterArray();
+            (int[] array, int posicao) = repeticao_exs2.ex5_remover_caractere_especifico.ObterInfosArray();
 
-            int posicaoExcluida = repeticao_exs.ex30_excluir_valor_array.PosicaoExcluida(array);
-
-            int[] novoArray = repeticao_exs.ex30_excluir_valor_array.ArrayNovo(array, posicaoExcluida);
+            repeticao_exs2.ex5_remover_caractere_especifico.ArrayAlterado(array, posicao);
         }
     }
 }
