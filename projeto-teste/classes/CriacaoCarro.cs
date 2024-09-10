@@ -11,25 +11,25 @@ namespace curso_udemy
     {
         public static void CriarCarro()
         {
-            Carro fusca = new Carro()
+            Carro carro = new Carro("Nissan", "GTR")
             {
-                Marca = "VW",
-                Cor = "Vermelho",
-                Modelo = "1969",
-                PrecoAluguel = 100
+                //Marca = "VW",
+                //Modelo = "1969",
+                Cor = "Azul",
+                PrecoAluguel = 3000
             };
 
-            Console.WriteLine($"Meu primeiro carro da frota é: {fusca.Marca}");
+            Console.WriteLine($"Meu primeiro carro da frota é da marca: {carro.Marca} e do modelo {carro.Modelo}");
 
             Console.Write("Quer alugar esse carro (coloque 'sim' ou 'não'): ");
             string alugar = Console.ReadLine().ToLower();
 
             if (alugar == "sim")
-                fusca.Alugar();
+                carro.Alugar();
             else
                 Console.WriteLine("O carro não foi alugado");
 
-            Console.WriteLine($"O {fusca.Marca} está alugado? {fusca.EstadoAluguel()}");
+            Console.WriteLine($"O {carro.Marca} está alugado? {carro.EstadoAluguel()}");
 
             Console.ReadKey();
         }

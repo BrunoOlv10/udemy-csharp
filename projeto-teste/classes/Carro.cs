@@ -14,6 +14,12 @@ namespace curso_udemy.classes
         public bool EstaAlugado { get; set; }
         public double PrecoAluguel { get; set; }
 
+        public Carro(string Marca, string Modelo)
+        {
+            this.Marca = Marca;
+            this.Modelo = Modelo;
+        }
+
         public void Ligar()
         {
             Console.WriteLine("O carro está ligado!");
@@ -27,7 +33,7 @@ namespace curso_udemy.classes
         public void Alugar()
         {
             EstaAlugado = true;
-            Console.WriteLine($"O carro {Marca} está alugado");
+            Console.WriteLine($"O carro da marca {Marca} foi alugado com sucesso");
         }
 
         public string EstadoAluguel()
