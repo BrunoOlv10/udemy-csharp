@@ -12,6 +12,7 @@ namespace curso_udemy.classes
         public string Modelo { get; set; }
         public string Cor { get; set; }
         public bool EstaAlugado { get; set; }
+        public double PrecoAluguel { get; set; }
 
         public void Ligar()
         {
@@ -27,6 +28,11 @@ namespace curso_udemy.classes
         {
             EstaAlugado = true;
             Console.WriteLine($"O carro {Marca} está alugado");
+        }
+
+        public string EstadoAluguel()
+        {
+            return EstaAlugado == true ? "Sim" : "Não";
         }
 
         public void DevolverCarro()
