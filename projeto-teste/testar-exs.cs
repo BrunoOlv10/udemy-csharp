@@ -7,13 +7,13 @@ using curso_udemy.classes;
 using curso_udemy.recuperar_instituicao_ano;
 using DocumentFormat.OpenXml.ExtendedProperties;
 
-namespace curso_udemy
+namespace projeto
 {
     public class testar_exs
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex6_mudar_caractere_posicao.MudarPosicaoCaractere();
+            repeticao_exs2.ex7_numeros_opostos.NumeroPositivoNegativo();
         }
     }
 }
