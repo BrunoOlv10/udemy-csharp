@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex8_palavra_longa.IdentificarMaiorPalavra();
+            repeticao_exs2.ex9_soma_numeros_primos.SomarPrimos();
         }
     }
 }
