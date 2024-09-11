@@ -13,9 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            int[] numeros =repeticao_exs2.ex27_transferir_elementos_array.ObterInfosArray();
-
-            repeticao_exs2.ex27_transferir_elementos_array.TransferirArray(numeros);
+            repeticao_exs2.ex8_palavra_longa.IdentificarMaiorPalavra();
         }
     }
 }
