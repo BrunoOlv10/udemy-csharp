@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curso_udemy.repeticao_exs2
 {
-    public class ex5_remover_caractere_especifico
+    public class ex30_excluir_numero_array
     {
         public static (int[], int) ObterInfosArray()
         {

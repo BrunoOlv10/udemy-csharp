@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curso_udemy.repeticao_exs2
 {
-    public class ex6_mudar_caractere_posicao
+    public class ex27_elementos_array_trocados
     {
         public static (int[], int, int) ObterInfosArray()
         {

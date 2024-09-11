@@ -13,7 +13,7 @@ namespace curso_udemy
     {
         static void Main(string[] args)
         {
-            CriacaoCarro.CriarCarro();
+            repeticao_exs2.ex5_remover_caractere_especifico.RemoverCaractere();
         }
     }
 }
