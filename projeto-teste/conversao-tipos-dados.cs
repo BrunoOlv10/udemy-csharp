@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace curso_udemy
+namespace projeto
 {
     internal class conversao_tipos_dados
     {

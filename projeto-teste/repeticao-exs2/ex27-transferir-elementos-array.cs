@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace curso_udemy.repeticao_exs2
+namespace projeto.repeticao_exs2
 {
-    public class ex27_elementos_array_trocados
+    public class ex27_transferir_elementos_array
     {
-        public static (int[], int, int) ObterInfosArray()
+        public static int[] ObterInfosArray()
         {
             Console.Write("Insira os números do array (separados por vírgula): ");
             string numeroString = Console.ReadLine();
@@ -20,15 +20,17 @@ namespace curso_udemy.repeticao_exs2
                 numeros[i] = Convert.ToInt32(numerosDivividos[i]);
             }
 
-            Console.Write("Insira a posição do número que quer trocar de posição: ");
-            int posicaoNumero = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Insira a posição destino para onde o número vai: ");
-            int posicaoDestino = Convert.ToInt32(Console.ReadLine());
-
-            return (numeros, posicaoNumero, posicaoDestino);
+            return numeros;
         }
 
-        //public static (int[], int, int) Mudar
+        public static void TransferirArray(int[] numeros)
+        {
+            int[] numerosNovo = new int[numeros.Length];
+            Array.Copy(numeros, numerosNovo, numeros.Length);
+
+            Console.WriteLine($"O array inicial: " + String.Join(",", numeros) + "");
+            Console.WriteLine("O array novo: " + String.Join(",", numerosNovo) + "");
+            Console.ReadKey();
+        }
     }
 }

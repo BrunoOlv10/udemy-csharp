@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace curso_udemy.repeticao_exs2
+namespace projeto.repeticao_exs2
 {
     public class ex1_trocar_numeros_variaveis
     {

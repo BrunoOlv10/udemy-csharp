@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace curso_udemy
+namespace projeto
 {
     class algoritmo_corte_controle
     {

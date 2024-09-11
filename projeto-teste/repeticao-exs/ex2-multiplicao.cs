@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DocumentFormat.OpenXml.Drawing;
 
-namespace curso_udemy.repeticao_exs
+namespace projeto.repeticao_exs
 {
     public class ex2_multiplicao
     {

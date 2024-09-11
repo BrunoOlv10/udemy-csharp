@@ -5,7 +5,7 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace curso_udemy.repeticao_exs
+namespace projeto.repeticao_exs
 {
     public class ex6_mudar_caractere_posicao
     {

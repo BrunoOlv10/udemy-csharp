@@ -245,7 +245,7 @@
     <Compile Include="repeticao-exs2\ex3-media.cs" />
     <Compile Include="repeticao-exs2\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs2\ex30-excluir-numero-array.cs" />
-    <Compile Include="repeticao-exs2\ex27-elementos-array-trocados.cs" />
+    <Compile Include="repeticao-exs2\ex27-transferir-elementos-array.cs" />
     <Compile Include="repeticao-exs2\ex5-remover-caractere-especifico.cs" />
     <Compile Include="repeticao-exs2\ex6-mudar-caractere-posicao.cs" />
     <Compile Include="repeticao-exs2\ex7-numeros-opostos.cs" />

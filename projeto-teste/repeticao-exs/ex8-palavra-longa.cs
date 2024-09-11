@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DocumentFormat.OpenXml.Math;
 using DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main;
 
-namespace curso_udemy.repeticao_exs
+namespace projeto.repeticao_exs
 {
     public class ex8_palavra_longa
     {

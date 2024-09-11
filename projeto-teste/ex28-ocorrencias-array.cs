@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DocumentFormat.OpenXml.Office.CustomUI;
 
-namespace curso_udemy
+namespace projeto
 {
     public class ex28_ocorrencias_array
     {

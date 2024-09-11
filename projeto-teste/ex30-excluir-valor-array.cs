@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace curso_udemy
+namespace projeto
 {
     public class ex30_excluir_valor_array
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace curso_udemy
+namespace projeto
 {
     class remover_caractere_especifico
     {

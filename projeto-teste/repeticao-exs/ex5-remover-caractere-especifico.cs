@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using DocumentFormat.OpenXml.Drawing;
 using DocumentFormat.OpenXml.Math;
 
-namespace curso_udemy.repeticao_exs
+namespace projeto.repeticao_exs
 {
     public class ex5_remover_caractere_especifico
     {

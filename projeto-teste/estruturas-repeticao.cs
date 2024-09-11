@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace estruturas_repeticao
+namespace projeto
 {
     internal class estruturas_repeticao
     {

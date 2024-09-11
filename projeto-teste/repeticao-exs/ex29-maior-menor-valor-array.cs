@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace curso_udemy.repeticao_exs
+namespace projeto.repeticao_exs
 {
     public class ex29_maior_menor_valor_array
     {

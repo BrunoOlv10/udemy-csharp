@@ -13,7 +13,9 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex7_numeros_opostos.NumeroPositivoNegativo();
+            int[] numeros =repeticao_exs2.ex27_transferir_elementos_array.ObterInfosArray();
+
+            repeticao_exs2.ex27_transferir_elementos_array.TransferirArray(numeros);
         }
     }
 }

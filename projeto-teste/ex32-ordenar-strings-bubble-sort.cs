@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DocumentFormat.OpenXml.Drawing;
 
-namespace curso_udemy
+namespace projeto
 {
     public class ex32_ordenar_strings_buble_sort
     {

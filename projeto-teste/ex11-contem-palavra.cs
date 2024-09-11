@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DocumentFormat.OpenXml.Office2010.PowerPoint;
 
-namespace curso_udemy
+namespace projeto
 {
     class ex11_comeca_palavra_especifica
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.Eventing.Reader;
 
-namespace estruturas_condicionais
+namespace projeto
 {
     internal class Program
     {
