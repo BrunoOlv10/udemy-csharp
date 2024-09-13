@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex12_valor_mais_proximo.IdentificarValorProximo();
+            repeticao_exs2.ex13_maiuscula_minuscula.IdentificarMaiuscula();
         }
     }
 }
