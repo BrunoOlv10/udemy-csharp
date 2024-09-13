@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            CriacaoCarro.CriarCarro();
+            repeticao_exs2.ex10_frase_invertida.InverterFrase();
         }
     }
 }

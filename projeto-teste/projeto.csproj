@@ -241,6 +241,7 @@
     <Compile Include="recuperar-instituicao-ano\teste-api-gpt.cs" />
     <Compile Include="recuperar-instituicao-ano\teste-codigo.cs" />
     <Compile Include="repeticao-exs2\ex1-trocar-numeros-variaveis.cs" />
+    <Compile Include="repeticao-exs2\ex10-frase-invertida.cs" />
     <Compile Include="repeticao-exs2\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs2\ex3-media.cs" />
     <Compile Include="repeticao-exs2\ex4-retangulo.cs" />
@@ -251,7 +252,6 @@
     <Compile Include="repeticao-exs2\ex7-numeros-opostos.cs" />
     <Compile Include="repeticao-exs2\ex8-palavra-longa.cs" />
     <Compile Include="repeticao-exs2\ex9-soma-numeros-primos.cs" />
-    <Compile Include="repeticao-exs2\teste.cs" />
     <Compile Include="repeticao-exs\ex1-trocar-numeros-variaveis.cs" />
     <Compile Include="repeticao-exs\ex10-frase-invertida.cs" />
     <Compile Include="repeticao-exs\ex11-contem-palavra.cs" />
