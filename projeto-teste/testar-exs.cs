@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex13_maiuscula_minuscula.IdentificarMaiuscula();
+            repeticao_exs2.ex15_soma_array.SomarValoresArray();
         }
     }
 }
