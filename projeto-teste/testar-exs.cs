@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex11_contem_palavra.VerificarContemPalavra();
+            repeticao_exs2.ex12_valor_mais_proximo.IdentificarValorProximo();
         }
     }
 }
