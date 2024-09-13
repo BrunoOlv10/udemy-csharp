@@ -247,6 +247,7 @@
     <Compile Include="repeticao-exs2\ex13-maiuscula-minuscula.cs" />
     <Compile Include="repeticao-exs2\ex15-soma-array.cs" />
     <Compile Include="repeticao-exs2\ex16-girar-array.cs" />
+    <Compile Include="repeticao-exs2\ex17-maior-valor-array.cs" />
     <Compile Include="repeticao-exs2\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs2\ex3-media.cs" />
     <Compile Include="repeticao-exs2\ex4-retangulo.cs" />
