@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex17_maior_valor_array.IdentificarMaiorValorArray();
+            repeticao_exs2.ex18_palindromo.IdentificarPalindromos();
         }
     }
 }
