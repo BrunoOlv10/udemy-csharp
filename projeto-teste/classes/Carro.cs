@@ -55,8 +55,16 @@ namespace projeto.classes
         {
             if (this.Senha == senha)
             {
-                this.PrecoAluguel = novoPrecoAluguel;
-                Console.WriteLine("Preço do aluguel alterado com sucesso!");
+                if (novoPrecoAluguel > PrecoAluguel)
+                {
+                    this.PrecoAluguel = novoPrecoAluguel;
+                    Console.WriteLine("Preço do aluguel alterado com sucesso!");
+                }
+                else
+                {
+                    Console.WriteLine("Usuário Admin acessado com sucesso!");
+                    Console.WriteLine("Preço não alterado, pois o novo preço inserido é menor ou igual ao atual presente no sistema");
+                }
             }
             else
                 Console.WriteLine($"Senha incorreta! Não autorizado a mudança de preço do aluguel do carro {Marca} {Modelo}");

@@ -28,7 +28,7 @@ namespace projeto
 
             carro.MudarPrecoAluguel(senha, preco);
 
-            Console.WriteLine($"Meu primeiro carro da frota é da marca: {carro.Marca} e do modelo {carro.Modelo} e com preço de aluguel { carro.PrecoAluguel }");
+            Console.WriteLine($"Meu primeiro carro da frota é da marca: {carro.Marca} e do modelo {carro.Modelo} e com preço de aluguel {carro.PrecoAluguel}");
 
             //Console.Write("Quer alugar esse carro (coloque 'sim' ou 'não'): ");
             //string alugar = Console.ReadLine().ToLower();
