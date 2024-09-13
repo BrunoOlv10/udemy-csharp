@@ -16,7 +16,7 @@ namespace projeto.repeticao_exs2
                 string frase = Console.ReadLine();
                 string[] palavras = frase.Split(' ');
 
-                if (string.IsNullOrWhiteSpace(frase) || frase.All(c => char.IsLetter(c)))
+                if (string.IsNullOrEmpty(frase) || !frase.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
                     throw new Exception();
 
                 string fraseInvertida = String.Join(" ", palavras.Reverse());
@@ -28,7 +28,8 @@ namespace projeto.repeticao_exs2
             catch (Exception)
             {
                 Console.WriteLine();
-                Console.WriteLine("Insira apenas frases com letras (sem símbolos e números) e não mande vazio");
+                Console.WriteLine("Insira apenas frases com letras (sem símbolos e números) e não mande vazio!");
+                Console.ReadKey();
             }
         }
     }
