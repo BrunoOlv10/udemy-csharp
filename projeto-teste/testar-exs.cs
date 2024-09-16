@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex18_palindromo.IdentificarPalindromos();
+            repeticao_exs2.ex19_conversao_graus_fahrenheit.ConversaoCelsiusFahrenheit();
         }
     }
 }

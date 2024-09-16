@@ -205,7 +205,7 @@
     <Compile Include="ex13-maiuscula-minuscula.cs" />
     <Compile Include="ex15-soma-array.cs" />
     <Compile Include="ex16-girar-array.cs" />
-    <Compile Include="ex19-conversao-graus-fahrenheit.cs" />
+    <Compile Include="ex19-conversao-celsius-fahrenheit.cs" />
     <Compile Include="ex2-multiplicao.cs" />
     <Compile Include="ex20-ano-nascimento.cs" />
     <Compile Include="ex21-dias-mes.cs" />
@@ -249,6 +249,7 @@
     <Compile Include="repeticao-exs2\ex16-girar-array.cs" />
     <Compile Include="repeticao-exs2\ex17-maior-valor-array.cs" />
     <Compile Include="repeticao-exs2\ex18-palindromo.cs" />
+    <Compile Include="repeticao-exs2\ex19-conversao-celsius-fahrenheit.cs" />
     <Compile Include="repeticao-exs2\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs2\ex3-media.cs" />
     <Compile Include="repeticao-exs2\ex4-retangulo.cs" />
@@ -268,7 +269,7 @@
     <Compile Include="repeticao-exs\ex16-girar-array.cs" />
     <Compile Include="repeticao-exs\ex17-maior-valor-array.cs" />
     <Compile Include="repeticao-exs\ex18-palindromo.cs" />
-    <Compile Include="repeticao-exs\ex19-conversao-graus-fahrenheit.cs" />
+    <Compile Include="repeticao-exs\ex19-conversao-celsius-fahrenheit.cs" />
     <Compile Include="repeticao-exs\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs\ex20-ano-nascimento.cs" />
     <Compile Include="repeticao-exs\ex21-dias-mes.cs" />
