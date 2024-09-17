@@ -4,22 +4,18 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using curso_udemy.classes.classesAbstratas;
 
 namespace projeto.classes
 {
-    public class Carro
+    public class Carro : Veiculo
     {
-        public string Marca { get; private set; }
-        public string Modelo { get; private set; }
-        public string Cor { get; set; }
-        public bool EstaAlugado { get; set; }
-        public double PrecoAluguel { get; set; }
+        public bool EstaAlugado { get; private set; }
+        public double PrecoAluguel { get; private set; }
         public int Senha { get; set; }
 
-        public Carro(string Marca, string Modelo, double PrecoAluguel, int Senha)
+        public Carro(string Marca, string Modelo, string Cor, DateTime DataManutencao, double PrecoAluguel, int Senha) : base (Marca, Modelo, Cor, DataManutencao)
         {
-            this.Marca = Marca;
-            this.Modelo = Modelo;
             this.PrecoAluguel = PrecoAluguel;
             this.Senha = Senha;
         }
@@ -68,6 +64,13 @@ namespace projeto.classes
             }
             else
                 Console.WriteLine($"Senha incorreta! Não autorizado a mudança de preço do aluguel do carro {Marca} {Modelo}");
+        }
+
+        public void ProximaManutencao()
+        {
+            Console.WriteLine();
+            string dataFormatada = DataManutencao.ToString("dd/MM/yyyy");
+            Console.WriteLine($"A próxima manutenção é em {dataFormatada}");
         }
     }
 }
