@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex20_ano_nascimento.DescobrirAnoNasc();
+            repeticao_exs2.ex21_dias_mes.DescobrirDiasMes();
         }
     }
 }
