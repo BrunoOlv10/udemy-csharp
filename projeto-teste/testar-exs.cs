@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex26_soma_elementos_array.SomarElementosArray();
+            repeticao_exs2.ex28_ocorrencias_array.EncontrarOcorrenciasArray();
         }
     }
 }
