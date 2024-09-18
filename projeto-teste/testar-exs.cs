@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex23_sequencia_fibonacci.GerarSequencia();
+            repeticao_exs2.ex24_letras_alfabeto.ExibirAlfabeto();
         }
     }
 }

@@ -255,6 +255,7 @@
     <Compile Include="repeticao-exs2\ex21-dias-mes.cs" />
     <Compile Include="repeticao-exs2\ex22-piramide-caracteres.cs" />
     <Compile Include="repeticao-exs2\ex23-sequencia-fibonacci.cs" />
+    <Compile Include="repeticao-exs2\ex24-letras-alfabeto.cs" />
     <Compile Include="repeticao-exs2\ex3-media.cs" />
     <Compile Include="repeticao-exs2\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs2\ex30-excluir-numero-array.cs" />
