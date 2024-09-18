@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex22_piramide_caracteres.MontarPiramide();
+            repeticao_exs2.ex23_sequencia_fibonacci.GerarSequencia();
         }
     }
 }
