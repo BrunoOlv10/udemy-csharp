@@ -234,7 +234,7 @@
     <Compile Include="ex29-maior-menor-valor-array.cs" />
     <Compile Include="ex3-media.cs" />
     <Compile Include="ex30-excluir-valor-array.cs" />
-    <Compile Include="ex31-ordenar-matriz-string.cs" />
+    <Compile Include="ex31-ordenar-array-string.cs" />
     <Compile Include="ex32-ordenar-strings-bubble-sort.cs" />
     <Compile Include="ex4-retangulo-numeros.cs" />
     <Compile Include="ex6-mudar-caractere-posicao.cs" />
@@ -277,6 +277,7 @@
     <Compile Include="repeticao-exs2\ex29-maior-menor-valor-array.cs" />
     <Compile Include="repeticao-exs2\ex3-media.cs" />
     <Compile Include="repeticao-exs2\ex30-excluir-valor-array.cs" />
+    <Compile Include="repeticao-exs2\ex31-ordenar-array-string.cs" />
     <Compile Include="repeticao-exs2\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs2\ex27-transferir-elementos-array.cs" />
     <Compile Include="repeticao-exs2\ex5-remover-caractere-especifico.cs" />

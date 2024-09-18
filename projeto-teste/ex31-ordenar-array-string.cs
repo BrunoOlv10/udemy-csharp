@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projeto
 {
-    public class ex31_ordenar_matriz_string
+    public class ex31_ordenar_array_string
     {
         public static char[] ObterPalavra()
         {

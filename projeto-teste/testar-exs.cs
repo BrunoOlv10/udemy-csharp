@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex30_excluir_valor_array.ExcluirValorArray();
+            repeticao_exs2.ex31_ordenar_array_string.OrdenarSring();
         }
     }
 }
