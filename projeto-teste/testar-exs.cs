@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex28_ocorrencias_array.EncontrarOcorrenciasArray();
+            repeticao_exs2.ex29_maior_menor_valor_array.IdentificarMaiorMenorValorArray();
         }
     }
 }

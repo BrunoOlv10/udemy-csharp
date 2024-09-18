@@ -274,6 +274,7 @@
     <Compile Include="repeticao-exs2\ex25-elementos-array.cs" />
     <Compile Include="repeticao-exs2\ex26-soma-elementos-array.cs" />
     <Compile Include="repeticao-exs2\ex28-ocorrencias-array.cs" />
+    <Compile Include="repeticao-exs2\ex29-maior-menor-valor-array.cs" />
     <Compile Include="repeticao-exs2\ex3-media.cs" />
     <Compile Include="repeticao-exs2\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs2\ex30-excluir-numero-array.cs" />
