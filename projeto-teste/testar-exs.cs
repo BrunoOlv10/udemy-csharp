@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs2.ex31_ordenar_array_string.OrdenarSring();
+            repeticao_exs2.ex32_ordenar_strings_bubble_sort.OrdenarStringsBubbleSort();
         }
     }
 }
