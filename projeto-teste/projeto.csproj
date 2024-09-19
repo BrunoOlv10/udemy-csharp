@@ -208,10 +208,11 @@
     <Compile Include="classes\Carro.cs" />
     <Compile Include="classes\classesAbstratas\Pessoa.cs" />
     <Compile Include="classes\classesAbstratas\Veiculo.cs" />
+    <Compile Include="classes\Moto.cs" />
     <Compile Include="classes\PessoaFisica.cs" />
     <Compile Include="classes\PessoaJuridica.cs" />
     <Compile Include="conversao-tipos-dados.cs" />
-    <Compile Include="classes\CriacaoCarro.cs" />
+    <Compile Include="classes\CriacaoObjeto.cs" />
     <Compile Include="estruturas-condicionais.cs" />
     <Compile Include="estruturas-repeticao.cs" />
     <Compile Include="ex10-frase-invertida.cs" />

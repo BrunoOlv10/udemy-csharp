@@ -14,10 +14,11 @@ namespace projeto.classes
         public double PrecoAluguel { get; private set; }
         public int Senha { get; set; }
 
-        public Carro(string Marca, string Modelo, string Cor, DateTime DataManutencao, double PrecoAluguel, int Senha) : base (Marca, Modelo, Cor, DataManutencao)
+        //public Carro(string Marca, string Modelo, string Cor, DateTime DataManutencao, double PrecoAluguel, int Senha) : base (Marca, Modelo, Cor, DataManutencao)
+        public Carro(string Marca, string Modelo, string Cor, double PrecoAluguel) : base (Marca, Modelo, Cor)
         {
             this.PrecoAluguel = PrecoAluguel;
-            this.Senha = Senha;
+            //this.Senha = Senha;
         }
 
         public void Ligar()
@@ -66,11 +67,10 @@ namespace projeto.classes
                 Console.WriteLine($"Senha incorreta! Não autorizado a mudança de preço do aluguel do carro {Marca} {Modelo}");
         }
 
-        public void ProximaManutencao()
+        public override void ProximaManutencao()
         {
             Console.WriteLine();
-            string dataFormatada = DataManutencao.ToString("dd/MM/yyyy");
-            Console.WriteLine($"A próxima manutenção é em {dataFormatada}");
+            Console.WriteLine($"O carro tem a manutenção especial para a data: {this.DataManutencao.AddDays(30)}");
         }
     }
 }

@@ -9,13 +9,21 @@ using projeto.classes;
 
 namespace projeto
 {
-    public class CriacaoCarro
+    public class CriacaoObjeto
     {
-        public static void CriarCarro()
+        public static void CriarObjeto()
         {
-            Veiculo veiculo = new Veiculo("Nissan", "GTR", "azul", new DateTime(2005, 10, 01));
+            Moto moto = new Moto("Kawasaki", "z1000", "Preto");
 
-            Carro carro = new Carro("Nissan", "GTR", "azul", new DateTime(2005, 10, 01), 1000, 1234);
+            moto.ProximaManutencao();
+
+            Veiculo veiculo = new Veiculo("Nissan", "GTR", "azul");
+
+            //Carro carro = new Carro("Nissan", "GTR", "azul", 1000, 1234);
+
+            Carro carro = new Carro("Nissan", "GTR", "azul", 1000);
+
+            carro.ProximaManutencao();
 
             Console.Write("Insira o novo preço do aluguel: ");
             var preco = Convert.ToInt32(Console.ReadLine());

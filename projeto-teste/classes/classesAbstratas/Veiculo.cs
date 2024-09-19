@@ -13,12 +13,20 @@ namespace curso_udemy.classes.classesAbstratas
         public string Cor { get; private set; }
         protected DateTime DataManutencao { get; private set; }
 
-        public Veiculo (string marca, string modelo, string cor, DateTime dataManutencao)
+        public Veiculo (string marca, string modelo, string cor)
         {
             this.Marca = marca;
             this.Modelo = modelo;
             this.Cor = cor;
-            this.DataManutencao = dataManutencao;
+            this.DataManutencao = DateTime.Now;
+        }
+
+        public virtual void ProximaManutencao()
+        {
+            Console.WriteLine();
+            //string dataFormatada = DataManutencao.ToString("dd/MM/yyyy");
+            //Console.WriteLine($"O carro tem a manutenção padrão para a dataa: {dataFormatada}");
+            Console.WriteLine($"O veículo tem a manutenção padrão para a dataa: {this.DataManutencao}");
         }
     }
 }
