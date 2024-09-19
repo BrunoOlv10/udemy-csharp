@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curso_udemy.classes.classesAbstratas
 {
-    public class Veiculo
+    abstract public class Veiculo
     {
         public string Marca { get; private set; }
         public string Modelo { get; private set; }
@@ -23,10 +23,10 @@ namespace curso_udemy.classes.classesAbstratas
 
         public virtual void ProximaManutencao()
         {
-            Console.WriteLine();
+            //Console.WriteLine();
             //string dataFormatada = DataManutencao.ToString("dd/MM/yyyy");
             //Console.WriteLine($"O carro tem a manutenção padrão para a dataa: {dataFormatada}");
-            Console.WriteLine($"O veículo tem a manutenção padrão para a dataa: {this.DataManutencao}");
+            //Console.WriteLine($"O veículo tem a manutenção padrão para a data: {this.DataManutencao}");
         }
     }
 }

@@ -208,6 +208,7 @@
     <Compile Include="classes\Carro.cs" />
     <Compile Include="classes\classesAbstratas\Pessoa.cs" />
     <Compile Include="classes\classesAbstratas\Veiculo.cs" />
+    <Compile Include="classes\Interfaces\ICarro.cs" />
     <Compile Include="classes\Moto.cs" />
     <Compile Include="classes\PessoaFisica.cs" />
     <Compile Include="classes\PessoaJuridica.cs" />

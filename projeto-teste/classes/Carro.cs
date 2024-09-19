@@ -5,10 +5,11 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using curso_udemy.classes.classesAbstratas;
+using projeto.classes.Interfaces;
 
 namespace projeto.classes
 {
-    public class Carro : Veiculo
+    public class Carro : Veiculo, ICarro
     {
         public bool EstaAlugado { get; private set; }
         public double PrecoAluguel { get; private set; }
@@ -50,8 +51,8 @@ namespace projeto.classes
 
         public void MudarPrecoAluguel(int senha, double novoPrecoAluguel)
         {
-            if (this.Senha == senha)
-            {
+            //if (this.Senha == senha)
+            //{
                 if (novoPrecoAluguel > PrecoAluguel)
                 {
                     this.PrecoAluguel = novoPrecoAluguel;
@@ -62,15 +63,21 @@ namespace projeto.classes
                     Console.WriteLine("Usuário Admin acessado com sucesso!");
                     Console.WriteLine("Preço não alterado, pois o novo preço inserido é menor ou igual ao atual presente no sistema");
                 }
-            }
-            else
-                Console.WriteLine($"Senha incorreta! Não autorizado a mudança de preço do aluguel do carro {Marca} {Modelo}");
+            //}
+            //else
+            //    Console.WriteLine($"Senha incorreta! Não autorizado a mudança de preço do aluguel do carro {Marca} {Modelo}");
         }
 
-        public override void ProximaManutencao()
+        //public override void ProximaManutencao()
+        //{
+        //    Console.WriteLine();
+        //    Console.WriteLine($"O carro tem a manutenção especial para a data: {this.DataManutencao.AddDays(30)}");
+        //}
+
+        public void ProximaManutencao(int dias)
         {
+            Console.WriteLine($"Próxima manutenção do carro em dias: {dias}");
             Console.WriteLine();
-            Console.WriteLine($"O carro tem a manutenção especial para a data: {this.DataManutencao.AddDays(30)}");
         }
     }
 }

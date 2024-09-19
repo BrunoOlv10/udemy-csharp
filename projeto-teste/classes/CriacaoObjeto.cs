@@ -14,22 +14,20 @@ namespace projeto
         public static void CriarObjeto()
         {
             Moto moto = new Moto("Kawasaki", "z1000", "Preto");
-
+            //moto.ProximaManutencao(5);
             moto.ProximaManutencao();
-
-            Veiculo veiculo = new Veiculo("Nissan", "GTR", "azul");
 
             //Carro carro = new Carro("Nissan", "GTR", "azul", 1000, 1234);
 
             Carro carro = new Carro("Nissan", "GTR", "azul", 1000);
-
-            carro.ProximaManutencao();
+            carro.ProximaManutencao(10);
 
             Console.Write("Insira o novo preço do aluguel: ");
             var preco = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Insira a senha cadastrada (apenas números): ");
-            int senha = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Insira a senha cadastrada (apenas números): ");
+            //int senha = Convert.ToInt32(Console.ReadLine());
+            int senha = 0;
 
             Console.WriteLine();
 
