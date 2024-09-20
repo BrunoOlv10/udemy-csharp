@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs3.ex1_trocar_numeros_variaveis.TrocarNumerosVariaveis();
+            repeticao_exs3.ex2_multiplicao.Multiplicar();
         }
     }
 }
