@@ -13,7 +13,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            CriacaoObjeto.CriarObjeto();
+            repeticao_exs3.ex1_trocar_numeros_variaveis.TrocarNumerosVariaveis();
         }
     }
 }

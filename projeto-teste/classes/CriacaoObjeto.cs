@@ -31,7 +31,8 @@ namespace projeto
 
             Console.WriteLine();
 
-            carro.MudarPrecoAluguel(senha, preco);
+            //carro.MudarPrecoAluguel(senha, preco);
+            carro.MudarPrecoAluguel(preco);
 
             Console.WriteLine();
 

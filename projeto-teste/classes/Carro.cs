@@ -49,7 +49,8 @@ namespace projeto.classes
             Console.WriteLine($"O carro {Marca} foi devolvido");
         }
 
-        public void MudarPrecoAluguel(int senha, double novoPrecoAluguel)
+        //public void MudarPrecoAluguel(int senha, double novoPrecoAluguel)
+        public void MudarPrecoAluguel(double novoPrecoAluguel)
         {
             //if (this.Senha == senha)
             //{

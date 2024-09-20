@@ -288,6 +288,7 @@
     <Compile Include="repeticao-exs2\ex7-numeros-opostos.cs" />
     <Compile Include="repeticao-exs2\ex8-palavra-longa.cs" />
     <Compile Include="repeticao-exs2\ex9-soma-numeros-primos.cs" />
+    <Compile Include="repeticao-exs3\ex1-trocar-numeros-variaveis.cs" />
     <Compile Include="repeticao-exs\ex1-trocar-numeros-variaveis.cs" />
     <Compile Include="repeticao-exs\ex10-frase-invertida.cs" />
     <Compile Include="repeticao-exs\ex11-contem-palavra.cs" />
