@@ -206,6 +206,7 @@
     <Compile Include="array.cs" />
     <Compile Include="algoritmo-busca-binaria.cs" />
     <Compile Include="classes\Carro.cs" />
+    <Compile Include="classes\Carros.cs" />
     <Compile Include="classes\classesAbstratas\Pessoa.cs" />
     <Compile Include="classes\classesAbstratas\Veiculo.cs" />
     <Compile Include="classes\classesEstaticas\CarrosDadosBasicos.cs" />
