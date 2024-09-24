@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using curso_udemy.classes.classesAbstratas;
 using projeto.classes;
+using projeto.classes.classesEstaticas;
 
 namespace projeto
 {
@@ -21,6 +22,10 @@ namespace projeto
 
             Carro carro = new Carro("Nissan", "GTR", "azul", 1000);
             carro.ProximaManutencao(10);
+
+            Console.WriteLine($"Número de pneus {carro.NumeroPneus}");
+
+            CarrosDadosBasicos.ConsumoMedio(150, 10);
 
             Console.Write("Insira o novo preço do aluguel: ");
             var preco = Convert.ToInt32(Console.ReadLine());

@@ -5,6 +5,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using curso_udemy.classes.classesAbstratas;
+using projeto.classes.classesEstaticas;
 using projeto.classes.Interfaces;
 
 namespace projeto.classes
@@ -13,12 +14,15 @@ namespace projeto.classes
     {
         public bool EstaAlugado { get; private set; }
         public double PrecoAluguel { get; private set; }
+
+        public string NumeroPneus { get; set; }
         public int Senha { get; set; }
 
         //public Carro(string Marca, string Modelo, string Cor, DateTime DataManutencao, double PrecoAluguel, int Senha) : base (Marca, Modelo, Cor, DataManutencao)
         public Carro(string Marca, string Modelo, string Cor, double PrecoAluguel) : base (Marca, Modelo, Cor)
         {
             this.PrecoAluguel = PrecoAluguel;
+            this.NumeroPneus = CarrosDadosBasicos.NumeroPneus;
             //this.Senha = Senha;
         }
 
