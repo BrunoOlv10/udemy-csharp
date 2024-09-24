@@ -20,13 +20,27 @@ namespace projeto
 
             //Carro carro = new Carro("Nissan", "GTR", "azul", 1000, 1234);
 
-            Carro carro = new Carro("Nissan", "GTR", "azul", 1000);
+            Carro carro = new Carro("Nissan", "GTR", "Azul", 1000);
             carro.ProximaManutencao(10);
 
             Console.WriteLine($"Número de pneus {carro.NumeroPneus}");
 
             CarrosDadosBasicos.ConsumoMedio(150, 10);
+            Console.WriteLine();
 
+            List<Carro> listaCarros = new List<Carro>();
+            listaCarros.Add(carro);
+            listaCarros.Add(new Carro("VW", "Passat", "Cinza", 450));
+
+            //Console.WriteLine($"Número de elementos da lista {listaCarros.Count}");
+
+            foreach (var car in listaCarros)
+            {
+                Console.WriteLine($"Marcas de carro: { car.Marca } e da cor { car.Cor }");
+                car.ProximaManutencao();
+            }
+
+            Console.WriteLine();
             Console.Write("Insira o novo preço do aluguel: ");
             var preco = Convert.ToInt32(Console.ReadLine());
 
