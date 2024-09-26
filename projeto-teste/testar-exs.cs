@@ -14,7 +14,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            Carros.ManipularCarros();
+            repeticao_exs3.ex6_mudar_caractere_posicao.MudarCaracterePosicao();
         }
     }
 }
