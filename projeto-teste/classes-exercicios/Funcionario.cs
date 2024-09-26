@@ -25,9 +25,11 @@ namespace projeto.classes_exercicios
     {
         List<Funcionario> FuncionariosEmpresa = new List<Funcionario>();
 
-        public void AdicionarFuncionario(Funcionario funcionario)
+        public List<Funcionario> AdicionarFuncionario(Funcionario funcionario)
         {
             FuncionariosEmpresa.Add(funcionario);
+
+            return FuncionariosEmpresa;
         }
 
         public void ListarFuncionarios()
@@ -37,7 +39,6 @@ namespace projeto.classes_exercicios
             {
                 Console.WriteLine(); 
                 Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
-                Console.ReadKey();
             }
         }
     }

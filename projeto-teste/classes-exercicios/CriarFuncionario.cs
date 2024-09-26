@@ -10,20 +10,31 @@ namespace projeto.classes_exercicios
     {
         public static void CadastrarNovoFuncionario()
         {
-            Console.WriteLine("Cadastrar novo funcionário");
-            Console.Write("Insira o nome do funcionário: ");
-            string nome = Console.ReadLine();
+            Console.Write("Quantos funcionários você deseja cadastrar? ");
+            int quantidade = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Insira o sobrenome: ");
-            string sobrenome = Console.ReadLine();
-
-            Console.Write("Insira o cargo dele(a) na empresa: ");
-            string cargo = Console.ReadLine();
-
-            Funcionario funcionario = new Funcionario(nome, sobrenome, cargo);
+            Console.WriteLine();
 
             Empresa empresa = new Empresa();
-            empresa.AdicionarFuncionario(funcionario);
+            for (int i = 0; i < quantidade; i++)
+            {
+                Console.WriteLine($"Cadastrar o funcionário {i + 1}");
+
+                Console.Write("Insira o nome do funcionário: ");
+                string nome = Console.ReadLine();
+
+                Console.Write("Insira o sobrenome: ");
+                string sobrenome = Console.ReadLine();
+
+                Console.Write("Insira o cargo dele(a) na empresa: ");
+                string cargo = Console.ReadLine();
+
+                Funcionario funcionario = new Funcionario(nome, sobrenome, cargo);
+
+                empresa.AdicionarFuncionario(funcionario);
+
+                Console.WriteLine();
+            }
 
             empresa.ListarFuncionarios();
         }

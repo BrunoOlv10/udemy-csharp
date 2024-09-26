@@ -27,6 +27,7 @@ namespace projeto.classes_exercicios
                     Console.WriteLine();
                     Console.WriteLine("Menu opção 1");
                     CriarFuncionario.CadastrarNovoFuncionario();
+                    Console.ReadKey();
                 }
 
                 else if (opcao == 2)
