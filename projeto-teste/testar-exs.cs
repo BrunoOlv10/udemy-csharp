@@ -14,7 +14,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs3.ex6_mudar_caractere_posicao.MudarCaracterePosicao();
+            classes_exercicios.Menu_Principal.SelecionarMenu();
         }
     }
 }
