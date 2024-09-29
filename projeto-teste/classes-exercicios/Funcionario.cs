@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main;
+using OfficeOpenXml.ConditionalFormatting.Contracts;
 
 namespace projeto.classes_exercicios
 {
@@ -32,6 +33,23 @@ namespace projeto.classes_exercicios
             return FuncionariosEmpresa;
         }
 
+        public List<Funcionario> ObterRelatorioFuncionariosPorSobrenome()
+        {
+            return FuncionariosEmpresa.OrderBy(f => f.Sobrenome).ToList();
+        }
+
+        public Dictionary<string, int> ContarFuncionariosPorCargo()
+        {
+            return FuncionariosEmpresa
+                .GroupBy(f => f.Cargo)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
+
+        public int ObterTotalFuncionarios()
+        {
+            return FuncionariosEmpresa.Count;
+        }
+
         public void ListarFuncionarios()
         {
             Console.WriteLine("Atualmente esses são os funcionários da empresa:");
@@ -39,6 +57,23 @@ namespace projeto.classes_exercicios
             {
                 Console.WriteLine();
                 Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
+            }
+        }
+
+        public void ListarFuncionariosOrdenadosPorSobrenome()
+        {
+            var funcionariosOrdenados = ObterRelatorioFuncionariosPorSobrenome();
+            if (funcionariosOrdenados.Count == 0)
+            {
+                Console.WriteLine("Nenhum funcionário cadastrado");
+            }
+            else
+            {
+                Console.WriteLine("Funcionários da empresa (ordenados por sobrenome):");
+                foreach (var funcionario in funcionariosOrdenados)
+                {
+                    Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
+                }
             }
         }
     }

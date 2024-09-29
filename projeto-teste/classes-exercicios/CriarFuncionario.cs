@@ -8,14 +8,13 @@ namespace projeto.classes_exercicios
 {
     public class CriarFuncionario
     {
-        public static void CadastrarNovoFuncionario()
+        public static void CadastrarNovoFuncionario(Empresa empresa)
         {
             Console.Write("Quantos funcionários você deseja cadastrar? ");
             int quantidade = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();
 
-            Empresa empresa = new Empresa();
             for (int i = 0; i < quantidade; i++)
             {
                 Console.WriteLine($"Cadastrar o funcionário {i + 1}");
@@ -36,7 +35,10 @@ namespace projeto.classes_exercicios
                 Console.WriteLine();
             }
 
-            empresa.ListarFuncionarios();
+            Console.WriteLine("Funcionários cadastrados com sucesso!");
+            Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+            Console.WriteLine();
+            Console.ReadKey();
         }
     }
 }

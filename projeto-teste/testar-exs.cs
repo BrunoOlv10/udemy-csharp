@@ -7,6 +7,7 @@ using curso_udemy.classes;
 using curso_udemy.recuperar_instituicao_ano;
 using DocumentFormat.OpenXml.ExtendedProperties;
 using projeto.classes;
+using projeto.classes_exercicios;
 
 namespace projeto
 {
@@ -14,7 +15,8 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs3.ex7_numeros_opostos.VerificarNumerosOpostos();
+            Empresa empresa = new Empresa();
+            classes_exercicios.Menu_Principal.SelecionarMenu(empresa);
         }
     }
 }
