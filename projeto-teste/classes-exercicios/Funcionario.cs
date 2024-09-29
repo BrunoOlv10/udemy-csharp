@@ -37,7 +37,7 @@ namespace projeto.classes_exercicios
             Console.WriteLine("Atualmente esses são os funcionários da empresa:");
             foreach (var funcionario in FuncionariosEmpresa)
             {
-                Console.WriteLine(); 
+                Console.WriteLine();
                 Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
             }
         }

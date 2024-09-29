@@ -14,7 +14,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            classes_exercicios.Menu_Principal.SelecionarMenu();
+            repeticao_exs3.ex7_numeros_opostos.VerificarNumerosOpostos();
         }
     }
 }
