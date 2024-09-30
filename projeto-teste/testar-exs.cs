@@ -18,7 +18,7 @@ namespace projeto
             //Empresa empresa = new Empresa();
             //classes_exercicios.Menu_Principal.SelecionarMenu(empresa);
 
-            repeticao_exs3.ex8_palavra_longa.EncontrarPalavraMaisLonga();
+            repeticao_exs3.ex9_soma_numeros_primos.ObterSomaPrimos();
         }
     }
 }
