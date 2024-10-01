@@ -18,7 +18,7 @@ namespace projeto
             //Empresa empresa = new Empresa();
             //classes_exercicios.Menu_Principal.SelecionarMenu(empresa);
 
-            repeticao_exs3.ex12_valor_mais_proximo.IdentificarValorMaisProximo();
+            repeticao_exs3.ex13_maiuscula_minuscula.EncontrarMaiuscula();
         }
     }
 }
