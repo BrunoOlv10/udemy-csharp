@@ -18,7 +18,7 @@ namespace projeto
             //Empresa empresa = new Empresa();
             //classes_exercicios.Menu_Principal.SelecionarMenu(empresa);
 
-            repeticao_exs3.ex11_contem_palavra.EncontrarPalavra();
+            repeticao_exs3.ex12_valor_mais_proximo.IdentificarValorMaisProximo();
         }
     }
 }
