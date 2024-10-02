@@ -15,7 +15,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs3.ex15_soma_array.SomarArray();
+            repeticao_exs3.ex16_girar_array.GirarMatriz();
         }
     }
 }
