@@ -15,7 +15,7 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs3.ex16_girar_array.GirarMatriz();
+            repeticao_exs3.ex17_maior_menor_valor_array.EncontrarMaiorValorArray();
         }
     }
 }
