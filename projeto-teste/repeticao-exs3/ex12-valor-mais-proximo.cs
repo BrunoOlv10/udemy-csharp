@@ -48,8 +48,8 @@ namespace projeto.repeticao_exs3
                 List<int> numerosMaisProximos = diferencas[menorDiferenca].Distinct().ToList();
 
                 Console.WriteLine();
-                Console.WriteLine($"Os números inseridos foram '" + String.Join(", ", numeros) + "'");
-                Console.WriteLine($"O(s) número(s) mais próximos da referencia {referencia} é '" + String.Join(", ",
+                Console.WriteLine($"O(s) número(s) inserido(s) foram '" + String.Join(", ", numeros) + "'");
+                Console.WriteLine($"O(s) número(s) mais próximo(s) da referencia {referencia} é '" + String.Join(", ",
                     numerosMaisProximos) + $"' e a diferença é de {menorDiferenca}");
                 Console.ReadKey();
             }

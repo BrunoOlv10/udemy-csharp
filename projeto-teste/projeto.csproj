@@ -206,8 +206,10 @@
     <Compile Include="array.cs" />
     <Compile Include="algoritmo-busca-binaria.cs" />
     <Compile Include="classes-exercicios\CriarFuncionario.cs" />
+    <Compile Include="classes-exercicios\CriarProduto.cs" />
     <Compile Include="classes-exercicios\Funcionario.cs" />
     <Compile Include="classes-exercicios\MenuPrincipal.cs" />
+    <Compile Include="classes-exercicios\Produto.cs" />
     <Compile Include="classes-exercicios\RelatorioFuncionarios.cs" />
     <Compile Include="classes\Carro.cs" />
     <Compile Include="classes\Carros.cs" />

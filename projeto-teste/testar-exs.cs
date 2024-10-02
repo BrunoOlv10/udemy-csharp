@@ -15,10 +15,8 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            //Empresa empresa = new Empresa();
-            //classes_exercicios.Menu_Principal.SelecionarMenu(empresa);
-
-            repeticao_exs3.ex13_maiuscula_minuscula.EncontrarMaiuscula();
+            Empresa empresa = new Empresa();
+            classes_exercicios.Menu_Principal.SelecionarMenu(empresa);
         }
     }
 }

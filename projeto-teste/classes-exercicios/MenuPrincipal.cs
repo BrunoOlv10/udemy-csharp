@@ -7,52 +7,99 @@ using DocumentFormat.OpenXml.Drawing.Diagrams;
 
 namespace projeto.classes_exercicios
 {
+    class NumeroMenuInexistenteException : Exception { } 
+
     public class Menu_Principal
     {
         public static void SelecionarMenu(Empresa empresa)
         {
-            while (true)
+            Console.WriteLine("1- Ir para menu de funcionários");
+            Console.WriteLine("2- Ir para menu de produtos");
+            Console.Write("Insira o número de opção de menu: ");
+            int opcaoInicial = Convert.ToInt32(Console.ReadLine());
+
+            if (opcaoInicial != 1 && opcaoInicial != 2)
+                throw new Exception();
+
+            try
             {
-                try
+                while (true)
                 {
-                    Console.WriteLine("1- Insira um funcionário novo");
-                    Console.WriteLine("2- Relatório de funcionários");
-                    Console.WriteLine("3- Sair do sistema");
-                    Console.Write("Insira o número de opção de menu: ");
-                    int opcao = Convert.ToInt32(Console.ReadLine());
-
-                    if (opcao != 1 && opcao != 2 && opcao != 3)
-                        throw new Exception();
-
-                    if (opcao == 1)
+                    if (opcaoInicial == 1)
                     {
                         Console.WriteLine();
-                        Console.WriteLine("Menu opção 1");
-                        CriarFuncionario.CadastrarNovoFuncionario(empresa);
-                        Console.ReadKey();
+                        Console.WriteLine("1- Cadastrar um funcionário novo");
+                        Console.WriteLine("2- Relatório de funcionários");
+                        Console.WriteLine("3- Sair do sistema");
+                        Console.Write("Insira o número do que deseja fazer: ");
+                        int opcaoFuncionario = Convert.ToInt32(Console.ReadLine());
+
+                        if (opcaoFuncionario != 1 && opcaoFuncionario != 2 && opcaoFuncionario != 3)
+                            throw new NumeroMenuInexistenteException();
+
+                        if (opcaoFuncionario == 1)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Menu Cadastrar Funcionário");
+                            CriarFuncionario.CadastrarNovoFuncionario(empresa);
+                            Console.ReadKey();
+                        }
+
+                        else if (opcaoFuncionario == 2)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Menu Obter Relatório de Funcionários");
+                            RelatorioFuncionarios.ObterRelatorioFuncionarios(empresa);
+                            Console.ReadKey();
+                        }
+
+                        else if (opcaoFuncionario == 3)
+                            break;
                     }
 
-                    else if (opcao == 2)
+                    else if (opcaoInicial == 2)
                     {
                         Console.WriteLine();
-                        Console.WriteLine("Menu opção 2");
-                        RelatorioFuncionarios.ObterRelatorioFuncionarios(empresa);
-                        Console.ReadKey();
-                    }
+                        Console.WriteLine("1- Cadastrar um produto");
+                        Console.WriteLine("2- Relatório de produtos");
+                        Console.WriteLine("3- Sair do sistema");
+                        Console.Write("Insira o número do que deseja fazer: ");
+                        int opcaoProduto = Convert.ToInt32(Console.ReadLine());
 
-                    else if (opcao == 3)
-                    {
-                        Console.WriteLine("Saindo do sistema...");
-                        Console.ReadKey();
-                        break;
+                        if (opcaoProduto != 1 && opcaoProduto != 2 && opcaoProduto != 3)
+                            throw new Exception();
+
+                        if (opcaoProduto == 1)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Menu Cadastrar Produto");
+                            CriarProduto.CadastrarProduto(empresa);
+                            Console.ReadKey();
+                        }
+
+                        else if (opcaoProduto == 2)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Menu Obter Relatório de Produto");
+                            Console.ReadKey();
+                        }
+
+                        else if (opcaoProduto == 3)
+                            break;
                     }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("Insira uma das 3 opções de menu disponíveis!");
-                    Console.ReadKey();
-                }
+            }
+            catch (NumeroMenuInexistenteException)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Insira um dos números de opções de menu disponíveis!");
+                Console.ReadKey();
+            }
+            catch (System.FormatException)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Insira um número válido nas entradas que solicitam algum valor numérico!");
+                Console.ReadKey();
             }
         }
     }

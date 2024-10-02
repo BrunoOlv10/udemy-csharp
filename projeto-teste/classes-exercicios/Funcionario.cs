@@ -32,6 +32,15 @@ namespace projeto.classes_exercicios
 
             return FuncionariosEmpresa;
         }
+        
+        List<Produto> ProdutosEmpresa = new List<Produto>();
+
+        public List<Produto> AdicionarProduto(Produto produto)
+        {
+            ProdutosEmpresa.Add(produto);
+
+            return ProdutosEmpresa;
+        }
 
         public List<Funcionario> ObterRelatorioFuncionariosPorSobrenome()
         {
