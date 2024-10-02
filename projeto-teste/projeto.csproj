@@ -301,6 +301,7 @@
     <Compile Include="repeticao-exs3\ex11-contem-palavra.cs" />
     <Compile Include="repeticao-exs3\ex12-valor-mais-proximo.cs" />
     <Compile Include="repeticao-exs3\ex13-maiuscula-minuscula.cs" />
+    <Compile Include="repeticao-exs3\ex15-soma-array.cs" />
     <Compile Include="repeticao-exs3\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs3\ex3-media.cs" />
     <Compile Include="repeticao-exs3\ex5-remover-caractere-especifico.cs" />
