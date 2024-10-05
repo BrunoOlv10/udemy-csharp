@@ -211,6 +211,7 @@
     <Compile Include="classes-exercicios\MenuPrincipal.cs" />
     <Compile Include="classes-exercicios\Produto.cs" />
     <Compile Include="classes-exercicios\RelatorioFuncionarios.cs" />
+    <Compile Include="classes-exercicios\RelatorioProdutos.cs" />
     <Compile Include="classes\Carro.cs" />
     <Compile Include="classes\Carros.cs" />
     <Compile Include="classes\classesAbstratas\Pessoa.cs" />

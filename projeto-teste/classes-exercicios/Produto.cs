@@ -21,4 +21,74 @@ namespace projeto.classes_exercicios
             this.Preco = preco;
         }
     }
+
+    public class ProdutoEmpresa
+    {
+        List<Produto> ProdutosEmpresa = new List<Produto>();
+
+        public List<Produto> AdicionarProduto(Produto produto)
+        {
+            ProdutosEmpresa.Add(produto);
+
+            return ProdutosEmpresa;
+        }
+
+        public void ListarProdutos()
+        {
+            Console.WriteLine("Atualmente esses são os produtos da empresa:");
+            foreach (var produto in ProdutosEmpresa)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Id: {produto.Id} - Nome: {produto.NomeProduto} - Categoria: {produto.Categoria} - Preço: {produto.Preco}");
+            }
+        }
+
+        public List<Produto> ObterProdutosPorNome()
+        {
+            return ProdutosEmpresa.OrderBy(p => p.NomeProduto).ToList();
+        }
+
+        public Dictionary<string, List<Produto>> AgruparProdutosPorCategoria()
+        {
+            Dictionary<string, List<Produto>> ProdutosAgrupadosPorCategoria = new Dictionary<string, List<Produto>>();
+
+            foreach (var item in ProdutosEmpresa)
+            {
+                if (!ProdutosAgrupadosPorCategoria.ContainsKey(item.Categoria))
+                {
+                    ProdutosAgrupadosPorCategoria[item.Categoria] = new List<Produto>();
+                }
+
+                ProdutosAgrupadosPorCategoria[item.Categoria].Add(item);
+            }
+
+            return ProdutosAgrupadosPorCategoria;
+        }
+
+        public void ListarProdutoAgrupadosPorCategoriaComTotais()
+        {
+            var produtosAgrupados = AgruparProdutosPorCategoria();
+            double totalGeral = 0;
+
+            foreach (var categoria in produtosAgrupados)
+            {
+                Console.WriteLine($"Categoria: {categoria.Key}");
+                double subtotal = 0;
+
+                foreach (var produto in categoria.Value)
+                {
+                    Console.WriteLine($"Id: {produto.Id}, Nome: {produto.NomeProduto}, Preço: {produto.Preco}");
+                    subtotal += produto.Preco;
+                }
+
+                Console.WriteLine();
+                Console.WriteLine($"Subtotal da categoria '{categoria.Key}': {subtotal:C2}\n");
+
+                totalGeral += subtotal;
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"Total Geral de Todos os Produtos: {totalGeral:C2}");
+        }
+    }
 }

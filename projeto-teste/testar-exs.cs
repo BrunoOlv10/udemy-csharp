@@ -15,7 +15,9 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            repeticao_exs3.ex17_maior_menor_valor_array.EncontrarMaiorValorArray();
+            FuncionarioEmpresa funcionario = new FuncionarioEmpresa();
+            ProdutoEmpresa produto = new ProdutoEmpresa();
+            Menu_Principal.SelecionarMenu(funcionario, produto);
         }
     }
 }

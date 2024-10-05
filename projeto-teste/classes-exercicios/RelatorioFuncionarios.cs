@@ -8,8 +8,11 @@ namespace projeto.classes_exercicios
 {
     public class RelatorioFuncionarios
     {
-        public static void ObterRelatorioFuncionarios(Empresa empresa)
+        public static void ObterRelatorioFuncionarios(FuncionarioEmpresa empresa)
         {
+            empresa.ListarFuncionarios();
+            Console.WriteLine();
+
             empresa.ListarFuncionariosOrdenadosPorSobrenome();
             Console.WriteLine();
 

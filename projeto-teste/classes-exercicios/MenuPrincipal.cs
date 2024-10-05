@@ -11,7 +11,7 @@ namespace projeto.classes_exercicios
 
     public class Menu_Principal
     {
-        public static void SelecionarMenu(Empresa empresa)
+        public static void SelecionarMenu(FuncionarioEmpresa funcionario, ProdutoEmpresa produto)
         {
             Console.WriteLine("1- Ir para menu de funcionários");
             Console.WriteLine("2- Ir para menu de produtos");
@@ -28,6 +28,7 @@ namespace projeto.classes_exercicios
                     if (opcaoInicial == 1)
                     {
                         Console.WriteLine();
+                        Console.WriteLine("Menu de Funcionários");
                         Console.WriteLine("1- Cadastrar um funcionário novo");
                         Console.WriteLine("2- Relatório de funcionários");
                         Console.WriteLine("3- Sair do sistema");
@@ -41,7 +42,7 @@ namespace projeto.classes_exercicios
                         {
                             Console.WriteLine();
                             Console.WriteLine("Menu Cadastrar Funcionário");
-                            CriarFuncionario.CadastrarNovoFuncionario(empresa);
+                            CriarFuncionario.CadastrarNovoFuncionario(funcionario);
                             Console.ReadKey();
                         }
 
@@ -49,7 +50,7 @@ namespace projeto.classes_exercicios
                         {
                             Console.WriteLine();
                             Console.WriteLine("Menu Obter Relatório de Funcionários");
-                            RelatorioFuncionarios.ObterRelatorioFuncionarios(empresa);
+                            RelatorioFuncionarios.ObterRelatorioFuncionarios(funcionario);
                             Console.ReadKey();
                         }
 
@@ -60,6 +61,7 @@ namespace projeto.classes_exercicios
                     else if (opcaoInicial == 2)
                     {
                         Console.WriteLine();
+                        Console.WriteLine("Menu de Produtos");
                         Console.WriteLine("1- Cadastrar um produto");
                         Console.WriteLine("2- Relatório de produtos");
                         Console.WriteLine("3- Sair do sistema");
@@ -73,14 +75,15 @@ namespace projeto.classes_exercicios
                         {
                             Console.WriteLine();
                             Console.WriteLine("Menu Cadastrar Produto");
-                            CriarProduto.CadastrarProduto(empresa);
+                            CriarProduto.CadastrarProduto(produto);
                             Console.ReadKey();
                         }
 
                         else if (opcaoProduto == 2)
                         {
                             Console.WriteLine();
-                            Console.WriteLine("Menu Obter Relatório de Produto");
+                            Console.WriteLine("Menu Obter Relatório de Produtos");
+                            RelatorioProdutos.ObterRelatorioProdutos(produto);
                             Console.ReadKey();
                         }
 

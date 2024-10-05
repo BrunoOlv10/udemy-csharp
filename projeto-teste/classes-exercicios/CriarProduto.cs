@@ -8,7 +8,7 @@ namespace projeto.classes_exercicios
 {
     public class CriarProduto
     {
-        public static void CadastrarProduto(Empresa empresa)
+        public static void CadastrarProduto(ProdutoEmpresa produtoEmpresa)
         {
             Console.Write("Quantos produtos serão cadastrados? ");
             int quantidade = Convert.ToInt32(Console.ReadLine());
@@ -33,7 +33,7 @@ namespace projeto.classes_exercicios
 
                 Produto produto = new Produto(id, nomeProduto, categoria, preco);
 
-                empresa.AdicionarProduto(produto);
+                produtoEmpresa.AdicionarProduto(produto);
 
                 Console.WriteLine();
             }

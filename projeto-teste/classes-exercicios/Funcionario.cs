@@ -22,7 +22,7 @@ namespace projeto.classes_exercicios
         }
     }
 
-    public class Empresa
+    public class FuncionarioEmpresa
     {
         List<Funcionario> FuncionariosEmpresa = new List<Funcionario>();
 
@@ -31,15 +31,6 @@ namespace projeto.classes_exercicios
             FuncionariosEmpresa.Add(funcionario);
 
             return FuncionariosEmpresa;
-        }
-        
-        List<Produto> ProdutosEmpresa = new List<Produto>();
-
-        public List<Produto> AdicionarProduto(Produto produto)
-        {
-            ProdutosEmpresa.Add(produto);
-
-            return ProdutosEmpresa;
         }
 
         public List<Funcionario> ObterRelatorioFuncionariosPorSobrenome()
@@ -61,10 +52,10 @@ namespace projeto.classes_exercicios
 
         public void ListarFuncionarios()
         {
+            Console.WriteLine();
             Console.WriteLine("Atualmente esses são os funcionários da empresa:");
             foreach (var funcionario in FuncionariosEmpresa)
             {
-                Console.WriteLine();
                 Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
             }
         }
