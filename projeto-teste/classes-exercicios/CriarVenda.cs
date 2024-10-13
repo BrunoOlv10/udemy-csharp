@@ -19,8 +19,17 @@ namespace projeto.classes_exercicios
             {
                 Console.WriteLine($"Cadastrar a venda {i + 1}");
 
-                Console.Write("Insira o nome do produto: ");
+                Console.Write("Insira o nome do produto vendido: ");
                 string nomeProduto = Console.ReadLine();
+
+                Console.Write("Insira a descrição do produto: ");
+                string descricaoProduto = Console.ReadLine();
+
+                Console.Write("Insira o preço do produto: ");
+                double precoProduto = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Insira a quantidade vendidade desse produto: ");
+                int quantidadeVendida = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Insira o nome do funcionário que realizou essa venda: ");
                 string nomeFuncionarioVendeu = Console.ReadLine();
@@ -28,7 +37,7 @@ namespace projeto.classes_exercicios
                 Console.Write("Insira a data que a venda foi realizada: ");
                 DateTime dataVenda = Convert.ToDateTime(Console.ReadLine());
 
-                Venda venda = new Venda(nomeProduto, nomeFuncionarioVendeu, dataVenda);
+                Venda venda = new Venda(nomeProduto, descricaoProduto, precoProduto, quantidadeVendida, nomeFuncionarioVendeu, dataVenda);
 
                 vendaEmpresa.AdicionarVenda(venda);
 
