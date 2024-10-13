@@ -207,11 +207,13 @@
     <Compile Include="algoritmo-busca-binaria.cs" />
     <Compile Include="classes-exercicios\CriarFuncionario.cs" />
     <Compile Include="classes-exercicios\CriarProduto.cs" />
+    <Compile Include="classes-exercicios\CriarVenda.cs" />
     <Compile Include="classes-exercicios\Funcionario.cs" />
     <Compile Include="classes-exercicios\MenuPrincipal.cs" />
     <Compile Include="classes-exercicios\Produto.cs" />
     <Compile Include="classes-exercicios\RelatorioFuncionarios.cs" />
     <Compile Include="classes-exercicios\RelatorioProdutos.cs" />
+    <Compile Include="classes-exercicios\Venda.cs" />
     <Compile Include="classes\Carro.cs" />
     <Compile Include="classes\Carros.cs" />
     <Compile Include="classes\classesAbstratas\Pessoa.cs" />

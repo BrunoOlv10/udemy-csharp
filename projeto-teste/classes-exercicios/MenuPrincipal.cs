@@ -11,14 +11,15 @@ namespace projeto.classes_exercicios
 
     public class Menu_Principal
     {
-        public static void SelecionarMenu(FuncionarioEmpresa funcionario, ProdutoEmpresa produto)
+        public static void SelecionarMenu(FuncionarioEmpresa funcionario, ProdutoEmpresa produto, VendaEmpresa venda)
         {
             Console.WriteLine("1- Ir para menu de funcionários");
             Console.WriteLine("2- Ir para menu de produtos");
+            Console.WriteLine("3- Ir para menu de vendas");
             Console.Write("Insira o número de opção de menu: ");
             int opcaoInicial = Convert.ToInt32(Console.ReadLine());
 
-            if (opcaoInicial != 1 && opcaoInicial != 2)
+            if (opcaoInicial != 1 && opcaoInicial != 2 && opcaoInicial != 3)
                 throw new Exception();
 
             try
@@ -90,7 +91,29 @@ namespace projeto.classes_exercicios
                         else if (opcaoProduto == 3)
                             break;
                     }
+
+                    else if (opcaoInicial == 3)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Menu de Vendas");
+                        Console.WriteLine("1- Vender um produto");
+                        Console.WriteLine("2- Exibir relatório de vendas");
+                        Console.Write("Insira o número do que deseja fazer: ");
+                        int opcaoVenda = Convert.ToInt32(Console.ReadLine());
+
+                        if (opcaoVenda != 1 && opcaoVenda != 2)
+                            throw new Exception();
+
+                        if (opcaoVenda == 1)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Menu Vender Produto");
+                            CriarVenda.CadastrarVenda(venda);
+                            Console.ReadKey();
+                        }
+                    }
                 }
+
             }
             catch (NumeroMenuInexistenteException)
             {
