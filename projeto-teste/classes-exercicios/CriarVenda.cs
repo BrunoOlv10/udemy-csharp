@@ -28,7 +28,7 @@ namespace projeto.classes_exercicios
                 Console.Write("Insira o preço do produto: ");
                 double precoProduto = Convert.ToDouble(Console.ReadLine());
 
-                Console.Write("Insira a quantidade vendidade desse produto: ");
+                Console.Write("Insira a quantidade vendida desse produto: ");
                 int quantidadeVendida = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Insira o nome do funcionário que realizou essa venda: ");

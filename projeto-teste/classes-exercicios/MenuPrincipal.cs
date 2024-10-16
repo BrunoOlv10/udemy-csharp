@@ -96,7 +96,7 @@ namespace projeto.classes_exercicios
                     {
                         Console.WriteLine();
                         Console.WriteLine("Menu de Vendas");
-                        Console.WriteLine("1- Vender um produto");
+                        Console.WriteLine("1- Cadastrar vendas");
                         Console.WriteLine("2- Exibir relatório de vendas");
                         Console.Write("Insira o número do que deseja fazer: ");
                         int opcaoVenda = Convert.ToInt32(Console.ReadLine());
@@ -109,6 +109,14 @@ namespace projeto.classes_exercicios
                             Console.WriteLine();
                             Console.WriteLine("Menu Vender Produto");
                             CriarVenda.CadastrarVenda(venda);
+                            Console.ReadKey();
+                        }
+
+                        if (opcaoVenda == 2)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Relatório de Vendas:");
+                            RelatorioVendas.ObterRelatorioVendas(venda);
                             Console.ReadKey();
                         }
                     }

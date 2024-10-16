@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace projeto.classes_exercicios
 {
-    public class RelatorioProdutos
+    public class RelatorioVendas
     {
-        public static void ObterRelatorioProdutos(ProdutoEmpresa produto)
+        public static void ObterRelatorioVendas(VendaEmpresa venda)
         {
-            produto.ListarProdutos();
+            venda.ListarVendas();
             Console.WriteLine();
-            
-            produto.ListarProdutoAgrupadosPorCategoriaComTotais();
+
+            venda.ListarComissoesVendas();
             Console.WriteLine();
 
             Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");

@@ -35,10 +35,10 @@ namespace projeto.classes_exercicios
 
         public void ListarProdutos()
         {
+            Console.WriteLine();
             Console.WriteLine("Atualmente esses são os produtos da empresa:");
             foreach (var produto in ProdutosEmpresa)
             {
-                Console.WriteLine();
                 Console.WriteLine($"Id: {produto.Id} - Nome: {produto.NomeProduto} - Categoria: {produto.Categoria} - Preço: {produto.Preco}");
             }
         }
@@ -81,13 +81,11 @@ namespace projeto.classes_exercicios
                     subtotal += produto.Preco;
                 }
 
-                Console.WriteLine();
                 Console.WriteLine($"Subtotal da categoria '{categoria.Key}': {subtotal:C2}\n");
 
                 totalGeral += subtotal;
             }
 
-            Console.WriteLine();
             Console.WriteLine($"Total Geral de Todos os Produtos: {totalGeral:C2}");
         }
     }
