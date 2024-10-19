@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace projeto.classes_exercicios
 {
@@ -16,10 +17,11 @@ namespace projeto.classes_exercicios
             Console.WriteLine("1- Ir para menu de funcionários");
             Console.WriteLine("2- Ir para menu de produtos");
             Console.WriteLine("3- Ir para menu de vendas");
+            Console.WriteLine("4- Sair do sistema");
             Console.Write("Insira o número de opção de menu: ");
             int opcaoInicial = Convert.ToInt32(Console.ReadLine());
 
-            if (opcaoInicial != 1 && opcaoInicial != 2 && opcaoInicial != 3)
+            if (opcaoInicial != 1 && opcaoInicial != 2 && opcaoInicial != 3 && opcaoInicial != 4)
                 throw new Exception();
 
             try
@@ -64,12 +66,13 @@ namespace projeto.classes_exercicios
                         Console.WriteLine();
                         Console.WriteLine("Menu de Produtos");
                         Console.WriteLine("1- Cadastrar um produto");
-                        Console.WriteLine("2- Relatório de produtos");
-                        Console.WriteLine("3- Sair do sistema");
+                        Console.WriteLine("2- Alterar preço de produtos por categoria");
+                        Console.WriteLine("3- Relatório de produtos");
+                        Console.WriteLine("4- Sair do sistema");
                         Console.Write("Insira o número do que deseja fazer: ");
                         int opcaoProduto = Convert.ToInt32(Console.ReadLine());
 
-                        if (opcaoProduto != 1 && opcaoProduto != 2 && opcaoProduto != 3)
+                        if (opcaoProduto != 1 && opcaoProduto != 2 && opcaoProduto != 3 && opcaoProduto != 4)
                             throw new Exception();
 
                         if (opcaoProduto == 1)
@@ -83,12 +86,20 @@ namespace projeto.classes_exercicios
                         else if (opcaoProduto == 2)
                         {
                             Console.WriteLine();
+                            Console.WriteLine("Menu Alterar Preços Por Categoria de Produtos");
+                            CriarProduto.ObterCategoriaMudarPreco(produto);
+                            Console.ReadKey();
+                        }
+
+                        else if (opcaoProduto == 3)
+                        {
+                            Console.WriteLine();
                             Console.WriteLine("Menu Obter Relatório de Produtos");
                             RelatorioProdutos.ObterRelatorioProdutos(produto);
                             Console.ReadKey();
                         }
 
-                        else if (opcaoProduto == 3)
+                        else if (opcaoProduto == 4)
                             break;
                     }
 
@@ -98,10 +109,11 @@ namespace projeto.classes_exercicios
                         Console.WriteLine("Menu de Vendas");
                         Console.WriteLine("1- Cadastrar vendas");
                         Console.WriteLine("2- Exibir relatório de vendas");
+                        Console.WriteLine("3- Sair do sistema");
                         Console.Write("Insira o número do que deseja fazer: ");
                         int opcaoVenda = Convert.ToInt32(Console.ReadLine());
 
-                        if (opcaoVenda != 1 && opcaoVenda != 2)
+                        if (opcaoVenda != 1 && opcaoVenda != 2 && opcaoVenda != 3)
                             throw new Exception();
 
                         if (opcaoVenda == 1)
@@ -112,14 +124,20 @@ namespace projeto.classes_exercicios
                             Console.ReadKey();
                         }
 
-                        if (opcaoVenda == 2)
+                        else if (opcaoVenda == 2)
                         {
                             Console.WriteLine();
                             Console.WriteLine("Relatório de Vendas:");
                             RelatorioVendas.ObterRelatorioVendas(venda);
                             Console.ReadKey();
                         }
+
+                        else if (opcaoInicial == 3)
+                            break;
                     }
+
+                    else if (opcaoInicial == 4)
+                        break;
                 }
 
             }

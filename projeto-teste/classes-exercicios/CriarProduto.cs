@@ -43,5 +43,16 @@ namespace projeto.classes_exercicios
             Console.WriteLine();
             Console.ReadKey();
         }
+
+        public static void ObterCategoriaMudarPreco(ProdutoEmpresa produtoEmpresa)
+        {
+            Console.Write("Qual a categoria que será mudado o preço? ");
+            string categoriaEscolhida = Console.ReadLine();
+
+            Console.Write("Qual será o novo preço para os produtos dessa categoria? ");
+            double novoPreco = Convert.ToDouble(Console.ReadLine());
+
+            produtoEmpresa.AlterarPrecoPorCategoria(categoriaEscolhida, novoPreco);
+        }
     }
 }

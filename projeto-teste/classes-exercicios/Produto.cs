@@ -33,6 +33,38 @@ namespace projeto.classes_exercicios
             return ProdutosEmpresa;
         }
 
+        public void AlterarPrecoPorCategoria(string categoriaEscolhida, double novoPreco)
+        {
+            bool categoriaExiste = false;
+
+            foreach (var item in ProdutosEmpresa)
+            {
+                if (item.Categoria == categoriaEscolhida)
+                {
+                    item.Preco = novoPreco;
+                    categoriaExiste = true;
+                }
+            }
+
+            if (categoriaExiste)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Os produtos da categoria '{categoriaEscolhida}' com os preços atualizados:");
+                foreach (var produto in ProdutosEmpresa)
+                {
+                    if (produto.Categoria == categoriaEscolhida)
+                    {
+                        Console.WriteLine($"Id: {produto.Id} - Nome: {produto.NomeProduto} - Categoria: {produto.Categoria} - Preço: {produto.Preco}");
+                    }
+                }
+            }
+
+            else
+            {
+                Console.WriteLine("Não foi encontrado a categoria nos produtos cadastrados");
+            }
+        }
+
         public void ListarProdutos()
         {
             Console.WriteLine();

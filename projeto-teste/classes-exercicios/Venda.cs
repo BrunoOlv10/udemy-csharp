@@ -39,9 +39,11 @@ namespace projeto.classes_exercicios
             return VendasEmpresa;
         }
 
-        public Dictionary<string, Dictionary<string, double>> ComissaoPorProdutoEVendedor()
+        public (Dictionary<string, Dictionary<string, double>>, double) ComissaoPorProdutoEVendedor()
         {
             Dictionary<string, Dictionary<string, double>> ComissaoPorVendador = new Dictionary<string, Dictionary<string, double>>();
+
+            double comissaoTotalGeral = 0;
 
             foreach (var venda in VendasEmpresa)
             {
@@ -58,9 +60,11 @@ namespace projeto.classes_exercicios
                 double comissao = (venda.PrecoProduto * venda.QuantidadeVendida ) * 0.10;
 
                 ComissaoPorVendador[venda.NomeFuncionarioVendeu][venda.NomeProduto] += comissao;
+
+                comissaoTotalGeral += comissao;
             }
 
-            return ComissaoPorVendador;
+            return (ComissaoPorVendador, comissaoTotalGeral);
         }
 
         public Dictionary<string, double> TotalComissaoPorVendedor(Dictionary<string, Dictionary<string, double>> comissaoPorVendedor)
@@ -83,7 +87,7 @@ namespace projeto.classes_exercicios
 
         public void ListarComissoesVendas()
         {
-            var comissaoPorProdutoEVendedor = ComissaoPorProdutoEVendedor();
+            var (comissaoPorProdutoEVendedor, comissaoTotalGeral) = ComissaoPorProdutoEVendedor();
             var totalComissaoPorVendedor = TotalComissaoPorVendedor(comissaoPorProdutoEVendedor);
 
             foreach (var vendedor in comissaoPorProdutoEVendedor)
@@ -102,6 +106,8 @@ namespace projeto.classes_exercicios
             {
                 Console.WriteLine($"Vendedor: {vendedor.Key}, Total de Comissão: {vendedor.Value}");
             }
+
+            Console.WriteLine($"Total de comissão pago pela loja aos funcionários: {comissaoTotalGeral}");
         }
 
         public void ListarVendas()
