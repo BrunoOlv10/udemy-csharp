@@ -26,6 +26,11 @@ namespace projeto.classes_exercicios
     {
         List<Produto> ProdutosEmpresa = new List<Produto>();
 
+        public List<Produto> ObterProdutos()
+        {
+            return ProdutosEmpresa;
+        }
+
         public List<Produto> AdicionarProduto(Produto produto)
         {
             ProdutosEmpresa.Add(produto);
@@ -33,36 +38,39 @@ namespace projeto.classes_exercicios
             return ProdutosEmpresa;
         }
 
-        public void AlterarPrecoPorCategoria(string categoriaEscolhida, double novoPreco)
+        public List<Produto> AlterarPrecoPorCategoria(string categoriaEscolhida, int porcentagemAumento)
         {
-            bool categoriaExiste = false;
+            List<Produto> ProdutosComAumento = new List<Produto>();
 
             foreach (var item in ProdutosEmpresa)
             {
                 if (item.Categoria == categoriaEscolhida)
                 {
-                    item.Preco = novoPreco;
-                    categoriaExiste = true;
+                    double calcularAumento = (porcentagemAumento / 100.0);
+                    item.Preco += item.Preco * calcularAumento;
+                    ProdutosComAumento.Add(item);
                 }
             }
 
-            if (categoriaExiste)
-            {
-                Console.WriteLine();
+            return ProdutosComAumento;
+        }
+
+        public void ListarProdutosPrecosReajustados(List<Produto> ProdutosComAumento, string categoriaEscolhida)
+        {
+            Console.WriteLine();
+            //if (ProdutosComAumento.Count > 0)
+            //{
                 Console.WriteLine($"Os produtos da categoria '{categoriaEscolhida}' com os preços atualizados:");
-                foreach (var produto in ProdutosEmpresa)
+                foreach (var produto in ProdutosComAumento)
                 {
-                    if (produto.Categoria == categoriaEscolhida)
-                    {
-                        Console.WriteLine($"Id: {produto.Id} - Nome: {produto.NomeProduto} - Categoria: {produto.Categoria} - Preço: {produto.Preco}");
-                    }
+                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.NomeProduto} - Categoria: {produto.Categoria} - Preço Reajustado: {produto.Preco}");
                 }
-            }
+            //}
 
-            else
-            {
-                Console.WriteLine("Não foi encontrado a categoria nos produtos cadastrados");
-            }
+            //else
+            //{
+            //    Console.WriteLine("Não foi encontrado a categoria nos produtos cadastrados");
+            //}
         }
 
         public void ListarProdutos()

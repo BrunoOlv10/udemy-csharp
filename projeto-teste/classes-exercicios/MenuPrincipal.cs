@@ -87,7 +87,7 @@ namespace projeto.classes_exercicios
                         {
                             Console.WriteLine();
                             Console.WriteLine("Menu Alterar Preços Por Categoria de Produtos");
-                            CriarProduto.ObterCategoriaMudarPreco(produto);
+                            CriarProduto.ObterInfosMudarPreco(produto);
                             Console.ReadKey();
                         }
 
