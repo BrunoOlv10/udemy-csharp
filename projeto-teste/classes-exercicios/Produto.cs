@@ -38,6 +38,28 @@ namespace projeto.classes_exercicios
             return ProdutosEmpresa;
         }
 
+        public static void ObterInfosMudarPreco(ProdutoEmpresa produtoEmpresa)
+        {
+            Console.Write("Qual a categoria que será mudado o preço? ");
+            string categoriaEscolhida = Console.ReadLine();
+
+            bool categoriaExiste = produtoEmpresa.ObterProdutos().Any(p => p.Categoria == categoriaEscolhida);
+
+            if (!categoriaExiste)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Categoria não encontrada!");
+                return;
+            }
+
+            Console.Write("Quanto será o aumento do preço do produto (em porcentagem, apenas o valor)? ");
+            int porcentagemAumento = Convert.ToInt32(Console.ReadLine());
+
+            List<Produto> ProdutosComAumento = produtoEmpresa.AlterarPrecoPorCategoria(categoriaEscolhida, porcentagemAumento);
+
+            produtoEmpresa.ListarProdutosPrecosReajustados(ProdutosComAumento, categoriaEscolhida);
+        }
+
         public List<Produto> AlterarPrecoPorCategoria(string categoriaEscolhida, int porcentagemAumento)
         {
             List<Produto> ProdutosComAumento = new List<Produto>();
@@ -58,19 +80,11 @@ namespace projeto.classes_exercicios
         public void ListarProdutosPrecosReajustados(List<Produto> ProdutosComAumento, string categoriaEscolhida)
         {
             Console.WriteLine();
-            //if (ProdutosComAumento.Count > 0)
-            //{
-                Console.WriteLine($"Os produtos da categoria '{categoriaEscolhida}' com os preços atualizados:");
-                foreach (var produto in ProdutosComAumento)
-                {
-                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.NomeProduto} - Categoria: {produto.Categoria} - Preço Reajustado: {produto.Preco}");
-                }
-            //}
-
-            //else
-            //{
-            //    Console.WriteLine("Não foi encontrado a categoria nos produtos cadastrados");
-            //}
+            Console.WriteLine($"Os produtos da categoria '{categoriaEscolhida}' com os preços atualizados:");
+            foreach (var produto in ProdutosComAumento)
+            {
+                Console.WriteLine($"Id: {produto.Id} - Nome: {produto.NomeProduto} - Categoria: {produto.Categoria} - Preço Reajustado: {produto.Preco}");
+            }
         }
 
         public void ListarProdutos()

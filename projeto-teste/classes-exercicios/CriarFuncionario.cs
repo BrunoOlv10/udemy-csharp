@@ -31,8 +31,6 @@ namespace projeto.classes_exercicios
                 Funcionario funcionario = new Funcionario(nome, sobrenome, cargo);
 
                 funcionarioEmpresa.AdicionarFuncionario(funcionario);
-
-                Console.WriteLine();
             }
 
             Console.WriteLine("Funcionários cadastrados com sucesso!");

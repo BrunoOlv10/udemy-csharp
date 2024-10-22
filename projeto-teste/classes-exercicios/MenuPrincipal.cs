@@ -14,18 +14,20 @@ namespace projeto.classes_exercicios
     {
         public static void SelecionarMenu(FuncionarioEmpresa funcionario, ProdutoEmpresa produto, VendaEmpresa venda)
         {
-            Console.WriteLine("1- Ir para menu de funcionários");
-            Console.WriteLine("2- Ir para menu de produtos");
-            Console.WriteLine("3- Ir para menu de vendas");
-            Console.WriteLine("4- Sair do sistema");
-            Console.Write("Insira o número de opção de menu: ");
-            int opcaoInicial = Convert.ToInt32(Console.ReadLine());
-
-            if (opcaoInicial != 1 && opcaoInicial != 2 && opcaoInicial != 3 && opcaoInicial != 4)
-                throw new Exception();
-
             try
             {
+                Console.WriteLine("1- Ir para menu de funcionários");
+                Console.WriteLine("2- Ir para menu de produtos");
+                Console.WriteLine("3- Ir para menu de vendas");
+                Console.WriteLine("4- Sair do sistema");
+                Console.Write("Insira o número de opção de menu: ");
+                int opcaoInicial = Convert.ToInt32(Console.ReadLine());
+
+                if (opcaoInicial != 1 && opcaoInicial != 2 && opcaoInicial != 3 && opcaoInicial != 4)
+                {
+                    throw new NumeroMenuInexistenteException();
+                }
+
                 while (true)
                 {
                     if (opcaoInicial == 1)
@@ -87,7 +89,7 @@ namespace projeto.classes_exercicios
                         {
                             Console.WriteLine();
                             Console.WriteLine("Menu Alterar Preços Por Categoria de Produtos");
-                            CriarProduto.ObterInfosMudarPreco(produto);
+                            ProdutoEmpresa.ObterInfosMudarPreco(produto);
                             Console.ReadKey();
                         }
 
@@ -141,16 +143,10 @@ namespace projeto.classes_exercicios
                 }
 
             }
-            catch (NumeroMenuInexistenteException)
+            catch (Exception ex) when (ex is NumeroMenuInexistenteException || ex is System.FormatException)
             {
                 Console.WriteLine();
-                Console.WriteLine("Insira um dos números de opções de menu disponíveis!");
-                Console.ReadKey();
-            }
-            catch (System.FormatException)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Insira um número válido nas entradas que solicitam algum valor numérico!");
+                Console.WriteLine("Insira um dos números disponíveis no menu");
                 Console.ReadKey();
             }
         }

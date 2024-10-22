@@ -35,7 +35,10 @@ namespace projeto.classes_exercicios
 
         public List<Funcionario> ObterRelatorioFuncionariosPorSobrenome()
         {
-            return FuncionariosEmpresa.OrderBy(f => f.Sobrenome).ToList();
+            return FuncionariosEmpresa
+                    .OrderBy(f => f.Sobrenome)
+                    .ThenBy(f => f.Nome)
+                    .ToList();
         }
 
         public Dictionary<string, int> ContarFuncionariosPorCargo()
