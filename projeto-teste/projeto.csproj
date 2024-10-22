@@ -226,6 +226,7 @@
     <Compile Include="classes\PessoaJuridica.cs" />
     <Compile Include="conversao-tipos-dados.cs" />
     <Compile Include="classes\CriacaoObjeto.cs" />
+    <Compile Include="dicionarios.cs" />
     <Compile Include="estruturas-condicionais.cs" />
     <Compile Include="estruturas-repeticao.cs" />
     <Compile Include="ex10-frase-invertida.cs" />
