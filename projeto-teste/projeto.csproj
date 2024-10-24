@@ -348,6 +348,7 @@
     <Compile Include="repeticao-exs\ex9-soma-numeros-primos.cs" />
     <Compile Include="testar-exs.cs" />
     <Compile Include="try-catch.cs" />
+    <Compile Include="tuplas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

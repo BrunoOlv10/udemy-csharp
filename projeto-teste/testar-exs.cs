@@ -20,7 +20,7 @@ namespace projeto
             //VendaEmpresa venda = new VendaEmpresa();
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
-            dicionarios.testandoDicionarios();
+            tuplas.TestandoTupla();
         }
     }
 }
