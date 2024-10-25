@@ -18,10 +18,12 @@ namespace projeto.classes_exercicios
 
             var funcionariosPorCargo = empresa.ContarFuncionariosPorCargo();
             Console.WriteLine("Total de funcionários por cargo:");
+
             foreach (var cargo in funcionariosPorCargo)
             {
                 Console.WriteLine($"{cargo.Key}: {cargo.Value} funcionário(s)");
             }
+
             Console.WriteLine();
 
             int totalFuncionarios = empresa.ObterTotalFuncionarios();

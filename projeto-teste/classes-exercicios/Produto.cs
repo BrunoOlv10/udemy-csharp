@@ -26,11 +26,6 @@ namespace projeto.classes_exercicios
     {
         List<Produto> ProdutosEmpresa = new List<Produto>();
 
-        public List<Produto> ObterProdutos()
-        {
-            return ProdutosEmpresa;
-        }
-
         public List<Produto> AdicionarProduto(Produto produto)
         {
             ProdutosEmpresa.Add(produto);
@@ -38,9 +33,14 @@ namespace projeto.classes_exercicios
             return ProdutosEmpresa;
         }
 
-        public static void ObterInfosMudarPreco(ProdutoEmpresa produtoEmpresa)
+        public List<Produto> ObterProdutos()
         {
-            Console.Write("Qual a categoria que será mudado o preço? ");
+            return ProdutosEmpresa;
+        }
+
+        public static void ObterInfosAlterarPreco(ProdutoEmpresa produtoEmpresa)
+        {
+            Console.Write("Qual a categoria que será alterado o preço? ");
             string categoriaEscolhida = Console.ReadLine();
 
             bool categoriaExiste = produtoEmpresa.ObterProdutos().Any(p => p.Categoria == categoriaEscolhida);
@@ -52,7 +52,7 @@ namespace projeto.classes_exercicios
                 return;
             }
 
-            Console.Write("Quanto será o aumento do preço do produto (em porcentagem, apenas o valor)? ");
+            Console.Write("Quanto será o aumento, em porcentagem, do preço do produto (sem o sinal %)? ");
             int porcentagemAumento = Convert.ToInt32(Console.ReadLine());
 
             List<Produto> ProdutosComAumento = produtoEmpresa.AlterarPrecoPorCategoria(categoriaEscolhida, porcentagemAumento);
@@ -90,33 +90,11 @@ namespace projeto.classes_exercicios
         public void ListarProdutos()
         {
             Console.WriteLine();
-            Console.WriteLine("Atualmente esses são os produtos da empresa:");
+            Console.WriteLine("Esses são os produtos da empresa:");
             foreach (var produto in ProdutosEmpresa)
             {
                 Console.WriteLine($"Id: {produto.Id} - Nome: {produto.NomeProduto} - Categoria: {produto.Categoria} - Preço: {produto.Preco}");
             }
-        }
-
-        public List<Produto> ObterProdutosPorNome()
-        {
-            return ProdutosEmpresa.OrderBy(p => p.NomeProduto).ToList();
-        }
-
-        public Dictionary<string, List<Produto>> AgruparProdutosPorCategoria()
-        {
-            Dictionary<string, List<Produto>> ProdutosAgrupadosPorCategoria = new Dictionary<string, List<Produto>>();
-
-            foreach (var item in ProdutosEmpresa)
-            {
-                if (!ProdutosAgrupadosPorCategoria.ContainsKey(item.Categoria))
-                {
-                    ProdutosAgrupadosPorCategoria[item.Categoria] = new List<Produto>();
-                }
-
-                ProdutosAgrupadosPorCategoria[item.Categoria].Add(item);
-            }
-
-            return ProdutosAgrupadosPorCategoria;
         }
 
         public void ListarProdutoAgrupadosPorCategoriaComTotais()
@@ -142,5 +120,27 @@ namespace projeto.classes_exercicios
 
             Console.WriteLine($"Total Geral de Todos os Produtos: {totalGeral:C2}");
         }
+
+        public Dictionary<string, List<Produto>> AgruparProdutosPorCategoria()
+        {
+            Dictionary<string, List<Produto>> ProdutosAgrupadosPorCategoria = new Dictionary<string, List<Produto>>();
+
+            foreach (var item in ProdutosEmpresa)
+            {
+                if (!ProdutosAgrupadosPorCategoria.ContainsKey(item.Categoria))
+                {
+                    ProdutosAgrupadosPorCategoria[item.Categoria] = new List<Produto>();
+                }
+
+                ProdutosAgrupadosPorCategoria[item.Categoria].Add(item);
+            }
+
+            return ProdutosAgrupadosPorCategoria;
+        }
+
+        //public List<Produto> ObterProdutosPorNome()
+        //{
+        //    return ProdutosEmpresa.OrderBy(p => p.NomeProduto).ToList();
+        //}
     }
 }

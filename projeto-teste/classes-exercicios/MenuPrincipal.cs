@@ -34,7 +34,7 @@ namespace projeto.classes_exercicios
                     {
                         Console.WriteLine();
                         Console.WriteLine("Menu de Funcionários");
-                        Console.WriteLine("1- Cadastrar um funcionário novo");
+                        Console.WriteLine("1- Cadastrar funcionários");
                         Console.WriteLine("2- Relatório de funcionários");
                         Console.WriteLine("3- Sair do sistema");
                         Console.Write("Insira o número do que deseja fazer: ");
@@ -46,8 +46,8 @@ namespace projeto.classes_exercicios
                         if (opcaoFuncionario == 1)
                         {
                             Console.WriteLine();
-                            Console.WriteLine("Menu Cadastrar Funcionário");
-                            CriarFuncionario.CadastrarNovoFuncionario(funcionario);
+                            Console.WriteLine("Menu Cadastrar Funcionários");
+                            CriarFuncionario.CadastrarNovosFuncionarios(funcionario);
                             Console.ReadKey();
                         }
 
@@ -67,7 +67,7 @@ namespace projeto.classes_exercicios
                     {
                         Console.WriteLine();
                         Console.WriteLine("Menu de Produtos");
-                        Console.WriteLine("1- Cadastrar um produto");
+                        Console.WriteLine("1- Cadastrar produtos");
                         Console.WriteLine("2- Alterar preço de produtos por categoria");
                         Console.WriteLine("3- Relatório de produtos");
                         Console.WriteLine("4- Sair do sistema");
@@ -80,7 +80,7 @@ namespace projeto.classes_exercicios
                         if (opcaoProduto == 1)
                         {
                             Console.WriteLine();
-                            Console.WriteLine("Menu Cadastrar Produto");
+                            Console.WriteLine("Menu Cadastrar Produtos");
                             CriarProduto.CadastrarProduto(produto);
                             Console.ReadKey();
                         }
@@ -88,8 +88,8 @@ namespace projeto.classes_exercicios
                         else if (opcaoProduto == 2)
                         {
                             Console.WriteLine();
-                            Console.WriteLine("Menu Alterar Preços Por Categoria de Produtos");
-                            ProdutoEmpresa.ObterInfosMudarPreco(produto);
+                            Console.WriteLine("Menu Alterar Preços de Produtos Por Categoria");
+                            ProdutoEmpresa.ObterInfosAlterarPreco(produto);
                             Console.ReadKey();
                         }
 
@@ -108,7 +108,7 @@ namespace projeto.classes_exercicios
                     else if (opcaoInicial == 3)
                     {
                         Console.WriteLine();
-                        Console.WriteLine("Menu de Vendas");
+                        Console.WriteLine("Menu Vendas de Produtos");
                         Console.WriteLine("1- Cadastrar vendas");
                         Console.WriteLine("2- Exibir relatório de vendas");
                         Console.WriteLine("3- Sair do sistema");
@@ -121,7 +121,7 @@ namespace projeto.classes_exercicios
                         if (opcaoVenda == 1)
                         {
                             Console.WriteLine();
-                            Console.WriteLine("Menu Vender Produto");
+                            Console.WriteLine("Cadastrar Vendas:");
                             CriarVenda.CadastrarVenda(venda);
                             Console.ReadKey();
                         }

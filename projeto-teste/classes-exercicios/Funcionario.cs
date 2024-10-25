@@ -33,30 +33,10 @@ namespace projeto.classes_exercicios
             return FuncionariosEmpresa;
         }
 
-        public List<Funcionario> ObterRelatorioFuncionariosPorSobrenome()
-        {
-            return FuncionariosEmpresa
-                    .OrderBy(f => f.Sobrenome)
-                    .ThenBy(f => f.Nome)
-                    .ToList();
-        }
-
-        public Dictionary<string, int> ContarFuncionariosPorCargo()
-        {
-            return FuncionariosEmpresa
-                .GroupBy(f => f.Cargo)
-                .ToDictionary(g => g.Key, g => g.Count());
-        }
-
-        public int ObterTotalFuncionarios()
-        {
-            return FuncionariosEmpresa.Count;
-        }
-
         public void ListarFuncionarios()
         {
             Console.WriteLine();
-            Console.WriteLine("Atualmente esses são os funcionários da empresa:");
+            Console.WriteLine("Esses são os funcionários da empresa:");
             foreach (var funcionario in FuncionariosEmpresa)
             {
                 Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
@@ -79,6 +59,26 @@ namespace projeto.classes_exercicios
                 }
             }
         }
-    }
 
+        public List<Funcionario> ObterRelatorioFuncionariosPorSobrenome()
+        {
+            return FuncionariosEmpresa
+                    .OrderBy(f => f.Sobrenome)
+                    .ThenBy(f => f.Nome)
+                    .ToList();
+        }
+
+        public Dictionary<string, int> ContarFuncionariosPorCargo()
+        {
+            return FuncionariosEmpresa
+                .GroupBy(f => f.Cargo)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
+
+        public int ObterTotalFuncionarios()
+        {
+            return FuncionariosEmpresa.Count;
+        }
+
+    }
 }

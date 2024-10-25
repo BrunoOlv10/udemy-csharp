@@ -22,16 +22,16 @@ namespace projeto.classes_exercicios
                 Console.Write("Insira o nome do produto vendido: ");
                 string nomeProduto = Console.ReadLine();
 
-                Console.Write("Insira a descrição do produto: ");
+                Console.Write("Insira a descrição: ");
                 string descricaoProduto = Console.ReadLine();
 
-                Console.Write("Insira o preço do produto: ");
+                Console.Write("Insira o preço: ");
                 double precoProduto = Convert.ToDouble(Console.ReadLine());
 
-                Console.Write("Insira a quantidade vendida desse produto: ");
+                Console.Write("Insira a quantidade vendida: ");
                 int quantidadeVendida = Convert.ToInt32(Console.ReadLine());
 
-                Console.Write("Insira o nome do funcionário que realizou essa venda: ");
+                Console.Write("Insira o nome do funcionário que realizou a venda: ");
                 string nomeFuncionarioVendeu = Console.ReadLine();
 
                 Console.Write("Insira a data que a venda foi realizada: ");

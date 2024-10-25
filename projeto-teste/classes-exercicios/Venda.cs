@@ -39,6 +39,42 @@ namespace projeto.classes_exercicios
             return VendasEmpresa;
         }
 
+        public void ListarVendas()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Essas foram as vendas realizadas: ");
+            foreach (var venda in VendasEmpresa)
+            {
+                Console.WriteLine($"Nome: {venda.NomeProduto} - Descrição: {venda.DscricaoProduto} - Preco: {venda.PrecoProduto} - Nome do funcionário que vendeu: {venda.NomeFuncionarioVendeu} - " +
+                    $"Data da venda: {venda.DataVenda} - Quantidade vendida: {venda.QuantidadeVendida}");
+            }
+        }
+
+        public void ListarComissoesVendas()
+        {
+            var (comissaoPorProdutoEVendedor, comissaoTotalGeral) = ComissaoPorProdutoEVendedor();
+            var totalComissaoPorVendedor = TotalComissaoPorVendedor(comissaoPorProdutoEVendedor);
+
+            foreach (var vendedor in comissaoPorProdutoEVendedor)
+            {
+                Console.WriteLine($"Vendedor: {vendedor.Key}");
+                foreach (var produto in vendedor.Value)
+                {
+                    Console.WriteLine($"Produto: {produto.Key}, Comissão: {produto.Value}");
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Total de comissões por vendedor:");
+            foreach (var vendedor in totalComissaoPorVendedor)
+            {
+                Console.WriteLine($"Vendedor: {vendedor.Key}, Total de Comissão: {vendedor.Value}");
+            }
+
+            Console.WriteLine($"Total de comissão pago aos funcionários: {comissaoTotalGeral}");
+        }
+
         public (Dictionary<string, Dictionary<string, double>>, double) ComissaoPorProdutoEVendedor()
         {
             Dictionary<string, Dictionary<string, double>> ComissaoPorVendador = new Dictionary<string, Dictionary<string, double>>();
@@ -85,57 +121,21 @@ namespace projeto.classes_exercicios
             return totalComissaoPorVendedor;
         }
 
-        public void ListarComissoesVendas()
-        {
-            var (comissaoPorProdutoEVendedor, comissaoTotalGeral) = ComissaoPorProdutoEVendedor();
-            var totalComissaoPorVendedor = TotalComissaoPorVendedor(comissaoPorProdutoEVendedor);
+        //public Dictionary<string, List<Venda>> VendasPorFuncionario()
+        //{
+        //    Dictionary<string, List<Venda>> VendasPorFuncionario = new Dictionary<string, List<Venda>>();
 
-            foreach (var vendedor in comissaoPorProdutoEVendedor)
-            {
-                Console.WriteLine($"Vendedor: {vendedor.Key}");
-                foreach (var produto in vendedor.Value)
-                {
-                    Console.WriteLine($"Produto: {produto.Key}, Comissão: {produto.Value}");
-                }
+        //    foreach (var venda in VendasEmpresa)
+        //    {
+        //        if (!VendasPorFuncionario.ContainsKey(venda.NomeFuncionarioVendeu))
+        //        {
+        //            VendasPorFuncionario[venda.NomeFuncionarioVendeu] = new List<Venda>();
+        //        }
 
-                Console.WriteLine();
-            }
+        //        VendasPorFuncionario[venda.NomeFuncionarioVendeu].Add(venda);
+        //    }
 
-            Console.WriteLine("Total de comissões por vendedor:");
-            foreach (var vendedor in totalComissaoPorVendedor)
-            {
-                Console.WriteLine($"Vendedor: {vendedor.Key}, Total de Comissão: {vendedor.Value}");
-            }
-
-            Console.WriteLine($"Total de comissão pago pela loja aos funcionários: {comissaoTotalGeral}");
-        }
-
-        public void ListarVendas()
-        {
-            Console.WriteLine();
-            Console.WriteLine("Essas foram as vendas realizadas: ");
-            foreach (var venda in VendasEmpresa)
-            {
-                Console.WriteLine($"Nome do produto: {venda.NomeProduto} - Descricao: {venda.DscricaoProduto} - Preco: {venda.PrecoProduto} - Nome do funcionário que vendeu: {venda.NomeFuncionarioVendeu} - " +
-                    $"Data da venda: {venda.DataVenda} - Quantidade vendida: {venda.QuantidadeVendida}");
-            }
-        }
-
-        public Dictionary<string, List<Venda>> VendasPorFuncionario()
-        {
-            Dictionary<string, List<Venda>> VendasPorFuncionario = new Dictionary<string, List<Venda>>();
-
-            foreach (var venda in VendasEmpresa)
-            {
-                if (!VendasPorFuncionario.ContainsKey(venda.NomeFuncionarioVendeu))
-                {
-                    VendasPorFuncionario[venda.NomeFuncionarioVendeu] = new List<Venda>();
-                }
-
-                VendasPorFuncionario[venda.NomeFuncionarioVendeu].Add(venda);
-            }
-
-            return VendasPorFuncionario;
-        }
+        //    return VendasPorFuncionario;
+        //}
     }
 }
