@@ -15,10 +15,12 @@ namespace projeto
     {
         static void Main(string[] args)
         {
-            FuncionarioEmpresa funcionario = new FuncionarioEmpresa();
-            ProdutoEmpresa produto = new ProdutoEmpresa();
-            VendaEmpresa venda = new VendaEmpresa();
-            Menu_Principal.SelecionarMenu(funcionario, produto, venda);
+            //FuncionarioEmpresa funcionario = new FuncionarioEmpresa();
+            //ProdutoEmpresa produto = new ProdutoEmpresa();
+            //VendaEmpresa venda = new VendaEmpresa();
+            //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
+
+            repeticao_exs3.ex20_ano_nascimento.EncontrarAno();
         }
     }
 }
