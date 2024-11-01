@@ -20,7 +20,7 @@ namespace projeto
             //VendaEmpresa venda = new VendaEmpresa();
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
-            repeticao_exs3.ex20_ano_nascimento.EncontrarAno();
+            repeticao_exs3.ex21_dias_mes.EncontrarDiasMes();
         }
     }
 }
