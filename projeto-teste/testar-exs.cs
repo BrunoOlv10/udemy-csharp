@@ -21,7 +21,7 @@ namespace projeto
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
             // faltando acertar a lógica para sequência sair certa depois que passa do 3
-            repeticao_exs3.ex23_sequencia_fibonacci.GerarSequenciaFibonacci();
+            repeticao_exs3.ex24_letras_alfabeto.GerarAlfabeto();
         }
     }
 }
