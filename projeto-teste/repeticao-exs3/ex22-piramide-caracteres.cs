@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DocumentFormat.OpenXml.Drawing;
 
 namespace projeto.repeticao_exs3
 {
@@ -15,8 +16,16 @@ namespace projeto.repeticao_exs3
                 Console.Write("Insira o caractere ou a sequência de caracteres que formará a pirâmide: ");
                 string caractere = Console.ReadLine();
 
-                Console.Write("Digite a altura que terá a pirâmide: ");
+                Console.Write("Digite a altura que terá a pirâmide (entre 1 e 50): ");
                 int altura = Convert.ToInt32(Console.ReadLine());
+
+                if (altura <= 1 || altura >= 50)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Digite uma altura entre 1 e 50");
+                    Console.ReadKey();
+                    return;
+                }
 
                 Console.WriteLine();
 

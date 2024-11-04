@@ -20,7 +20,8 @@ namespace projeto
             //VendaEmpresa venda = new VendaEmpresa();
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
-            repeticao_exs3.ex22_piramide_caracteres.GerarPiramide();
+            // faltando acertar a lógica para sequência sair certa depois que passa do 3
+            repeticao_exs3.ex23_sequencia_fibonacci.GerarSequenciaFibonacci();
         }
     }
 }
