@@ -317,6 +317,9 @@
     <Compile Include="repeticao-exs3\ex22-piramide-caracteres.cs" />
     <Compile Include="repeticao-exs3\ex23-sequencia-fibonacci.cs" />
     <Compile Include="repeticao-exs3\ex24-letras-alfabeto.cs" />
+    <Compile Include="repeticao-exs3\ex25-elementos-array.cs" />
+    <Compile Include="repeticao-exs3\ex26-soma-elementos-array.cs" />
+    <Compile Include="repeticao-exs3\ex27-transferir-elementos-array.cs" />
     <Compile Include="repeticao-exs3\ex3-media.cs" />
     <Compile Include="repeticao-exs3\ex5-remover-caractere-especifico.cs" />
     <Compile Include="repeticao-exs3\ex6-mudar-caractere-posicao.cs" />
