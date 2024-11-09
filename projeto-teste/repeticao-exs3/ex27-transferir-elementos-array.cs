@@ -11,12 +11,12 @@ namespace projeto.repeticao_exs3
         public static void TransferirArray()
         {
             Console.Write("Insira os dados para o primeiro array (separados por vírgulas): ");
-            string entrada1 = Console.ReadLine().Trim();
-            string[] array1 = entrada1.Split(',');
+            string entrada1 = Console.ReadLine();
+            string[] array1 = entrada1.Split(',').Select(e => e.Trim()).ToArray();
 
             Console.Write("Insira os dados para o segundo array (separados por vírgulas): ");
-            string entrada2 = Console.ReadLine().Trim();
-            string[] array2 = entrada2.Split(',');
+            string entrada2 = Console.ReadLine();
+            string[] array2 = entrada2.Split(',').Select(e => e.Trim()).ToArray();
 
             if (entrada1.Length == 0 || entrada2.Length == 0)
             {
