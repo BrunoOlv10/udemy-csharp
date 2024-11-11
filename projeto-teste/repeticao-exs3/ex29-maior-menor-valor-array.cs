@@ -24,14 +24,10 @@ namespace projeto.repeticao_exs3
                 foreach (var numero in array)
                 {
                     if (numero > maiorValor)
-                    {
                         maiorValor = numero;
-                    }
 
                     if (numero < menorValor)
-                    {
                         menorValor = numero;
-                    }
                 }
 
                 Console.WriteLine();
