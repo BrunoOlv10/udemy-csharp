@@ -76,7 +76,7 @@ namespace projeto.repeticao_exs3
                     Console.Write("Qual elemento será buscado no array? ");
                     string elemento = Console.ReadLine();
 
-                    if (elemento == string.Empty)
+                    if (string.IsNullOrWhiteSpace(elemento))
                     {
                         Console.WriteLine();
                         Console.WriteLine("É necessário digitar algo para poder realizar a busca");
