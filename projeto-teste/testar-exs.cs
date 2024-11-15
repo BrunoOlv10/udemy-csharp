@@ -20,7 +20,7 @@ namespace projeto
             //VendaEmpresa venda = new VendaEmpresa();
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
-            repeticao_exs3.ex31_ordenar_array_string.OrdenarArray();
+            repeticao_exs3.ex32_ordenar_strings_bubble_sort.OrdenarBubbleSort();
         }
     }
 }
