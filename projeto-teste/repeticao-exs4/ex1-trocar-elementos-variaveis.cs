@@ -25,6 +25,14 @@ namespace projeto.repeticao_exs4
                     elemento2 = entrada;
             }
 
+            if (string.IsNullOrWhiteSpace(elemento1) || string.IsNullOrWhiteSpace(elemento2))
+            {
+                Console.WriteLine();
+                Console.WriteLine("É necessário inserir algo nas duas vezes que o sistema pedir");
+                Console.ReadKey();
+                return;
+            }
+
             var aux = elemento1;
             string elementoTrocado1 = elemento2;
             string elementoTrocado2 = aux;
