@@ -21,7 +21,6 @@ namespace projeto
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
             repeticao_exs4.ex4_retangulo.GerarRetangulo();
-            // não finalizado
         }
     }
 }

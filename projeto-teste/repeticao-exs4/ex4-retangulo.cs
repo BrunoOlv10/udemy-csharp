@@ -31,9 +31,9 @@ namespace projeto.repeticao_exs4
 
                 Console.WriteLine();
 
-                if (largura < 1 || altura < 1)
+                if (largura <= 1 || altura <= 2)
                 {
-                    Console.WriteLine("Altura e largura tem que ser maiores que zero.");
+                    Console.WriteLine("A altura tem que ser maior que 2 e largura tem que ser maior que 1");
                     Console.ReadKey();
                     return;
                 }
