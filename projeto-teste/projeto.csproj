@@ -332,6 +332,7 @@
     <Compile Include="repeticao-exs3\ex8-palavra-longa.cs" />
     <Compile Include="repeticao-exs3\ex9-soma-numeros-primos.cs" />
     <Compile Include="repeticao-exs4\ex1-trocar-elementos-variaveis.cs" />
+    <Compile Include="repeticao-exs4\ex10-frase-invertida.cs" />
     <Compile Include="repeticao-exs4\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs4\ex3-media.cs" />
     <Compile Include="repeticao-exs4\ex4-retangulo.cs" />
