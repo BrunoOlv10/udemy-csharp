@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using curso_udemy.classes;
 using curso_udemy.recuperar_instituicao_ano;
-using DocumentFormat.OpenXml.ExtendedProperties;
 using projeto.classes;
 using projeto.classes_exercicios;
 
@@ -20,7 +19,7 @@ namespace projeto
             //VendaEmpresa venda = new VendaEmpresa();
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
-            repeticao_exs4.ex10_frase_invertida.InverterFrase();
+            repeticao_exs4.ex11_contem_palavra.ContemPalavra();
         }
     }
 }
