@@ -19,7 +19,7 @@ namespace projeto
             //VendaEmpresa venda = new VendaEmpresa();
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
-            repeticao_exs4.ex12_valor_mais_proximo.EncontrarMaisProximo();
+            repeticao_exs4.ex13_maiuscula_minuscula.TransformarMaiusculaMinuscula();
         }
     }
 }
