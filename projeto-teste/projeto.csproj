@@ -333,6 +333,7 @@
     <Compile Include="repeticao-exs4\ex11-contem-palavra.cs" />
     <Compile Include="repeticao-exs4\ex12-valor-mais-proximo.cs" />
     <Compile Include="repeticao-exs4\ex13-maiuscula-minuscula.cs" />
+    <Compile Include="repeticao-exs4\ex15-soma-array.cs" />
     <Compile Include="repeticao-exs4\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs4\ex3-media.cs" />
     <Compile Include="repeticao-exs4\ex4-retangulo.cs" />
