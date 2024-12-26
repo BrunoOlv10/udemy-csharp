@@ -19,7 +19,7 @@ namespace projeto
             //VendaEmpresa venda = new VendaEmpresa();
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
-            repeticao_exs4.ex15_soma_array.SomarArray();
+            repeticao_exs4.ex17_maior_valor_array.MaiorMenorArray();
         }
     }
 }
