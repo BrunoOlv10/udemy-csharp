@@ -334,6 +334,7 @@
     <Compile Include="repeticao-exs4\ex16-girar-array.cs" />
     <Compile Include="repeticao-exs4\ex17-maior-menor-valor-array.cs" />
     <Compile Include="repeticao-exs4\ex18-palindromo.cs" />
+    <Compile Include="repeticao-exs4\ex19-conversao-temperatura.cs" />
     <Compile Include="repeticao-exs4\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs4\ex3-media.cs" />
     <Compile Include="repeticao-exs4\ex4-retangulo.cs" />
