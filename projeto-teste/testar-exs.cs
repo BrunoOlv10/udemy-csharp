@@ -19,7 +19,7 @@ namespace projeto
             //VendaEmpresa venda = new VendaEmpresa();
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
-            repeticao_exs4.ex19_conversao_celsius_fahrenheit.ConversaoTemperatura();
+            repeticao_exs4.ex20_ano_nascimento.DescobrirNascimento();
         }
     }
 }
