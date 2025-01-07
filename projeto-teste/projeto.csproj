@@ -337,6 +337,7 @@
     <Compile Include="repeticao-exs4\ex19-conversao-temperatura.cs" />
     <Compile Include="repeticao-exs4\ex2-multiplicao.cs" />
     <Compile Include="repeticao-exs4\ex20-ano-nascimento.cs" />
+    <Compile Include="repeticao-exs4\ex21-dias-mes.cs" />
     <Compile Include="repeticao-exs4\ex3-media.cs" />
     <Compile Include="repeticao-exs4\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs4\ex5-remover-caractere-especifico.cs" />
