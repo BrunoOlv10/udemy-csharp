@@ -19,7 +19,7 @@ namespace projeto
             //VendaEmpresa venda = new VendaEmpresa();
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
-            repeticao_exs4.ex21_dias_mes.QuantosDiasMes();
+            repeticao_exs4.ex22_piramide_caracteres.GerarPiramide();
         }
     }
 }
