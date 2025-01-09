@@ -18,7 +18,7 @@ namespace projeto.repeticao_exs4
                 if (numerosTermos < 1)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("É necessário inserir números positivos e inteiros");
+                    Console.WriteLine("É necessário inserir um número positivo e inteiro para a quantidade de termos");
                     Console.ReadKey();
                     return;
                 }
