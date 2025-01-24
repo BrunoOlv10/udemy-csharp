@@ -345,6 +345,7 @@
     <Compile Include="repeticao-exs4\ex26-soma-elementos-array.cs" />
     <Compile Include="repeticao-exs4\ex27-transferir-elementos-array.cs" />
     <Compile Include="repeticao-exs4\ex28-ocorrencias-array.cs" />
+    <Compile Include="repeticao-exs4\ex29-maior-menor-valor-array.cs" />
     <Compile Include="repeticao-exs4\ex3-media.cs" />
     <Compile Include="repeticao-exs4\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs4\ex5-remover-caractere-especifico.cs" />
