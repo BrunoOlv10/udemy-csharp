@@ -349,6 +349,7 @@
     <Compile Include="repeticao-exs4\ex3-media.cs" />
     <Compile Include="repeticao-exs4\ex30-excluir-valor-array.cs" />
     <Compile Include="repeticao-exs4\ex31-ordenar-array-string.cs" />
+    <Compile Include="repeticao-exs4\ex32-ordenar-inteiros-bubble-sort.cs" />
     <Compile Include="repeticao-exs4\ex32-ordenar-strings-bubble-sort.cs" />
     <Compile Include="repeticao-exs4\ex4-retangulo.cs" />
     <Compile Include="repeticao-exs4\ex5-remover-caractere-especifico.cs" />
