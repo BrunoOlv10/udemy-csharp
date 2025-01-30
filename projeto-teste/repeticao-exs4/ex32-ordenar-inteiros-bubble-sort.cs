@@ -12,20 +12,12 @@ namespace projeto.repeticao_exs4
         {
             try
             {
-                Console.Write("Insira os elementos que entrarão no array (separados por vírgulas): ");
+                Console.Write("Digite os elementos que entrarão no array (separados por vírgulas): ");
                 string[] entrada = Console.ReadLine().Split(',');
                 int[] array = entrada.Select(x => int.Parse(x.Trim())).ToArray();
-
-                if (array.Length == 0)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("É necessário inserir algo para entrar no array");
-                    Console.ReadLine();
-                    return;
-                }
+                int[] arrayOriginal = (int[])array.Clone();
 
                 int n = array.Length;
-                int[] arrayOriginal = (int[])array.Clone();
                 for (int i = 0; i < n - 1; i++)
                 {
                     bool repetir = false;
@@ -47,8 +39,8 @@ namespace projeto.repeticao_exs4
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("Array original: " + String.Join(", ", arrayOriginal) + "");
-                Console.WriteLine("Array ordenado com Bubble Sort: " + String.Join(", ", array) + "");
+                Console.WriteLine($"Array digitado: " + String.Join(", ", arrayOriginal) + "");
+                Console.WriteLine($"Array ordenado com Bubble Sort: " + String.Join(", ", array) + "");
                 Console.ReadKey();
             }
             catch (System.FormatException)
