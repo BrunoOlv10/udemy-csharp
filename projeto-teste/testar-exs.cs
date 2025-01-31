@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using curso_udemy.classes;
 using curso_udemy.recuperar_instituicao_ano;
 using projeto.classes;
-using projeto.classes_exercicios;
+//using projeto.classes_exercicios;
+using projeto.classes_exercicios_2;
 
 namespace projeto
 {
@@ -19,7 +20,8 @@ namespace projeto
             //VendaEmpresa venda = new VendaEmpresa();
             //Menu_Principal.SelecionarMenu(funcionario, produto, venda);
 
-            repeticao_exs4.ex32_ordenar_inteiros_bubble_sort.OrdenarInteirosBubbleSort();
+            FuncionarioEmpresa funcionario = new FuncionarioEmpresa();
+            MenuPrincipal.SelecionarOpcao(funcionario);
         }
     }
 }
