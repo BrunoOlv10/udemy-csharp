@@ -16,8 +16,9 @@ namespace projeto.classes_exercicios_2
                 Console.WriteLine("Menu Gerar Relatórios de Funcionário(s)");
                 Console.WriteLine("------------------------------");
                 Console.WriteLine("1- Listar Funcionários");
-                Console.WriteLine("2- Voltar para o Menu Principal");
-                Console.WriteLine("3- Sair do Sistema");
+                Console.WriteLine("2- Listar Funcionários Por Sobrenome");
+                Console.WriteLine("3- Voltar para o Menu Principal");
+                Console.WriteLine("4- Sair do Sistema");
                 Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
                 int opcao = Convert.ToInt32(Console.ReadLine());
 
@@ -28,16 +29,26 @@ namespace projeto.classes_exercicios_2
                     Console.WriteLine();
                     Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
                     Console.ReadKey();
-                    opcao = 2;
+                    opcao = 3;
                 }
 
                 if (opcao == 2)
                 {
                     Console.Clear();
+                    funcionarioEmpresa.OrdenarSobrenome(funcionarioEmpresa);
+                    Console.WriteLine();
+                    Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                    Console.ReadKey();
+                    opcao = 3;
+                }
+
+                if (opcao == 3)
+                {
+                    Console.Clear();
                     MenuPrincipal.SelecionarOpcao(funcionarioEmpresa);
                 }
 
-                else if (opcao == 3)
+                else if (opcao == 4)
                     return;
 
                 else

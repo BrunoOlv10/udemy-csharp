@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using projeto.classes_exercicios;
 
 namespace projeto.classes_exercicios_2
 {
@@ -33,9 +34,37 @@ namespace projeto.classes_exercicios_2
 
         public void ListarFuncionarios()
         {
-            foreach (var funcionario in FuncionariosEmpresa)
+            if (FuncionariosEmpresa.Count == 0)
             {
-                Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
+                Console.WriteLine("Não há nenhum funcionário cadastrado");
+            }
+
+            else
+            {
+                foreach (var funcionario in FuncionariosEmpresa)
+                {
+                    Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
+                }
+            }
+        }
+
+        public void OrdenarSobrenome(FuncionarioEmpresa funcionarioEmpresa)
+        {
+            if (FuncionariosEmpresa.Count == 0)
+            {
+                Console.WriteLine("Não há nenhum funcionário cadastrado");
+            }
+
+            else
+            {
+                List<Funcionario> OrdenacaoSobrenome = new List<Funcionario>();
+
+                FuncionariosEmpresa = FuncionariosEmpresa.OrderBy(x => x.Sobrenome).ToList();
+
+                foreach (var funcionario in FuncionariosEmpresa)
+                {
+                    Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
+                }
             }
         }
     }
