@@ -48,7 +48,7 @@ namespace projeto.classes_exercicios_2
             }
         }
 
-        public void OrdenarSobrenome(FuncionarioEmpresa funcionarioEmpresa)
+        public void OrdenarSobrenome()
         {
             if (FuncionariosEmpresa.Count == 0)
             {
@@ -65,6 +65,43 @@ namespace projeto.classes_exercicios_2
                 {
                     Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
                 }
+            }
+        }
+
+        public void ListarCargos()
+        {
+            if (FuncionariosEmpresa.Count == 0)
+            {
+                Console.WriteLine("Não há nenhum funcionário cadastrado");
+            }
+
+            else
+            {
+                Dictionary<string, int> QuantidadeCargos = new Dictionary<string, int>();
+                int totalGeral = 0;
+
+                foreach (var funcionario in FuncionariosEmpresa)
+                {
+                    if (QuantidadeCargos.ContainsKey(funcionario.Cargo))
+                    {
+                        QuantidadeCargos[funcionario.Cargo]++;
+                    }
+
+                    else
+                    {
+                        QuantidadeCargos.Add(funcionario.Cargo, 1);
+                    }
+
+                    totalGeral++;
+                }
+
+                Console.WriteLine("Cargos:");
+                foreach (var cargo in QuantidadeCargos)
+                {
+                    Console.WriteLine($"{cargo.Key}: {cargo.Value} funcionário(s)");
+                }
+                Console.WriteLine();
+                Console.WriteLine($"Total de cargos ocupados na empresa: {totalGeral}");
             }
         }
     }

@@ -88,7 +88,11 @@ namespace projeto.classes_exercicios_2
                 }
 
                 else if (opcao == 3)
-                    return;
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Saindo do sistema...");
+                    Environment.Exit(0);
+                }
 
                 else
                 {

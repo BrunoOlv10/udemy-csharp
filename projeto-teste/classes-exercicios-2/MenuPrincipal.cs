@@ -12,42 +12,49 @@ namespace projeto.classes_exercicios_2
     {
         public static void SelecionarOpcao(FuncionarioEmpresa funcionario)
         {
-            try
+            while (true)
             {
-                Console.WriteLine("1- Insira funcionários");
-                Console.WriteLine("2- Relatório de funcionários");
-                Console.WriteLine("3- Sair do sistema");
-                Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
-                int opcao = Convert.ToInt32(Console.ReadLine());
-
-                if (opcao == 1)
+                try
                 {
                     Console.Clear();
-                    AdicionarFuncionario.AddFuncionario(funcionario);
+                    Console.WriteLine("1- Insira Funcionários");
+                    Console.WriteLine("2- Relatório de Funcionários");
+                    Console.WriteLine("3- Sair do Sistema");
+                    Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
+                    int opcao = Convert.ToInt32(Console.ReadLine());
+
+                    if (opcao == 1)
+                    {
+                        Console.Clear();
+                        AdicionarFuncionario.AddFuncionario(funcionario);
+                    }
+
+                    else if (opcao == 2)
+                    {
+                        Console.Clear();
+                        GeradorRelatoriosFuncionarios.GerarRelatoriosFuncionarios(funcionario);
+                    }
+
+                    else if (opcao == 3)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Saindo do sistema...");
+                        break;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Opção inexistente, insira alguma das opções que estão disponíveis");
+                        Console.ReadKey();
+                    }
                 }
-
-                else if (opcao == 2)
-                {
-                    Console.Clear();
-                    GeradorRelatoriosFuncionarios.GerarRelatoriosFuncionarios(funcionario);
-                }
-
-                else if (opcao == 3)
-                    return;
-
-                else
+                catch (System.FormatException)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Opção inexistente, insira alguma das opções que estão disponíveis");
+                    Console.WriteLine("Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
                     Console.ReadKey();
-                    return;
                 }
-            }
-            catch (System.FormatException)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
-                Console.ReadKey();
             }
         }
     }
