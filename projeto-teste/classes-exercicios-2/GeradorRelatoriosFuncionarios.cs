@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using projeto.classes_exercicios_2;
 
 namespace projeto.classes_exercicios_2
 {
@@ -18,10 +19,10 @@ namespace projeto.classes_exercicios_2
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("Menu Gerar Relatórios de Funcionário(s)");
                     Console.WriteLine("------------------------------");
-                    Console.WriteLine("1- Listar Funcionários");
+                    Console.WriteLine("1- Listar Funcionário(s)");
                     Console.WriteLine("2- Listar Funcionários por Sobrenome");
-                    Console.WriteLine("3- Listar Cargos dos Funcionários");
-                    Console.WriteLine("4- Voltar para o Menu Principal");
+                    Console.WriteLine("3- Listar Cargos dos Funcionário(s)");
+                    Console.WriteLine("4- Voltar");
                     Console.WriteLine("5- Sair do Sistema");
                     Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
                     int opcao = Convert.ToInt32(Console.ReadLine());

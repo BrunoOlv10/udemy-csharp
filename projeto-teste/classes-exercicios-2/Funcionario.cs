@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using projeto.classes_exercicios;
+using projeto.classes_exercicios_2;
 
 namespace projeto.classes_exercicios_2
 {
@@ -20,7 +20,8 @@ namespace projeto.classes_exercicios_2
             this.Cargo = cargo;
         }
 
-        }
+    }
+
     public class FuncionarioEmpresa
     {
         List<Funcionario> FuncionariosEmpresa = new List<Funcionario>();
@@ -41,6 +42,7 @@ namespace projeto.classes_exercicios_2
 
             else
             {
+                Console.WriteLine("Funcionários: ");
                 foreach (var funcionario in FuncionariosEmpresa)
                 {
                     Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
