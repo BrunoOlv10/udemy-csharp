@@ -50,7 +50,7 @@ namespace projeto.classes_exercicios_2
             }
         }
 
-        public void OrdenarSobrenome()
+        public void OrdenarSobrenome(string ordenacao)
         {
             if (FuncionariosEmpresa.Count == 0)
             {
@@ -59,9 +59,15 @@ namespace projeto.classes_exercicios_2
 
             else
             {
-                List<Funcionario> OrdenacaoSobrenome = new List<Funcionario>();
-
-                FuncionariosEmpresa = FuncionariosEmpresa.OrderBy(x => x.Sobrenome).ToList();
+                if (ordenacao == "asc")
+                {
+                    FuncionariosEmpresa = FuncionariosEmpresa.OrderBy(f => f.Sobrenome).ToList();
+                }
+                
+                else if (ordenacao == "desc")
+                {
+                    FuncionariosEmpresa = FuncionariosEmpresa.OrderByDescending(f => f.Sobrenome).ToList();
+                }
 
                 foreach (var funcionario in FuncionariosEmpresa)
                 {

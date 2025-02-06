@@ -55,5 +55,31 @@ namespace projeto.classes_exercicios_2
                 }
             }
         }
+
+        public void OrdenarNome(string ordenacao)
+        {
+            if (ProdutosEmpresa.Count == 0)
+            {
+                Console.WriteLine("Não há nenhum funcionário cadastrado");
+            }
+
+            else
+            {
+                if (ordenacao == "asc")
+                {
+                    ProdutosEmpresa = ProdutosEmpresa.OrderBy(p => p.Nome).ToList();
+                }
+
+                else if (ordenacao == "desc") 
+                {
+                    ProdutosEmpresa = ProdutosEmpresa.OrderByDescending(p => p.Nome).ToList();
+                }
+
+                foreach (var produto in ProdutosEmpresa)
+                {
+                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco}");
+                }
+            }
+        }
     }
 }

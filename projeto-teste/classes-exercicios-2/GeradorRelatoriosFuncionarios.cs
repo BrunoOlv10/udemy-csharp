@@ -20,10 +20,11 @@ namespace projeto.classes_exercicios_2
                     Console.WriteLine("Menu Gerar Relatórios de Funcionário(s)");
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("1- Listar Funcionário(s)");
-                    Console.WriteLine("2- Listar Funcionários por Sobrenome");
-                    Console.WriteLine("3- Listar Cargos dos Funcionário(s)");
-                    Console.WriteLine("4- Voltar");
-                    Console.WriteLine("5- Sair do Sistema");
+                    Console.WriteLine("2- Listar Funcionário(s) por Sobrenome - Ascendente");
+                    Console.WriteLine("3- Listar Funcionário(s) por Sobrenome - Descendente");
+                    Console.WriteLine("4- Listar Cargos dos Funcionário(s)");
+                    Console.WriteLine("5- Voltar");
+                    Console.WriteLine("6- Sair do Sistema");
                     Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
                     int opcao = Convert.ToInt32(Console.ReadLine());
 
@@ -39,7 +40,8 @@ namespace projeto.classes_exercicios_2
                     else if (opcao == 2)
                     {
                         Console.Clear();
-                        funcionarioEmpresa.OrdenarSobrenome();
+                        string ordenacao = "asc";
+                        funcionarioEmpresa.OrdenarSobrenome(ordenacao);
                         Console.WriteLine();
                         Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
                         Console.ReadKey();
@@ -48,16 +50,26 @@ namespace projeto.classes_exercicios_2
                     else if (opcao == 3)
                     {
                         Console.Clear();
-                        funcionarioEmpresa.ListarCargos();
+                        string ordenacao = "desc";
+                        funcionarioEmpresa.OrdenarSobrenome(ordenacao);
                         Console.WriteLine();
                         Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
                         Console.ReadKey();
                     }
 
                     else if (opcao == 4)
-                        break;
+                    {
+                        Console.Clear();
+                        funcionarioEmpresa.ListarCargos();
+                        Console.WriteLine();
+                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.ReadKey();
+                    }
 
                     else if (opcao == 5)
+                        break;
+
+                    else if (opcao == 6)
                     {
                         Console.WriteLine();
                         Console.WriteLine("Saindo do sistema...");

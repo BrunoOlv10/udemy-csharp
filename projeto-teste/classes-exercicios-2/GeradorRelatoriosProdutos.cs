@@ -20,8 +20,10 @@ namespace projeto.classes_exercicios_2
                     Console.WriteLine("Menu Gerar Relatórios de Produto(s)");
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("1- Listar Produto(s)");
-                    Console.WriteLine("2- Voltar");
-                    Console.WriteLine("3- Sair do Sistema");
+                    Console.WriteLine("2- Listar Produto(s) por Nome - Ascendente");
+                    Console.WriteLine("3- Listar Produto(s) por Nome - Descendente");
+                    Console.WriteLine("4- Voltar");
+                    Console.WriteLine("5- Sair do Sistema");
                     Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
                     int opcao = Convert.ToInt32(Console.ReadLine());
 
@@ -34,10 +36,30 @@ namespace projeto.classes_exercicios_2
                         Console.ReadKey();
                     }
 
-                    else if (opcao == 2)
-                        break;
+                    else if (opcao == 2) 
+                    {
+                        Console.Clear();
+                        string ordenacao = "asc";
+                        produtoEmpresa.OrdenarNome(ordenacao);
+                        Console.WriteLine();
+                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.ReadKey();
+                    }
 
                     else if (opcao == 3)
+                    {
+                        Console.Clear();
+                        string ordenacao = "desc";
+                        produtoEmpresa.OrdenarNome(ordenacao);
+                        Console.WriteLine();
+                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.ReadKey();
+                    }
+
+                    else if (opcao == 4)
+                        break;
+
+                    else if (opcao == 5)
                     {
                         Console.WriteLine();
                         Console.WriteLine("Saindo do sistema...");
