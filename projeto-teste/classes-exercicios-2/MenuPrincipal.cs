@@ -46,14 +46,14 @@ namespace projeto.classes_exercicios_2
                     else
                     {
                         Console.WriteLine();
-                        Console.WriteLine("Opção inexistente, insira alguma das opções que estão disponíveis");
+                        Console.WriteLine("ERRO: Opção inexistente, insira alguma das opções que estão disponíveis");
                         Console.ReadKey();
                     }
                 }
                 catch (System.FormatException)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
+                    Console.WriteLine("ERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
                     Console.ReadKey();
                 }
             }

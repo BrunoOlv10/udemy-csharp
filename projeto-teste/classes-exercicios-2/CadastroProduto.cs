@@ -13,95 +13,103 @@ namespace projeto.classes_exercicios_2
     {
         public static void AddProduto(ProdutoEmpresa produtoEmpresa)
         {
-            try
+            while (true)
             {
-                Console.Clear();
-                Console.WriteLine("------------------------------");
-                Console.WriteLine("Menu Cadastrar Produtos");
-                Console.WriteLine("------------------------------");
-                Console.WriteLine("1- Adicionar Produtos");
-                Console.WriteLine("2- Voltar");
-                Console.WriteLine("3- Sair do Sistema");
-                Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
-                int opcao = Convert.ToInt32(Console.ReadLine());
-
-                if (opcao == 1)
+                try
                 {
                     Console.Clear();
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("Menu Cadastrar Produtos");
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("1- Adicionar Produtos");
+                    Console.WriteLine("2- Voltar");
+                    Console.WriteLine("3- Sair do Sistema");
+                    Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
+                    int opcao = Convert.ToInt32(Console.ReadLine());
 
-                    while (true)
+                    if (opcao == 1)
                     {
-                        Console.Write("Insira quantos produtos serão cadastrados: ");
-                        int quantidade = Convert.ToInt32(Console.ReadLine());
+                        Console.Clear();
 
-                        Console.WriteLine();
-                        Console.WriteLine("Todos os campos são obrigatórios serem preenchidos, pois só será considerado os funcionários que tiverem todos os campos preenchidos (Id, Nome, Categoria e Preço)");
-                        Console.WriteLine("OBS: Tanto o Id como o Preço tem que ser inserido apenas valores maiores que 0 e o Id e Nome não podem ser iguais de nenhum produto, caso sejam, esse produto em específico não será cadastrado");
-                        Console.WriteLine();
-
-                        List<Produto> ProdutosCadastrados = new List<Produto>();
-
-                        for (int i = 0; i < quantidade; i++)
+                        while (true)
                         {
-                            Console.Write($"Insira o Id do {i + 1}º produto: ");
-                            int id = Convert.ToInt32(Console.ReadLine());
-
-                            Console.Write($"Insira o Nome: ");
-                            string nome = Console.ReadLine();
-
-                            Console.Write($"Insira a Categoria: ");
-                            string categoria = Console.ReadLine();
-
-                            Console.Write($"Insira o Preço: ");
-                            double preco = Convert.ToDouble(Console.ReadLine());
-
-                            if (id > 0 && !string.IsNullOrWhiteSpace(nome) && !string.IsNullOrWhiteSpace(categoria) && preco > 0)
-                            {
-                                Produto produto = new Produto(id, nome, categoria, preco);
-                                ProdutosCadastrados.Add(produto);
-                                produtoEmpresa.AdicionarProdutos(produto);
-                            }
+                            Console.Write("Insira quantos produtos serão cadastrados: ");
+                            int quantidade = Convert.ToInt32(Console.ReadLine());
 
                             Console.WriteLine();
-                        }
+                            Console.WriteLine("Todos os campos são obrigatórios serem preenchidos, pois só será considerado os funcionários que tiverem todos os campos preenchidos (Id, Nome, Categoria e Preço)");
+                            Console.WriteLine("OBS: Tanto o Id como o Preço tem que ser inserido apenas valores maiores que 0 e o Id e Nome não podem ser iguais de nenhum produto, caso sejam, esse produto em específico não será cadastrado");
+                            Console.WriteLine();
 
-                        if (ProdutosCadastrados.Count == 0)
-                        {
-                            Console.WriteLine("Nenhum produto foi cadastrado, pois todos os campos devem ser preenchidos corretamente para considerar o cadastro");
-                            Console.WriteLine("Pressione qualquer tecla para tentar novamente cadastrar os funcionários");
-                            Console.ReadKey();
-                            Console.Clear();
-                            continue;
-                        }
+                            List<Produto> ProdutosCadastrados = new List<Produto>();
 
-                        else
-                        {
-                            Console.WriteLine("Produtos cadastrados com sucesso!");
-                            Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
-                            Console.ReadKey();
-                            break;
+                            for (int i = 0; i < quantidade; i++)
+                            {
+                                Console.Write($"Insira o Id do {i + 1}º produto: ");
+                                int id = Convert.ToInt32(Console.ReadLine());
+
+                                Console.Write($"Insira o Nome: ");
+                                string nome = Console.ReadLine();
+                                string nomeValidado = string.Join(" ", nome.ToLower().Split(' ').Select(n => char.ToUpper(n[0]) + n.Substring(1)));
+
+                                Console.Write($"Insira a Categoria: ");
+                                string categoria = Console.ReadLine();
+                                string categoriaValidado = string.Join(" ", categoria.ToLower().Split(' ').Select(c => char.ToUpper(c[0]) + c.Substring(1)));
+
+                                Console.Write($"Insira o Preço: ");
+                                double preco = Convert.ToDouble(Console.ReadLine());
+
+                                if (id > 0 && !string.IsNullOrWhiteSpace(nomeValidado) && !string.IsNullOrWhiteSpace(categoriaValidado) && preco > 0)
+                                {
+                                    Produto produto = new Produto(id, nomeValidado, categoriaValidado, preco);
+                                    ProdutosCadastrados.Add(produto);
+                                    produtoEmpresa.AdicionarProdutos(produto);
+                                }
+
+                                Console.WriteLine();
+                            }
+
+                            if (ProdutosCadastrados.Count == 0)
+                            {
+                                Console.WriteLine("Nenhum produto foi cadastrado, pois todos os campos devem ser preenchidos corretamente para considerar o cadastro");
+                                Console.WriteLine("Pressione qualquer tecla para tentar novamente cadastrar os funcionários");
+                                Console.ReadKey();
+                                Console.Clear();
+                                continue;
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("Produtos cadastrados com sucesso!");
+                                Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                                Console.ReadKey();
+                                break;
+                            }
                         }
                     }
-                }
 
-                if (opcao == 2)
-                {
-                    Console.Clear();
-                    AddProduto(produtoEmpresa);
-                }
+                    if (opcao == 2)
+                        break;
 
-                else if (opcao == 3)
+                    else if (opcao == 3)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Saindo do sistema...");
+                        Environment.Exit(0);
+                    }
+                }
+                catch (System.FormatException)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Saindo do sistema...");
-                    Environment.Exit(0);
+                    Console.WriteLine("ERRO: Insira apenas valores numéricos e os que estão disponíveis");
+                    Console.ReadKey();
                 }
-            }
-            catch (System.FormatException)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Insira apenas valores numéricos e os que estão disponíveis");
-                Console.ReadKey();
+                catch (System.IndexOutOfRangeException)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("ERRO: Não deixe de preencher nenhum campo");
+                    Console.ReadKey();
+                }
             }
         }
     }

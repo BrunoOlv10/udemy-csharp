@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using projeto.classes_exercicios;
@@ -43,7 +44,7 @@ namespace projeto.classes_exercicios_2
         {
             if (ProdutosEmpresa.Count == 0)
             {
-                Console.WriteLine("Não há nenhum funcionário cadastrado");
+                Console.WriteLine("Não há nenhum produto cadastrado");
             }
 
             else
@@ -51,7 +52,7 @@ namespace projeto.classes_exercicios_2
                 Console.WriteLine("Produtos: ");
                 foreach (var produto in ProdutosEmpresa)
                 {
-                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco}");
+                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2}");
                 }
             }
         }
@@ -60,7 +61,7 @@ namespace projeto.classes_exercicios_2
         {
             if (ProdutosEmpresa.Count == 0)
             {
-                Console.WriteLine("Não há nenhum funcionário cadastrado");
+                Console.WriteLine("Não há nenhum produto cadastrado");
             }
 
             else
@@ -70,15 +71,60 @@ namespace projeto.classes_exercicios_2
                     ProdutosEmpresa = ProdutosEmpresa.OrderBy(p => p.Nome).ToList();
                 }
 
-                else if (ordenacao == "desc") 
+                else if (ordenacao == "desc")
                 {
                     ProdutosEmpresa = ProdutosEmpresa.OrderByDescending(p => p.Nome).ToList();
                 }
 
                 foreach (var produto in ProdutosEmpresa)
                 {
-                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco}");
+                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2}");
                 }
+            }
+        }
+
+        public void ListarCategorias()
+        {
+            if (ProdutosEmpresa.Count == 0)
+            {
+                Console.WriteLine("Não há nenhum produto cadastrado");
+            }
+
+            else
+            {
+                Dictionary<string, double> TotalPreco = new Dictionary<string, double>();
+                double totalGeral = 0;
+
+                foreach (var produto in ProdutosEmpresa)
+                {
+                    if (TotalPreco.ContainsKey(produto.Categoria))
+                    {
+                        TotalPreco[produto.Categoria] += produto.Preco;
+                    }
+
+                    else
+                    {
+                        TotalPreco.Add(produto.Categoria, produto.Preco);
+                    }
+
+                    totalGeral += produto.Preco;
+                }
+
+                Console.WriteLine("Relatório de Produtos Agrupados por Categoria:\n");
+
+                foreach (var categoria in TotalPreco.Keys)
+                {
+                    Console.WriteLine($"{categoria}");
+
+                    foreach (var produto in ProdutosEmpresa.Where(p => p.Categoria == categoria))
+                    {
+                        Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Preço: {produto.Preco:F2}");
+                    }
+
+                    Console.WriteLine($"Subtotal: R${TotalPreco[categoria]:F2}\n");
+                }
+
+                Console.WriteLine($"Total Geral dos Preços dos Produtos: R${totalGeral:F2}");
             }
         }
     }

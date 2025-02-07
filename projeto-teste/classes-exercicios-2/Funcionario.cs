@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using projeto.classes_exercicios;
 using projeto.classes_exercicios_2;
 
 namespace projeto.classes_exercicios_2
@@ -103,13 +104,21 @@ namespace projeto.classes_exercicios_2
                     totalGeral++;
                 }
 
-                Console.WriteLine("Cargos:");
-                foreach (var cargo in QuantidadeCargos)
+                Console.WriteLine("Relatório de Funcionários Agrupados por Cargo:\n");
+
+                foreach (var cargo in QuantidadeCargos.Keys)
                 {
-                    Console.WriteLine($"{cargo.Key}: {cargo.Value} funcionário(s)");
+                    Console.WriteLine($"{cargo}");
+
+                    foreach (var funcionario in FuncionariosEmpresa.Where(f => f.Cargo == cargo))
+                    {
+                        Console.WriteLine($"{funcionario.Nome} {funcionario.Sobrenome}");
+                    }
+
+                    Console.WriteLine($"Subtotal: {QuantidadeCargos[cargo]}\n");
                 }
-                Console.WriteLine();
-                Console.WriteLine($"Total de cargos ocupados na empresa: {totalGeral}");
+                
+                Console.WriteLine($"Total de Cargos Ocupados na Empresa: {totalGeral}");
             }
         }
     }

@@ -20,10 +20,11 @@ namespace projeto.classes_exercicios_2
                     Console.WriteLine("Menu Gerar Relatórios de Produto(s)");
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("1- Listar Produto(s)");
-                    Console.WriteLine("2- Listar Produto(s) por Nome - Ascendente");
-                    Console.WriteLine("3- Listar Produto(s) por Nome - Descendente");
-                    Console.WriteLine("4- Voltar");
-                    Console.WriteLine("5- Sair do Sistema");
+                    Console.WriteLine("2- Ordenar Produto(s) por Nome - Ascendente");
+                    Console.WriteLine("3- Ordenar Produto(s) por Nome - Descendente");
+                    Console.WriteLine("4- Listar Produto(s) por Categoria");
+                    Console.WriteLine("5- Voltar");
+                    Console.WriteLine("6- Sair do Sistema");
                     Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
                     int opcao = Convert.ToInt32(Console.ReadLine());
 
@@ -57,9 +58,18 @@ namespace projeto.classes_exercicios_2
                     }
 
                     else if (opcao == 4)
-                        break;
+                    {
+                        Console.Clear();
+                        produtoEmpresa.ListarCategorias();
+                        Console.WriteLine();
+                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.ReadKey();
+                    }
 
                     else if (opcao == 5)
+                        break;
+
+                    else if (opcao == 6)
                     {
                         Console.WriteLine();
                         Console.WriteLine("Saindo do sistema...");
@@ -69,7 +79,7 @@ namespace projeto.classes_exercicios_2
                 catch (System.FormatException)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
+                    Console.WriteLine("ERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
                     Console.ReadKey();
                 }
             }
