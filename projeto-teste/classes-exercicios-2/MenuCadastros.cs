@@ -9,7 +9,7 @@ namespace projeto.classes_exercicios_2
 {
     public class MenuCadastros
     {
-        public static void CadastrarInfos(FuncionarioEmpresa funcionario, ProdutoEmpresa produto)
+        public static void CadastrarInfos(FuncionarioEmpresa funcionario, ProdutoEmpresa produto, VendaEmpresa venda)
         {
             while (true)
             {
@@ -21,8 +21,9 @@ namespace projeto.classes_exercicios_2
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("1- Cadastrar Funcionários");
                     Console.WriteLine("2- Cadastrar Produtos");
-                    Console.WriteLine("3- Voltar");
-                    Console.WriteLine("4- Sair do Sistema");
+                    Console.WriteLine("3- Cadastrar Vendas");
+                    Console.WriteLine("4- Voltar");
+                    Console.WriteLine("5- Sair do Sistema");
                     Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
                     int opcao = Convert.ToInt32(Console.ReadLine());
 
@@ -39,9 +40,15 @@ namespace projeto.classes_exercicios_2
                     }
 
                     else if (opcao == 3)
-                        break;
+                    {
+                        Console.Clear();
+                        CadastroVenda.AddVenda(venda);
+                    }
 
                     else if (opcao == 4)
+                        break;
+
+                    else if (opcao == 5)
                     {
                         Console.WriteLine();
                         Console.WriteLine("Saindo do sistema...");

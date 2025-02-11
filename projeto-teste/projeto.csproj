@@ -204,13 +204,16 @@
     <Compile Include="algoritmo-busca-binaria.cs" />
     <Compile Include="classes-exercicios-2\CadastroFuncionario.cs" />
     <Compile Include="classes-exercicios-2\CadastroProduto.cs" />
+    <Compile Include="classes-exercicios-2\CadastroVenda.cs" />
     <Compile Include="classes-exercicios-2\ExibeRelatorios.cs" />
     <Compile Include="classes-exercicios-2\Funcionario.cs" />
     <Compile Include="classes-exercicios-2\GeradorRelatoriosFuncionarios.cs" />
     <Compile Include="classes-exercicios-2\GeradorRelatoriosProdutos.cs" />
+    <Compile Include="classes-exercicios-2\GeradorRelatoriosVendas.cs" />
     <Compile Include="classes-exercicios-2\MenuCadastros.cs" />
     <Compile Include="classes-exercicios-2\MenuPrincipal.cs" />
     <Compile Include="classes-exercicios-2\Produto.cs" />
+    <Compile Include="classes-exercicios-2\Venda.cs" />
     <Compile Include="classes-exercicios\CriarFuncionario.cs" />
     <Compile Include="classes-exercicios\CriarProduto.cs" />
     <Compile Include="classes-exercicios\CriarVenda.cs" />

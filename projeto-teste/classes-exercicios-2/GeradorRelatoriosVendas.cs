@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace projeto.classes_exercicios_2
 {
-    public class ExibeRelatorios
+    public class GeradorRelatoriosVendas
     {
-        public static void ExibirRelatorios(FuncionarioEmpresa funcionario, ProdutoEmpresa produto, VendaEmpresa venda)
+        public static void GerarRelatoriosVendas(VendaEmpresa vendaEmpresa)
         {
             while (true)
             {
@@ -16,38 +16,27 @@ namespace projeto.classes_exercicios_2
                 {
                     Console.Clear();
                     Console.WriteLine("------------------------------");
-                    Console.WriteLine("Menu de Relatórios");
+                    Console.WriteLine("Menu Gerar Relatórios de Venda(s)");
                     Console.WriteLine("------------------------------");
-                    Console.WriteLine("1- Menu Relatório de Funcionários");
-                    Console.WriteLine("2- Menu Relatório de Produtos");
-                    Console.WriteLine("3- Menu Relatório de Vendas");
-                    Console.WriteLine("4- Voltar");
-                    Console.WriteLine("5- Sair do Sistema");
+                    Console.WriteLine("1- Listar Venda(s)");
+                    Console.WriteLine("2- Voltar");
+                    Console.WriteLine("3- Sair do Sistema");
                     Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
                     int opcao = Convert.ToInt32(Console.ReadLine());
 
                     if (opcao == 1)
                     {
                         Console.Clear();
-                        GeradorRelatoriosFuncionarios.GerarRelatoriosFuncionarios(funcionario);
+                        vendaEmpresa.ListarVendas();
+                        Console.WriteLine();
+                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.ReadKey();
                     }
 
-                    if (opcao == 2)
-                    {
-                        Console.Clear();
-                        GeradorRelatoriosProdutos.GerarRelatoriosFuncionarios(produto);
-                    }
-
-                    if (opcao == 3)
-                    {
-                        Console.Clear();
-                        GeradorRelatoriosVendas.GerarRelatoriosVendas(venda);
-                    }
-
-                    else if (opcao == 4)
+                    else if (opcao == 2)
                         break;
 
-                    else if (opcao == 5)
+                    else if (opcao == 3)
                     {
                         Console.WriteLine();
                         Console.WriteLine("Saindo do sistema...");

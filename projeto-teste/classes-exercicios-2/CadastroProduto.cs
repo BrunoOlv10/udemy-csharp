@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DocumentFormat.OpenXml.Drawing;
-using projeto.classes_exercicios;
 using projeto.classes_exercicios_2;
 
 namespace projeto.classes_exercicios_2
@@ -29,10 +28,11 @@ namespace projeto.classes_exercicios_2
 
                     if (opcao == 1)
                     {
-                        Console.Clear();
-
                         while (true)
                         {
+                            Console.Clear();
+                            bool verificarExiste = false;
+
                             Console.Write("Insira quantos produtos serão cadastrados: ");
                             int quantidade = Convert.ToInt32(Console.ReadLine());
 
@@ -45,6 +45,8 @@ namespace projeto.classes_exercicios_2
 
                             for (int i = 0; i < quantidade; i++)
                             {
+                                verificarExiste = false;
+
                                 Console.Write($"Insira o Id do {i + 1}º produto: ");
                                 int id = Convert.ToInt32(Console.ReadLine());
 
@@ -63,7 +65,19 @@ namespace projeto.classes_exercicios_2
                                 {
                                     Produto produto = new Produto(id, nomeValidado, categoriaValidado, preco);
                                     ProdutosCadastrados.Add(produto);
-                                    produtoEmpresa.AdicionarProdutos(produto);
+                                    (List<Produto> produtosAtualizados, bool existe) = produtoEmpresa.AdicionarProdutos(produto);
+
+                                    if (existe)
+                                    {
+                                        verificarExiste = true;
+                                        i--;
+                                        Console.WriteLine("\nErro: Já existe um produto com esse Id!");
+                                        Console.WriteLine("Pressione qualquer tecla para tentar novamente cadastrar os produtos");
+                                        Console.WriteLine();
+                                        Console.ReadKey();
+                                        Console.Clear();
+                                        continue;
+                                    }
                                 }
 
                                 Console.WriteLine();
@@ -72,13 +86,13 @@ namespace projeto.classes_exercicios_2
                             if (ProdutosCadastrados.Count == 0)
                             {
                                 Console.WriteLine("Nenhum produto foi cadastrado, pois todos os campos devem ser preenchidos corretamente para considerar o cadastro");
-                                Console.WriteLine("Pressione qualquer tecla para tentar novamente cadastrar os funcionários");
+                                Console.WriteLine("Pressione qualquer tecla para tentar novamente cadastrar os produtos");
                                 Console.ReadKey();
                                 Console.Clear();
                                 continue;
                             }
 
-                            else
+                            else if (!verificarExiste)
                             {
                                 Console.WriteLine("Produtos cadastrados com sucesso!");
                                 Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");

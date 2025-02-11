@@ -10,7 +10,7 @@ namespace projeto.classes_exercicios_2
 {
     public class MenuPrincipal
     {
-        public static void SelecionarOpcao(FuncionarioEmpresa funcionario, ProdutoEmpresa produto)
+        public static void SelecionarOpcao(FuncionarioEmpresa funcionario, ProdutoEmpresa produto, VendaEmpresa venda)
         {
             while (true)
             {
@@ -20,7 +20,7 @@ namespace projeto.classes_exercicios_2
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("Menu Principal");
                     Console.WriteLine("------------------------------");
-                    Console.WriteLine("1- Criar Cadastros (Funcionários ou Produtos): ");
+                    Console.WriteLine("1- Criar Cadastros (Funcionários ou Produtos ou Vendas): ");
                     Console.WriteLine("2- Relatórios");
                     Console.WriteLine("3- Sair do Sistema");
                     Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
@@ -28,12 +28,12 @@ namespace projeto.classes_exercicios_2
 
                     if (opcao == 1)
                     {
-                        MenuCadastros.CadastrarInfos(funcionario, produto);
+                        MenuCadastros.CadastrarInfos(funcionario, produto, venda);
                     }
 
                     else if (opcao == 2)
                     {
-                        ExibeRelatorios.ExibirRelatorios(funcionario, produto);
+                        ExibeRelatorios.ExibirRelatorios(funcionario, produto, venda);
                     }
 
                     else if (opcao == 3)
