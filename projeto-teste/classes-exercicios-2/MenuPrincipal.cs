@@ -10,7 +10,7 @@ namespace projeto.classes_exercicios_2
 {
     public class MenuPrincipal
     {
-        public static void SelecionarOpcao(FuncionarioEmpresa funcionario, ProdutoEmpresa produto, VendaEmpresa venda)
+        public static void SelecionarOpcao(FuncionarioEmpresa funcionarioEmpresa, ProdutoEmpresa produtoEmpresa, VendaEmpresa vendaEmpresa)
         {
             while (true)
             {
@@ -28,12 +28,12 @@ namespace projeto.classes_exercicios_2
 
                     if (opcao == 1)
                     {
-                        MenuCadastros.CadastrarInfos(funcionario, produto, venda);
+                        MenuCadastros.CadastrarInfos(funcionarioEmpresa, produtoEmpresa, vendaEmpresa);
                     }
 
                     else if (opcao == 2)
                     {
-                        ExibeRelatorios.ExibirRelatorios(funcionario, produto, venda);
+                        ExibeRelatorios.ExibirRelatorios(funcionarioEmpresa, produtoEmpresa, vendaEmpresa);
                     }
 
                     else if (opcao == 3)

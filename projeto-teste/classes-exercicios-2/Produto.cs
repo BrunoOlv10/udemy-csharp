@@ -27,8 +27,9 @@ namespace projeto.classes_exercicios_2
     public class ProdutoEmpresa
     {
         List<Produto> ProdutosEmpresa = new List<Produto>();
+        public List<Produto> Produtos => ProdutosEmpresa;
 
-        public (List<Produto>, bool existe) AdicionarProdutos(Produto produto)
+        public (List<Produto>, bool) AdicionarProdutos(Produto produto)
         {
             bool existe = ProdutosEmpresa.Any(p => p.Id == produto.Id || p.Nome == produto.Nome);
 

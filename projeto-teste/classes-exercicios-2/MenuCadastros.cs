@@ -9,7 +9,7 @@ namespace projeto.classes_exercicios_2
 {
     public class MenuCadastros
     {
-        public static void CadastrarInfos(FuncionarioEmpresa funcionario, ProdutoEmpresa produto, VendaEmpresa venda)
+        public static void CadastrarInfos(FuncionarioEmpresa funcionarioEmpresa, ProdutoEmpresa produtoEmpresa, VendaEmpresa vendaEmpresa)
         {
             while (true)
             {
@@ -30,19 +30,19 @@ namespace projeto.classes_exercicios_2
                     if (opcao == 1)
                     {
                         Console.Clear();
-                        CadastroFuncionario.AddFuncionario(funcionario);
+                        CadastroFuncionario.AddFuncionario(funcionarioEmpresa);
                     }
 
                     else if (opcao == 2)
                     {
                         Console.Clear();
-                        CadastroProduto.AddProduto(produto);
+                        CadastroProduto.AddProduto(produtoEmpresa);
                     }
 
                     else if (opcao == 3)
                     {
                         Console.Clear();
-                        CadastroVenda.AddVenda(venda);
+                        CadastroVenda.AddVenda(vendaEmpresa, produtoEmpresa);
                     }
 
                     else if (opcao == 4)

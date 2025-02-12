@@ -9,18 +9,18 @@ namespace projeto.classes_exercicios_2
 {
     public class Venda
     {
-        public int Id { get; set; }
         public string ProdutoVendido { get; set; }
         public string Categoria { get; set; }
+        public int Id { get; set; }
         public double Preco { get; set; }
         public int Quantidade { get; set; }
         public string VendidoPor { get; set; }
 
-        public Venda(int id, string produtoVendido, string categoria, double preco, int quantidade, string vendidoPor)
+        public Venda(string produtoVendido, string categoria, int id, double preco, int quantidade, string vendidoPor)
         {
-            this.Id = id;
             this.ProdutoVendido = produtoVendido;
             this.Categoria = categoria;
+            this.Id = id;
             this.Preco = preco;
             this.Quantidade = quantidade;
             this.VendidoPor = vendidoPor;
@@ -33,14 +33,14 @@ namespace projeto.classes_exercicios_2
 
         public (List<Venda>, bool existe) AdicionarVendas(Venda venda)
         {
-            bool existe = VendasEmpresa.Any(v => v.Id == venda.Id);
+            bool existeId = VendasEmpresa.Any(v => v.Id == venda.Id);
 
-            if (!existe)
+            if (!existeId)
             {
                 VendasEmpresa.Add(venda);
             }
 
-            return (VendasEmpresa, existe);
+            return (VendasEmpresa, existeId);
         }
 
         public void ListarVendas()
