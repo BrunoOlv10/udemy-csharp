@@ -31,21 +31,25 @@ namespace projeto.classes_exercicios_2
                         while (true)
                         {
                             Console.Clear();
-                            bool verificarExiste = false;
+                            bool verificarExisteId = false;
+                            bool verificarExisteProduto = true;
 
-                            Console.Write("Insira quantos produtos serão cadastrados: ");
+                            Console.Write("Insira a quantidade de produtos que serão cadastrados: ");
                             int quantidade = Convert.ToInt32(Console.ReadLine());
 
                             Console.WriteLine();
-                            Console.WriteLine("Todos os campos são obrigatórios serem preenchidos, pois só será considerado os funcionários que tiverem todos os campos preenchidos (Id, Nome, Categoria e Preço)");
-                            Console.WriteLine("OBS: Tanto o Id como o Preço tem que ser inserido apenas valores maiores que 0 e o Id e Nome não podem ser iguais de nenhum produto, caso sejam, esse produto em específico não será cadastrado");
+                            Console.WriteLine("Todos os campos são obrigatórios serem preenchidos (Id, Nome, Categoria e Preço)");
+                            Console.WriteLine("Tanto o Id como o Preço tem que ser inserido apenas valores maiores que 0");
+                            Console.WriteLine("O Id não pode ser igual ao Id de produtos diferentes que já existem, a menos que o produto cadastrado seja igual a algum que exista");
+                            Console.WriteLine("Caso o produto cadastrado já exista, o Id anteriormente cadastrado será mantido e irá incrementar a quantidade disponível desse produto ");
                             Console.WriteLine();
 
                             List<Produto> ProdutosCadastrados = new List<Produto>();
 
                             for (int i = 0; i < quantidade; i++)
                             {
-                                verificarExiste = false;
+                                verificarExisteId = false;
+                                verificarExisteProduto = true;
 
                                 Console.Write($"Insira o Id do {i + 1}º produto: ");
                                 int id = Convert.ToInt32(Console.ReadLine());
@@ -65,11 +69,12 @@ namespace projeto.classes_exercicios_2
                                 {
                                     Produto produto = new Produto(id, nomeValidado, categoriaValidado, preco);
                                     ProdutosCadastrados.Add(produto);
-                                    (List<Produto> produtosAtualizados, bool existe) = produtoEmpresa.AdicionarProdutos(produto);
+                                    (List<Produto> produtosAtualizados, bool existeId, bool existeProduto) = produtoEmpresa.AdicionarProdutos(produto);
 
-                                    if (existe)
+                                    if (existeId && !existeProduto)
                                     {
-                                        verificarExiste = true;
+                                        verificarExisteId = true;
+                                        verificarExisteProduto = false;
                                         i--;
                                         Console.WriteLine("\nErro: Já existe um produto com esse Id!");
                                         Console.WriteLine("Pressione qualquer tecla para tentar novamente cadastrar os produtos");
@@ -92,7 +97,7 @@ namespace projeto.classes_exercicios_2
                                 continue;
                             }
 
-                            else if (!verificarExiste)
+                            else if (!verificarExisteId || verificarExisteId && verificarExisteProduto)
                             {
                                 Console.WriteLine("Produtos cadastrados com sucesso!");
                                 Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");

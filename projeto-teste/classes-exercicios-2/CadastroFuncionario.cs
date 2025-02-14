@@ -34,7 +34,7 @@ namespace projeto.classes_exercicios_2
 
                         while (true)
                         {
-                            Console.Write("Insira quantos funcionários serão cadastrados: ");
+                            Console.Write("Insira a quantidade de funcionários que serão cadastrados: ");
                             int quantidade = Convert.ToInt32(Console.ReadLine());
 
                             Console.WriteLine();

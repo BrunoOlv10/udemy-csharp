@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using projeto.classes_exercicios;
 
 namespace projeto.classes_exercicios_2
@@ -29,16 +30,49 @@ namespace projeto.classes_exercicios_2
         List<Produto> ProdutosEmpresa = new List<Produto>();
         public List<Produto> Produtos => ProdutosEmpresa;
 
-        public (List<Produto>, bool) AdicionarProdutos(Produto produto)
-        {
-            bool existe = ProdutosEmpresa.Any(p => p.Id == produto.Id || p.Nome == produto.Nome);
 
-            if (!existe)
+        Dictionary<(string Nome, string Categoria, double Preco), int> QuantidadeEstoque = new Dictionary<(string, string, double), int>();
+        public Dictionary<(string Nome, string Categoria, double Preco), int> QntdEstoque => QuantidadeEstoque;
+
+        public IEnumerable<dynamic> ObterInfosProdutos()
+        {
+            var listaProdutos = from produto in ProdutosEmpresa
+                                join estoque in QuantidadeEstoque
+                                on new { produto.Nome, produto.Categoria, produto.Preco } equals new { estoque.Key.Nome, estoque.Key.Categoria, estoque.Key.Preco }
+                                into estoqueProduto
+                                from estoque in estoqueProduto.DefaultIfEmpty()
+                                select new
+                                {
+                                    produto.Id,
+                                    produto.Nome,
+                                    produto.Categoria,
+                                    produto.Preco,
+                                    Quantidade = estoque.Value
+                                };
+
+            return listaProdutos;
+        }
+
+        public (List<Produto>, bool, bool) AdicionarProdutos(Produto produto)
+        {
+            bool existeId = ProdutosEmpresa.Any(p => p.Id == produto.Id);
+
+            bool existeProduto = ProdutosEmpresa.Any(p => p.Nome == produto.Nome && p.Categoria == produto.Categoria && p.Preco == produto.Preco);
+
+            if (existeId && existeProduto || !existeId && !existeProduto || !existeId && existeProduto)
             {
-                ProdutosEmpresa.Add(produto);
+                if (!existeProduto)
+                {
+                    ProdutosEmpresa.Add(produto);
+                    QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)] = 1;
+                }
+                else 
+                {
+                    QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]++;
+                }
             }
 
-            return (ProdutosEmpresa, existe);
+            return (ProdutosEmpresa, existeId, existeProduto);
         }
 
         public void ListarProdutos()
@@ -51,9 +85,12 @@ namespace projeto.classes_exercicios_2
             else
             {
                 Console.WriteLine("Produtos: ");
-                foreach (var produto in ProdutosEmpresa)
+
+                var listaProdutos = ObterInfosProdutos();
+
+                foreach (var produto in listaProdutos)
                 {
-                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2}");
+                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2} - Quantidade Disponível: {produto.Quantidade}");
                 }
             }
         }
@@ -67,19 +104,21 @@ namespace projeto.classes_exercicios_2
 
             else
             {
+                var listaProdutos = ObterInfosProdutos();
+
                 if (ordenacao == "asc")
                 {
-                    ProdutosEmpresa = ProdutosEmpresa.OrderBy(p => p.Nome).ToList();
+                    listaProdutos = listaProdutos.OrderBy(p => p.Nome).ToList();
                 }
 
                 else if (ordenacao == "desc")
                 {
-                    ProdutosEmpresa = ProdutosEmpresa.OrderByDescending(p => p.Nome).ToList();
+                    listaProdutos = listaProdutos.OrderByDescending(p => p.Nome).ToList();
                 }
 
-                foreach (var produto in ProdutosEmpresa)
+                foreach (var produto in listaProdutos)
                 {
-                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2}");
+                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2} - Quantidade Disponível: {produto.Quantidade}");
                 }
             }
         }
@@ -96,7 +135,9 @@ namespace projeto.classes_exercicios_2
                 Dictionary<string, double> TotalPreco = new Dictionary<string, double>();
                 double totalGeral = 0;
 
-                foreach (var produto in ProdutosEmpresa)
+                var listaProdutos = ObterInfosProdutos();
+
+                foreach (var produto in listaProdutos)
                 {
                     if (TotalPreco.ContainsKey(produto.Categoria))
                     {
@@ -117,9 +158,9 @@ namespace projeto.classes_exercicios_2
                 {
                     Console.WriteLine($"{categoria}");
 
-                    foreach (var produto in ProdutosEmpresa.Where(p => p.Categoria == categoria))
+                    foreach (var produto in listaProdutos.Where(p => p.Categoria == categoria))
                     {
-                        Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Preço: {produto.Preco:F2}");
+                        Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Preço: {produto.Preco:F2} - Quantidade Disponível: {produto.Quantidade}");
                     }
 
                     Console.WriteLine($"Subtotal: R${TotalPreco[categoria]:F2}\n");
