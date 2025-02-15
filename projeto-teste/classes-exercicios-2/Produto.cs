@@ -30,7 +30,6 @@ namespace projeto.classes_exercicios_2
         List<Produto> ProdutosEmpresa = new List<Produto>();
         public List<Produto> Produtos => ProdutosEmpresa;
 
-
         Dictionary<(string Nome, string Categoria, double Preco), int> QuantidadeEstoque = new Dictionary<(string, string, double), int>();
         public Dictionary<(string Nome, string Categoria, double Preco), int> QntdEstoque => QuantidadeEstoque;
 
@@ -75,6 +74,35 @@ namespace projeto.classes_exercicios_2
             return (ProdutosEmpresa, existeId, existeProduto);
         }
 
+        public bool AtualizarEstoque(string Nome, string Categoria, double Preco, int Quantidade)
+        {
+            var chave = (Nome, Categoria, Preco);
+
+            bool estoqueDisponivel = false;
+
+            if (QntdEstoque[chave] >= Quantidade)
+            {
+                QntdEstoque[(Nome, Categoria, Preco)] -= Quantidade;
+                Console.WriteLine($"\nEstoque atualizado! {Quantidade} unidade(s) de {Nome} - {Categoria} foram removidos(as)");
+
+                estoqueDisponivel = true;
+            }
+
+            else if (QntdEstoque[chave] == 0)
+            {
+                Console.WriteLine($"\nEstoque insuficiente! Nenhuma unidade disponível de {Nome} - {Categoria}");
+                Console.ReadKey();
+            }
+
+            else
+            {
+                Console.WriteLine($"\nEstoque insuficiente! Apenas {QntdEstoque[chave]} unidade(s) disponívei(s) de {Nome} - {Categoria}");
+                Console.ReadKey();
+            }
+
+            return estoqueDisponivel;
+        }
+
         public void ListarProdutos()
         {
             if (ProdutosEmpresa.Count == 0)
@@ -90,7 +118,8 @@ namespace projeto.classes_exercicios_2
 
                 foreach (var produto in listaProdutos)
                 {
-                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2} - Quantidade Disponível: {produto.Quantidade}");
+                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2} - " +
+                        ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
                 }
             }
         }
@@ -118,7 +147,8 @@ namespace projeto.classes_exercicios_2
 
                 foreach (var produto in listaProdutos)
                 {
-                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2} - Quantidade Disponível: {produto.Quantidade}");
+                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2} - " + 
+                        ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
                 }
             }
         }
@@ -160,7 +190,8 @@ namespace projeto.classes_exercicios_2
 
                     foreach (var produto in listaProdutos.Where(p => p.Categoria == categoria))
                     {
-                        Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Preço: {produto.Preco:F2} - Quantidade Disponível: {produto.Quantidade}");
+                        Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Preço: {produto.Preco:F2} - " +
+                            ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
                     }
 
                     Console.WriteLine($"Subtotal: R${TotalPreco[categoria]:F2}\n");

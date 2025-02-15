@@ -30,17 +30,30 @@ namespace projeto.classes_exercicios_2
     public class VendaEmpresa
     {
         List<Venda> VendasEmpresa = new List<Venda>();
+        private ProdutoEmpresa _produtoEmpresa;
 
-        public (List<Venda>, bool existe) AdicionarVendas(Venda venda)
+        public VendaEmpresa(ProdutoEmpresa produtoEmpresa)
+        {
+            _produtoEmpresa = produtoEmpresa;
+        }
+
+        public (List<Venda>, bool, bool ) AdicionarVendas(Venda venda)
         {
             bool existeId = VendasEmpresa.Any(v => v.Id == venda.Id);
 
+            bool estoqueDisponivel = false;
+
             if (!existeId)
             {
-                VendasEmpresa.Add(venda);
+                estoqueDisponivel = _produtoEmpresa.AtualizarEstoque(venda.ProdutoVendido, venda.Categoria, venda.Preco, venda.Quantidade);
+
+                if (estoqueDisponivel)
+                {
+                    VendasEmpresa.Add(venda);
+                }
             }
 
-            return (VendasEmpresa, existeId);
+            return (VendasEmpresa, existeId, estoqueDisponivel);
         }
 
         public void ListarVendas()

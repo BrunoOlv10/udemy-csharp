@@ -29,6 +29,7 @@ namespace projeto.classes_exercicios_2
                     {
                         Console.Clear();
                         bool verificarExisteId = false;
+                        bool verificarEstoqueDisponivel = false;
 
                         Console.WriteLine();
                         Console.WriteLine("É possível cadastrar apenas uma venda por vez");
@@ -58,7 +59,7 @@ namespace projeto.classes_exercicios_2
                         Console.Write($"Insira o Id da Venda: ");
                         int id = Convert.ToInt32(Console.ReadLine());
 
-                        Console.Write($"Insira o Preço da Venda: ");
+                        Console.Write($"Insira o Preço Unitário do Produto Vendido: ");
                         double preco = Convert.ToDouble(Console.ReadLine());
 
                         Console.Write($"Insira a Quantidade Vendida: ");
@@ -72,7 +73,9 @@ namespace projeto.classes_exercicios_2
                         {
                             Venda venda = new Venda(nomeValidado, categoriaValidada, id, preco, quantidade, vendidoPor);
                             VendasCadastradas.Add(venda);
-                            (List<Venda> vendasAtualizadas, bool existeId) = vendaEmpresa.AdicionarVendas(venda);
+                            (List<Venda> vendasAtualizadas, bool existeId, bool estoqueDisponivel) = vendaEmpresa.AdicionarVendas(venda);
+
+                            verificarEstoqueDisponivel = estoqueDisponivel;
 
                             if (existeId)
                             {
@@ -93,7 +96,7 @@ namespace projeto.classes_exercicios_2
                             continue;
                         }
 
-                        else if (!verificarExisteId)
+                        else if (!verificarExisteId && verificarEstoqueDisponivel)
                         {
                             Console.WriteLine("\nVendas cadastradas com sucesso!");
                             Console.WriteLine("Pressione qualquer tecla para voltar ao menu");

@@ -22,7 +22,7 @@ namespace projeto
 
             FuncionarioEmpresa funcionario = new FuncionarioEmpresa();
             ProdutoEmpresa produto = new ProdutoEmpresa();
-            VendaEmpresa venda = new VendaEmpresa();
+            VendaEmpresa venda = new VendaEmpresa(produto);
             MenuPrincipal.SelecionarOpcao(funcionario, produto, venda);
         }
     }
