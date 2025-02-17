@@ -56,16 +56,16 @@ namespace projeto.classes_exercicios_2
                             continue;
                         }
 
-                        Console.Write($"Insira o Id da Venda: ");
+                        Console.Write("Insira o Id da Venda: ");
                         int id = Convert.ToInt32(Console.ReadLine());
 
-                        Console.Write($"Insira o Preço Unitário do Produto Vendido: ");
+                        Console.Write("Insira o Preço Unitário do Produto Vendido: ");
                         double preco = Convert.ToDouble(Console.ReadLine());
 
-                        Console.Write($"Insira a Quantidade Vendida: ");
+                        Console.Write("Insira a Quantidade Vendida: ");
                         int quantidade = Convert.ToInt32(Console.ReadLine());
 
-                        Console.Write($"Insira o Nome do Funcionário que Vendeu: ");
+                        Console.Write("Insira o Nome do Funcionário que Vendeu: ");
                         string vendidoPor = Console.ReadLine();
 
                         if (!string.IsNullOrWhiteSpace(nomeValidado) && !string.IsNullOrWhiteSpace(categoriaValidada) && preco > 0

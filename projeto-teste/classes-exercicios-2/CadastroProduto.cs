@@ -32,10 +32,12 @@ namespace projeto.classes_exercicios_2
                         {
                             Console.Clear();
                             bool verificarExisteId = false;
+                            bool existeId;
                             bool verificarExisteProduto = true;
+                            bool existeProduto;
 
                             Console.Write("Insira a quantidade de produtos que serão cadastrados: ");
-                            int quantidade = Convert.ToInt32(Console.ReadLine());
+                            int quantidadeGeral = Convert.ToInt32(Console.ReadLine());
 
                             Console.WriteLine();
                             Console.WriteLine("Todos os campos são obrigatórios serem preenchidos (Id, Nome, Categoria e Preço)");
@@ -46,7 +48,7 @@ namespace projeto.classes_exercicios_2
 
                             List<Produto> ProdutosCadastrados = new List<Produto>();
 
-                            for (int i = 0; i < quantidade; i++)
+                            for (int i = 0; i < quantidadeGeral; i++)
                             {
                                 verificarExisteId = false;
                                 verificarExisteProduto = true;
@@ -54,22 +56,26 @@ namespace projeto.classes_exercicios_2
                                 Console.Write($"Insira o Id do {i + 1}º produto: ");
                                 int id = Convert.ToInt32(Console.ReadLine());
 
-                                Console.Write($"Insira o Nome: ");
+                                Console.Write("Insira o Nome: ");
                                 string nome = Console.ReadLine();
                                 string nomeValidado = string.Join(" ", nome.ToLower().Split(' ').Select(n => char.ToUpper(n[0]) + n.Substring(1)));
 
-                                Console.Write($"Insira a Categoria: ");
+                                Console.Write("Insira a Categoria: ");
                                 string categoria = Console.ReadLine();
                                 string categoriaValidado = string.Join(" ", categoria.ToLower().Split(' ').Select(c => char.ToUpper(c[0]) + c.Substring(1)));
 
-                                Console.Write($"Insira o Preço: ");
+                                Console.Write("Insira o Preço: ");
                                 double preco = Convert.ToDouble(Console.ReadLine());
+
+                                Console.Write("Insira a quantidade de vezes que esse produto será cadastrado: ");
+                                int quantidadeCadastro = Convert.ToInt32(Console.ReadLine());
 
                                 if (id > 0 && !string.IsNullOrWhiteSpace(nomeValidado) && !string.IsNullOrWhiteSpace(categoriaValidado) && preco > 0)
                                 {
                                     Produto produto = new Produto(id, nomeValidado, categoriaValidado, preco);
                                     ProdutosCadastrados.Add(produto);
-                                    (List<Produto> produtosAtualizados, bool existeId, bool existeProduto) = produtoEmpresa.AdicionarProdutos(produto);
+                                    List<Produto> produtosAtualizados;
+                                    (produtosAtualizados, existeId, existeProduto, quantidadeCadastro) = produtoEmpresa.AdicionarProdutos(produto, quantidadeCadastro);
 
                                     if (existeId && !existeProduto)
                                     {

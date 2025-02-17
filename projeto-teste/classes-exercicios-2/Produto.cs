@@ -52,7 +52,7 @@ namespace projeto.classes_exercicios_2
             return listaProdutos;
         }
 
-        public (List<Produto>, bool, bool) AdicionarProdutos(Produto produto)
+        public (List<Produto>, bool, bool, int) AdicionarProdutos(Produto produto, int quantidadeCadastro)
         {
             bool existeId = ProdutosEmpresa.Any(p => p.Id == produto.Id);
 
@@ -63,15 +63,15 @@ namespace projeto.classes_exercicios_2
                 if (!existeProduto)
                 {
                     ProdutosEmpresa.Add(produto);
-                    QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)] = 1;
+                    QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)] = quantidadeCadastro;
                 }
                 else 
                 {
-                    QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]++;
+                    QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)] += quantidadeCadastro;
                 }
             }
 
-            return (ProdutosEmpresa, existeId, existeProduto);
+            return (ProdutosEmpresa, existeId, existeProduto, quantidadeCadastro);
         }
 
         public bool AtualizarEstoque(string Nome, string Categoria, double Preco, int Quantidade)
@@ -171,15 +171,15 @@ namespace projeto.classes_exercicios_2
                 {
                     if (TotalPreco.ContainsKey(produto.Categoria))
                     {
-                        TotalPreco[produto.Categoria] += produto.Preco;
+                        TotalPreco[produto.Categoria] += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]);
                     }
 
                     else
                     {
-                        TotalPreco.Add(produto.Categoria, produto.Preco);
+                        TotalPreco.Add(produto.Categoria, (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]));
                     }
 
-                    totalGeral += produto.Preco;
+                    totalGeral += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]);
                 }
 
                 Console.WriteLine("Relatório de Produtos Agrupados por Categoria:\n");
