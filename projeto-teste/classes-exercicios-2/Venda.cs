@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +72,51 @@ namespace projeto.classes_exercicios_2
                     Console.WriteLine($"Id: {venda.Id} - Nome: {venda.ProdutoVendido} - Categoria: {venda.Categoria} " +
                         $"- Preço: {venda.Preco:F2} - Quantidade: {venda.Quantidade} - Vendido Por: {venda.VendidoPor}");
                 }
+            }
+        }
+
+        public void ListarVendasComissõesPorFuncionario()
+        {
+            if (VendasEmpresa.Count == 0)
+            {
+                Console.WriteLine("Não há nenhuma venda cadastrada");
+            }
+
+            else
+            {
+                Dictionary<string, double> TotalComissao = new Dictionary<string, double>();
+                double totalComissaoGeral = 0;
+
+                foreach (var venda in VendasEmpresa)
+                {
+                    if (TotalComissao.ContainsKey(venda.VendidoPor))
+                    {
+                        TotalComissao[venda.VendidoPor] += (venda.Preco * venda.Quantidade) * 0.10;
+                    }
+
+                    else
+                    {
+                        TotalComissao.Add(venda.VendidoPor, (venda.Preco * venda.Quantidade) * 0.10);
+                    }
+
+                    totalComissaoGeral += (venda.Preco * venda.Quantidade) * 0.10;
+                }
+
+                Console.WriteLine("Relatório de Vendas e Comissões Por Funcionários:\n");
+
+                foreach (var funcionario in TotalComissao.Keys)
+                {
+                    Console.WriteLine($"{funcionario}");
+
+                    foreach (var venda in VendasEmpresa.Where(v => v.VendidoPor == funcionario))
+                    {
+                        Console.WriteLine($"Produto Vendido: {venda.ProdutoVendido} - Categoria: {venda.Categoria} - Id da Venda: {venda.Id} - Preço Unitário: {venda.Preco} - Quantidade Vendida: {venda.Quantidade}");
+                    }
+
+                    Console.WriteLine($"Comissão Total do Funcionário: R${TotalComissao[funcionario]:F2}\n");
+                }
+
+                Console.WriteLine($"Total Geral das Comissões dos Funcionários: R${totalComissaoGeral:F2}");
             }
         }
     }

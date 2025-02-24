@@ -153,7 +153,7 @@ namespace projeto.classes_exercicios_2
             }
         }
 
-        public void ListarCategorias()
+        public void ListarProdutosPorCategoria()
         {
             if (ProdutosEmpresa.Count == 0)
             {
@@ -163,7 +163,7 @@ namespace projeto.classes_exercicios_2
             else
             {
                 Dictionary<string, double> TotalPreco = new Dictionary<string, double>();
-                double totalGeral = 0;
+                double totalPrecoGeral = 0;
 
                 var listaProdutos = ObterInfosProdutos();
 
@@ -179,7 +179,7 @@ namespace projeto.classes_exercicios_2
                         TotalPreco.Add(produto.Categoria, (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]));
                     }
 
-                    totalGeral += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]);
+                    totalPrecoGeral += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]);
                 }
 
                 Console.WriteLine("Relatório de Produtos Agrupados por Categoria:\n");
@@ -194,10 +194,10 @@ namespace projeto.classes_exercicios_2
                             ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
                     }
 
-                    Console.WriteLine($"Subtotal: R${TotalPreco[categoria]:F2}\n");
+                    Console.WriteLine($"Preço Total da Categoria: R${TotalPreco[categoria]:F2}\n");
                 }
 
-                Console.WriteLine($"Total Geral dos Preços dos Produtos: R${totalGeral:F2}");
+                Console.WriteLine($"Total Geral dos Preços dos Produtos: R${totalPrecoGeral:F2}");
             }
         }
     }

@@ -18,9 +18,10 @@ namespace projeto.classes_exercicios_2
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("Menu Gerar Relatórios de Venda(s)");
                     Console.WriteLine("------------------------------");
-                    Console.WriteLine("1- Listar Venda(s)");
-                    Console.WriteLine("2- Voltar");
-                    Console.WriteLine("3- Sair do Sistema");
+                    Console.WriteLine("1- Listar Vendas");
+                    Console.WriteLine("2- Listar Vendas e Comissões Por Funcionário");
+                    Console.WriteLine("3- Voltar");
+                    Console.WriteLine("4- Sair do Sistema");
                     Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
                     int opcao = Convert.ToInt32(Console.ReadLine());
 
@@ -34,9 +35,18 @@ namespace projeto.classes_exercicios_2
                     }
 
                     else if (opcao == 2)
-                        break;
+                    {
+                        Console.Clear();
+                        vendaEmpresa.ListarVendasComissõesPorFuncionario();
+                        Console.WriteLine();
+                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.ReadKey();
+                    }
 
                     else if (opcao == 3)
+                        break;
+
+                    else if (opcao == 4)
                     {
                         Console.WriteLine();
                         Console.WriteLine("Saindo do sistema...");

@@ -60,7 +60,7 @@ namespace projeto.classes_exercicios_2
                     else if (opcao == 4)
                     {
                         Console.Clear();
-                        produtoEmpresa.ListarCategorias();
+                        produtoEmpresa.ListarProdutosPorCategoria();
                         Console.WriteLine();
                         Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
                         Console.ReadKey();
