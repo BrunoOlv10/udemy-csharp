@@ -52,6 +52,16 @@ namespace projeto.classes_exercicios_2
             return listaProdutos;
         }
 
+        public dynamic ObterPrecoProduto(string nome, string categoria)
+        {
+            var precoProduto = ProdutosEmpresa
+                .Where(p => p.Nome == nome && p.Categoria == categoria)
+                .Select(p => p.Preco)
+                .FirstOrDefault();
+
+            return precoProduto;
+        }
+
         public (List<Produto>, bool, bool, int) AdicionarProdutos(Produto produto, int quantidadeCadastro)
         {
             bool existeId = ProdutosEmpresa.Any(p => p.Id == produto.Id);

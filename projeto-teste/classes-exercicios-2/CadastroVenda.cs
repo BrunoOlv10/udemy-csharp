@@ -34,9 +34,14 @@ namespace projeto.classes_exercicios_2
                         Console.WriteLine();
                         Console.WriteLine("É possível cadastrar apenas uma venda por vez");
                         Console.WriteLine("OBS: Id não pode ser igual de nenhuma venda, caso seja, essa venda em específico não será cadastrada");
+                        Console.WriteLine("OBS: Caso vc tente vender um produto que não exista nos produtos cadastrados (será verificado nome e categoria), não será" +
+                            "cadastrado a venda e virá uma mensagem avisando");
                         Console.WriteLine();
 
                         List<Venda> VendasCadastradas = new List<Venda>();
+
+                        Console.Write("Insira o Id da Venda: ");
+                        int id = Convert.ToInt32(Console.ReadLine());
 
                         Console.Write($"Insira o Nome do Produto Vendido: ");
                         string nome = Console.ReadLine();
@@ -56,11 +61,7 @@ namespace projeto.classes_exercicios_2
                             continue;
                         }
 
-                        Console.Write("Insira o Id da Venda: ");
-                        int id = Convert.ToInt32(Console.ReadLine());
-
-                        Console.Write("Insira o Preço Unitário do Produto Vendido: ");
-                        double preco = Convert.ToDouble(Console.ReadLine());
+                        double preco = produtoEmpresa.ObterPrecoProduto(nomeValidado, categoriaValidada);
 
                         Console.Write("Insira a Quantidade Vendida: ");
                         int quantidade = Convert.ToInt32(Console.ReadLine());
