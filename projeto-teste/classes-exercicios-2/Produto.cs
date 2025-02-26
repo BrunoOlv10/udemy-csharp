@@ -93,7 +93,8 @@ namespace projeto.classes_exercicios_2
             if (QntdEstoque[chave] >= Quantidade)
             {
                 QntdEstoque[(Nome, Categoria, Preco)] -= Quantidade;
-                Console.WriteLine($"\nEstoque atualizado! {Quantidade} unidade(s) de {Nome} - {Categoria} foram removidos(as)");
+                Console.WriteLine($"\nEstoque atualizado! {Quantidade} unidade(s) de {Nome} - {Categoria} foram removidos(as) do estoque");
+                Console.WriteLine(QntdEstoque[chave] > 0 ? $"Restaram {QntdEstoque[chave]} unidade(s) desse produto no estoque" : $"Não resta mais nenhuma unidade disponível desse produto em estoque");
 
                 estoqueDisponivel = true;
             }
