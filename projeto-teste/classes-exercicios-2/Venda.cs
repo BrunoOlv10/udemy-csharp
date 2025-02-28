@@ -15,15 +15,22 @@ namespace projeto.classes_exercicios_2
         public int Id { get; set; }
         public double Preco { get; set; }
         public int Quantidade { get; set; }
+        public string DataVenda { get; set; }
+        public double ValorTotal { get; set; }
+        public double Comissao { get; set; }
         public string VendidoPor { get; set; }
 
-        public Venda(string produtoVendido, string categoria, int id, double preco, int quantidade, string vendidoPor)
+        public Venda(string produtoVendido, string categoria, int id, double preco, int quantidade, string dataVenda, double valorTotal, 
+           double comissao, string vendidoPor)
         {
             this.ProdutoVendido = produtoVendido;
             this.Categoria = categoria;
             this.Id = id;
             this.Preco = preco;
             this.Quantidade = quantidade;
+            this.DataVenda = dataVenda;
+            this.ValorTotal = valorTotal;
+            this.Comissao = comissao;
             this.VendidoPor = vendidoPor;
         }
     }
@@ -69,8 +76,9 @@ namespace projeto.classes_exercicios_2
                 Console.WriteLine("Vendas: ");
                 foreach (var venda in VendasEmpresa)
                 {
-                    Console.WriteLine($"Id: {venda.Id} - Nome: {venda.ProdutoVendido} - Categoria: {venda.Categoria} " +
-                        $"- Preço: {venda.Preco:F2} - Quantidade: {venda.Quantidade} - Vendido Por: {venda.VendidoPor}");
+                    Console.WriteLine($"Id: {venda.Id} - Nome: {venda.ProdutoVendido} - Categoria: {venda.Categoria} " + $"- Preço Unitário: {venda.Preco:F2} " +
+                        $"- Valor Total: {venda.ValorTotal:F2} - Comissão: {venda.Comissao} - Quantidade: {venda.Quantidade} - Data Venda: {venda.DataVenda} " +
+                        $"- Vendido Por: {venda.VendidoPor}");
                 }
             }
         }
@@ -110,7 +118,8 @@ namespace projeto.classes_exercicios_2
 
                     foreach (var venda in VendasEmpresa.Where(v => v.VendidoPor == funcionario))
                     {
-                        Console.WriteLine($"Produto Vendido: {venda.ProdutoVendido} - Categoria: {venda.Categoria} - Id da Venda: {venda.Id} - Preço Unitário: {venda.Preco} - Quantidade Vendida: {venda.Quantidade}");
+                        Console.WriteLine($"Produto Vendido: {venda.ProdutoVendido} - Categoria: {venda.Categoria} - Id da Venda: {venda.Id} - Preço Unitário: {venda.Preco} " +
+                            $"- Valor Total: {venda.ValorTotal} - Quantidade Vendida: {venda.Quantidade} - Data: {venda.DataVenda}");
                     }
 
                     Console.WriteLine($"Comissão Total do Funcionário: R${TotalComissao[funcionario]:F2}\n");
