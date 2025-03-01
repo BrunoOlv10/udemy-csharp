@@ -44,7 +44,6 @@ namespace projeto.classes_exercicios_2
                             Console.WriteLine("Tanto o Id como o Preço tem que ser inserido apenas valores maiores que 0");
                             Console.WriteLine("O Id não pode ser igual ao Id de produtos diferentes que já existem, a menos que o produto cadastrado seja igual a algum que exista");
                             Console.WriteLine("Caso o produto cadastrado já exista, o Id anteriormente cadastrado será mantido e irá incrementar a quantidade disponível desse produto ");
-                            Console.WriteLine();
 
                             List<Produto> ProdutosCadastrados = new List<Produto>();
 
@@ -53,7 +52,9 @@ namespace projeto.classes_exercicios_2
                                 verificarExisteId = false;
                                 verificarExisteProduto = true;
 
-                                Console.Write($"Insira o Id do {i + 1}º produto: ");
+                                Console.WriteLine($"\nProduto {i + 1}");
+
+                                Console.Write($"Insira o Id do produto: ");
                                 int id = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Write("Insira o Nome: ");
@@ -90,13 +91,11 @@ namespace projeto.classes_exercicios_2
                                         continue;
                                     }
                                 }
-
-                                Console.WriteLine();
                             }
 
                             if (ProdutosCadastrados.Count == 0)
                             {
-                                Console.WriteLine("Nenhum produto foi cadastrado, pois todos os campos devem ser preenchidos corretamente para considerar o cadastro");
+                                Console.WriteLine("\nNenhum produto foi cadastrado, pois todos os campos devem ser preenchidos corretamente para considerar o cadastro");
                                 Console.WriteLine("Pressione qualquer tecla para tentar novamente cadastrar os produtos");
                                 Console.ReadKey();
                                 Console.Clear();
@@ -105,7 +104,7 @@ namespace projeto.classes_exercicios_2
 
                             else if (!verificarExisteId || verificarExisteId && verificarExisteProduto)
                             {
-                                Console.WriteLine("Produtos cadastrados com sucesso!");
+                                Console.WriteLine("\nProdutos cadastrados com sucesso!");
                                 Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
                                 Console.ReadKey();
                                 break;

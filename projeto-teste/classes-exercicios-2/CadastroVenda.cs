@@ -45,7 +45,9 @@ namespace projeto.classes_exercicios_2
 
                             for (int i = 0; i < quantidadeGeral; i++)
                             {
-                                Console.Write("\nInsira o Id da Venda: ");
+                                Console.WriteLine($"\nVenda {i + 1}");
+
+                                Console.Write("Insira o Id da Venda: ");
                                 int id = Convert.ToInt32(Console.ReadLine());
 
                                 Console.Write($"Insira o Nome do Produto Vendido: ");
@@ -110,6 +112,11 @@ namespace projeto.classes_exercicios_2
                                         Console.WriteLine("Pressione qualquer tecla para tentar novamente cadastrar a venda");
                                         Console.ReadKey();
                                         continue;
+                                    }
+
+                                    if (!verificarEstoqueDisponivel)
+                                    {
+                                        i--;
                                     }
                                 }
                             }
