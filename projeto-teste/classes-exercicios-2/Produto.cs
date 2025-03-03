@@ -37,7 +37,7 @@ namespace projeto.classes_exercicios_2
         {
             var listaProdutos = from produto in ProdutosEmpresa
                                 join estoque in QuantidadeEstoque
-                                on new { produto.Nome, produto.Categoria, produto.Preco } equals new { estoque.Key.Nome, estoque.Key.Categoria, estoque.Key.Preco }
+                                on new { produto.Nome, produto.Categoria } equals new { estoque.Key.Nome, estoque.Key.Categoria }
                                 into estoqueProduto
                                 from estoque in estoqueProduto.DefaultIfEmpty()
                                 select new
@@ -75,7 +75,7 @@ namespace projeto.classes_exercicios_2
                     ProdutosEmpresa.Add(produto);
                     QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)] = quantidadeCadastro;
                 }
-                else 
+                else
                 {
                     QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)] += quantidadeCadastro;
                 }
@@ -112,6 +112,34 @@ namespace projeto.classes_exercicios_2
             }
 
             return estoqueDisponivel;
+        }
+
+        public bool AtualizarPreco(string Nome, string Categoria, string sentidoAlteracao, string tipoAlteracao, double NovoPreco)
+        {
+            bool existeProduto = ProdutosEmpresa.Any(p => p.Nome == Nome && p.Categoria == Categoria);
+
+            if (existeProduto)
+            {
+                if (tipoAlteracao == "%")
+                {
+                    if (sentidoAlteracao == "A")
+                    {
+                        ProdutosEmpresa.Where(p => p.Nome == Nome && p.Categoria == Categoria).ToList().ForEach(p => p.Preco += (p.Preco * NovoPreco)/100);
+                    }
+
+                    else if (sentidoAlteracao == "D")
+                    {
+                        ProdutosEmpresa.Where(p => p.Nome == Nome && p.Categoria == Categoria).ToList().ForEach(p => p.Preco -= (p.Preco * NovoPreco)/100);
+                    }
+                }
+
+                else if (tipoAlteracao == "V")
+                {
+                    ProdutosEmpresa.Where(p => p.Nome == Nome && p.Categoria == Categoria).ToList().ForEach(p => p.Preco = NovoPreco);
+                }
+            }
+
+            return existeProduto;
         }
 
         public void ListarProdutos()
@@ -158,7 +186,7 @@ namespace projeto.classes_exercicios_2
 
                 foreach (var produto in listaProdutos)
                 {
-                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2} - " + 
+                    Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2} - " +
                         ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
                 }
             }

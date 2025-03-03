@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DocumentFormat.OpenXml.Drawing;
+using projeto.classes_exercicios;
 using projeto.classes_exercicios_2;
 
 namespace projeto.classes_exercicios_2
@@ -21,8 +22,10 @@ namespace projeto.classes_exercicios_2
                     Console.WriteLine("Menu Cadastrar Produtos");
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("1- Adicionar Produtos");
-                    Console.WriteLine("2- Voltar");
-                    Console.WriteLine("3- Sair do Sistema");
+                    Console.WriteLine("2- Alterar Preço de Produtos");
+                    Console.WriteLine("3- Alterar Preço de Produtos Por Categoria");
+                    Console.WriteLine("4- Voltar");
+                    Console.WriteLine("5- Sair do Sistema");
                     Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
                     int opcao = Convert.ToInt32(Console.ReadLine());
 
@@ -36,7 +39,7 @@ namespace projeto.classes_exercicios_2
                             bool verificarExisteProduto = true;
                             bool existeProduto;
 
-                            Console.Write("Insira a quantidade de produtos que serão cadastrados: ");
+                            Console.Write("Insira a quantidade de tipos de produtos diferentes que serão cadastrados: ");
                             int quantidadeGeral = Convert.ToInt32(Console.ReadLine());
 
                             Console.WriteLine();
@@ -112,10 +115,80 @@ namespace projeto.classes_exercicios_2
                         }
                     }
 
-                    if (opcao == 2)
-                        break;
+                    else if (opcao == 2)
+                    {
+                        Console.Clear();
+
+                        Console.Write("Quantos produtos terão alterações de preços (insira apenas o número)? ");
+                        int quantidade = Convert.ToInt32(Console.ReadLine());
+
+                        for (int i = 0; i < quantidade; i++)
+                        {
+                            try
+                            {
+                                Console.WriteLine($"\nProduto {i + 1}");
+                                Console.Write("Insira o nome do produto: ");
+                                string nome = Console.ReadLine();
+                                string nomeValidado = string.Join(" ", nome.ToLower().Split(' ').Select(n => char.ToUpper(n[0]) + n.Substring(1)));
+
+                                Console.Write("Insira a categoria do produto: ");
+                                string categoria = Console.ReadLine();
+                                string categoriaValidado = string.Join(" ", categoria.ToLower().Split(' ').Select(c => char.ToUpper(c[0]) + c.Substring(1)));
+
+                                Console.Write("Alterar o preço por porcentagem ou valor exato (Digite % ou V)? ");
+                                string tipoAlteracao = Console.ReadLine().ToUpper();
+
+                                string sentidoAlteracao = "A";
+                                if (tipoAlteracao == "%")
+                                {
+                                    Console.Write("Alterar o preço aumentando ou diminuindo (Digite A ou D)? ");
+                                    sentidoAlteracao = Console.ReadLine().ToUpper();
+                                }
+
+                                Console.Write("Qual é o valor da alteração (Independente de ser porcentagem ou valor exato, coloque apenas o número)? ");
+                                double novoPreco = Convert.ToDouble(Console.ReadLine());
+
+                                if (!string.IsNullOrWhiteSpace(nomeValidado) && !string.IsNullOrWhiteSpace(categoriaValidado) && (sentidoAlteracao == "A" || sentidoAlteracao == "D")
+                                    && (tipoAlteracao == "%" || tipoAlteracao == "V") && novoPreco > 0)
+                                {
+                                    bool alteracaoPreco = produtoEmpresa.AtualizarPreco(nomeValidado, categoriaValidado, sentidoAlteracao, tipoAlteracao, novoPreco);
+
+                                    if (!alteracaoPreco)
+                                    {
+                                        Console.WriteLine("\nO produto digitado não existe, tente inserir ele novamente");
+                                        i--;
+                                    }
+                                }
+
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("\nAlgum dado está incorreto, tente preencher novamente. Siga todas as regras");
+                                    i--;
+                                }
+                            }
+                            catch (System.FormatException)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("\nInsira dados válidos. Preencha novamente");
+                                i--;
+                            }
+                        }
+
+                        Console.WriteLine("\nAlterações de preço realizadas com sucesso!");
+                        Console.WriteLine("Pressione qualquer tecla para voltar");
+                        Console.ReadKey();
+                    }
 
                     else if (opcao == 3)
+                    {
+                        // Alterar Preço de Produtos Por Categoria
+                    }
+
+                    else if (opcao == 4)
+                        break;
+
+                    else if (opcao == 5)
                     {
                         Console.WriteLine();
                         Console.WriteLine("Saindo do sistema...");
@@ -125,7 +198,7 @@ namespace projeto.classes_exercicios_2
                 catch (System.FormatException)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("ERRO: Insira apenas valores numéricos e os que estão disponíveis");
+                    Console.WriteLine("ERRO: Insira dados válidos");
                     Console.ReadKey();
                 }
                 catch (System.IndexOutOfRangeException)

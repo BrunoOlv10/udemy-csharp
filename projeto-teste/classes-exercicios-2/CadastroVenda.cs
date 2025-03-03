@@ -133,7 +133,7 @@ namespace projeto.classes_exercicios_2
                             else if (!verificarExisteId && verificarEstoqueDisponivel)
                             {
                                 Console.WriteLine("\nVendas cadastradas com sucesso!");
-                                Console.WriteLine("Pressione qualquer tecla para voltar ao menu");
+                                Console.WriteLine("Pressione qualquer tecla para voltar");
                                 Console.ReadKey();
                                 break;
                             }

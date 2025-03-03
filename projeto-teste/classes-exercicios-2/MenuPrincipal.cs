@@ -18,9 +18,9 @@ namespace projeto.classes_exercicios_2
                 {
                     Console.Clear();
                     Console.WriteLine("------------------------------");
-                    Console.WriteLine("Menu Principal");
+                    Console.WriteLine("Menu Principal - Funcionários, Produtos e Vendas");
                     Console.WriteLine("------------------------------");
-                    Console.WriteLine("1- Criar Cadastros (Funcionários ou Produtos ou Vendas): ");
+                    Console.WriteLine("1- Criar Cadastros");
                     Console.WriteLine("2- Relatórios");
                     Console.WriteLine("3- Sair do Sistema");
                     Console.Write("Insira o número de opção de menu (dentro das opções acima): ");
