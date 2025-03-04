@@ -59,11 +59,12 @@ namespace projeto.classes_exercicios_2
 
                     else if (opcao == 4)
                     {
-                        Console.Clear();
-                        produtoEmpresa.ListarProdutosPorCategoria();
-                        Console.WriteLine();
-                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
-                        Console.ReadKey();
+                        // Passando por manutenção, não está funcionando corretamente
+                        //Console.Clear();
+                        //produtoEmpresa.ListarProdutosPorCategoria();
+                        //Console.WriteLine();
+                        //Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        //Console.ReadKey();
                     }
 
                     else if (opcao == 5)

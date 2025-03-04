@@ -182,7 +182,64 @@ namespace projeto.classes_exercicios_2
 
                     else if (opcao == 3)
                     {
-                        // Alterar Preço de Produtos Por Categoria
+                        Console.Clear();
+
+                        Console.Write("Quantas categorias terão alterações de preços em seus respectivos produtos (insira apenas o número)? ");
+                        int quantidade = Convert.ToInt32(Console.ReadLine());
+
+                        for (int i = 0; i < quantidade; i++)
+                        {
+                            try
+                            {
+                                Console.WriteLine($"\nCategoria {i + 1}");
+
+                                Console.Write("Insira a categoria: ");
+                                string categoria = Console.ReadLine();
+                                string categoriaValidado = string.Join(" ", categoria.ToLower().Split(' ').Select(c => char.ToUpper(c[0]) + c.Substring(1)));
+
+                                Console.Write("Alterar o preço por porcentagem ou valor exato (Digite % ou V)? ");
+                                string tipoAlteracao = Console.ReadLine().ToUpper();
+
+                                string sentidoAlteracao = "A";
+                                if (tipoAlteracao == "%")
+                                {
+                                    Console.Write("Alterar o preço aumentando ou diminuindo (Digite A ou D)? ");
+                                    sentidoAlteracao = Console.ReadLine().ToUpper();
+                                }
+
+                                Console.Write("Qual é o valor da alteração (Independente de ser porcentagem ou valor exato, coloque apenas o número)? ");
+                                double novoPreco = Convert.ToDouble(Console.ReadLine());
+
+                                if (!string.IsNullOrWhiteSpace(categoriaValidado) && (sentidoAlteracao == "A" || sentidoAlteracao == "D")
+                                     && (tipoAlteracao == "%" || tipoAlteracao == "V") && novoPreco > 0)
+                                {
+                                    bool alteracaoPreco = produtoEmpresa.AtualizarPrecoCategoria(categoriaValidado, sentidoAlteracao, tipoAlteracao, novoPreco);
+
+                                    if (!alteracaoPreco)
+                                    {
+                                        Console.WriteLine("\nA categoria digitada não existe, tente inserir ele novamente");
+                                        i--;
+                                    }
+                                }
+
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("\nAlgum dado está incorreto, tente preencher novamente. Siga todas as regras");
+                                    i--;
+                                }
+                            }
+                            catch (System.FormatException)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("\nInsira dados válidos. Preencha novamente");
+                                i--;
+                            }
+                        }
+
+                        Console.WriteLine("\nAlterações de preço realizadas com sucesso!");
+                        Console.WriteLine("Pressione qualquer tecla para voltar");
+                        Console.ReadKey();
                     }
 
                     else if (opcao == 4)

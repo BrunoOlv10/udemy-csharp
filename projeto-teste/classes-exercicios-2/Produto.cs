@@ -142,6 +142,34 @@ namespace projeto.classes_exercicios_2
             return existeProduto;
         }
 
+        public bool AtualizarPrecoCategoria(string Categoria, string sentidoAlteracao, string tipoAlteracao, double NovoPreco)
+        {
+            bool existeProduto = ProdutosEmpresa.Any(p => p.Categoria == Categoria);
+
+            if (existeProduto)
+            {
+                if (tipoAlteracao == "%")
+                {
+                    if (sentidoAlteracao == "A")
+                    {
+                        ProdutosEmpresa.Where(p => p.Categoria == Categoria).ToList().ForEach(p => p.Preco += (p.Preco * NovoPreco) / 100);
+                    }
+
+                    else if (sentidoAlteracao == "D")
+                    {
+                        ProdutosEmpresa.Where(p => p.Categoria == Categoria).ToList().ForEach(p => p.Preco -= (p.Preco * NovoPreco) / 100);
+                    }
+                }
+
+                else if (tipoAlteracao == "V")
+                {
+                    ProdutosEmpresa.Where(p => p.Categoria == Categoria).ToList().ForEach(p => p.Preco = NovoPreco);
+                }
+            }
+
+            return existeProduto;
+        }
+
         public void ListarProdutos()
         {
             if (ProdutosEmpresa.Count == 0)
@@ -192,52 +220,52 @@ namespace projeto.classes_exercicios_2
             }
         }
 
-        public void ListarProdutosPorCategoria()
-        {
-            if (ProdutosEmpresa.Count == 0)
-            {
-                Console.WriteLine("Não há nenhum produto cadastrado");
-            }
+        //public void ListarProdutosPorCategoria()
+        //{
+        //    if (ProdutosEmpresa.Count == 0)
+        //    {
+        //        Console.WriteLine("Não há nenhum produto cadastrado");
+        //    }
 
-            else
-            {
-                Dictionary<string, double> TotalPreco = new Dictionary<string, double>();
-                double totalPrecoGeral = 0;
+        //    else
+        //    {
+        //        Dictionary<string, double> TotalPreco = new Dictionary<string, double>();
+        //        double totalPrecoGeral = 0;
 
-                var listaProdutos = ObterInfosProdutos();
+        //        var listaProdutos = ObterInfosProdutos();
 
-                foreach (var produto in listaProdutos)
-                {
-                    if (TotalPreco.ContainsKey(produto.Categoria))
-                    {
-                        TotalPreco[produto.Categoria] += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]);
-                    }
+        //        foreach (var produto in listaProdutos)
+        //        {
+        //            if (TotalPreco.ContainsKey(produto.Categoria))
+        //            {
+        //                TotalPreco[produto.Categoria] += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]);
+        //            }
 
-                    else
-                    {
-                        TotalPreco.Add(produto.Categoria, (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]));
-                    }
+        //            else
+        //            {
+        //                TotalPreco.Add(produto.Categoria, (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]));
+        //            }
 
-                    totalPrecoGeral += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]);
-                }
+        //            totalPrecoGeral += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]);
+        //        }
 
-                Console.WriteLine("Relatório de Produtos Agrupados por Categoria:\n");
+        //        Console.WriteLine("Relatório de Produtos Agrupados por Categoria:\n");
 
-                foreach (var categoria in TotalPreco.Keys)
-                {
-                    Console.WriteLine($"{categoria}");
+        //        foreach (var categoria in TotalPreco.Keys)
+        //        {
+        //            Console.WriteLine($"{categoria}");
 
-                    foreach (var produto in listaProdutos.Where(p => p.Categoria == categoria))
-                    {
-                        Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Preço: {produto.Preco:F2} - " +
-                            ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
-                    }
+        //            foreach (var produto in listaProdutos.Where(p => p.Categoria == categoria))
+        //            {
+        //                Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Preço: {produto.Preco:F2} - " +
+        //                    ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
+        //            }
 
-                    Console.WriteLine($"Preço Total da Categoria: R${TotalPreco[categoria]:F2}\n");
-                }
+        //            Console.WriteLine($"Preço Total da Categoria: R${TotalPreco[categoria]:F2}\n");
+        //        }
 
-                Console.WriteLine($"Total Geral dos Preços dos Produtos: R${totalPrecoGeral:F2}");
-            }
-        }
+        //        Console.WriteLine($"Total Geral dos Preços dos Produtos: R${totalPrecoGeral:F2}");
+        //    }
+        //}
     }
 }
