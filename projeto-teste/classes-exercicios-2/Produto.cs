@@ -30,8 +30,8 @@ namespace projeto.classes_exercicios_2
         List<Produto> ProdutosEmpresa = new List<Produto>();
         public List<Produto> Produtos => ProdutosEmpresa;
 
-        Dictionary<(string Nome, string Categoria, double Preco), int> QuantidadeEstoque = new Dictionary<(string, string, double), int>();
-        public Dictionary<(string Nome, string Categoria, double Preco), int> QntdEstoque => QuantidadeEstoque;
+        Dictionary<(string Nome, string Categoria), int> QuantidadeEstoque = new Dictionary<(string, string), int>();
+        public Dictionary<(string Nome, string Categoria), int> QntdEstoque => QuantidadeEstoque;
 
         public IEnumerable<dynamic> ObterInfosProdutos()
         {
@@ -66,33 +66,33 @@ namespace projeto.classes_exercicios_2
         {
             bool existeId = ProdutosEmpresa.Any(p => p.Id == produto.Id);
 
-            bool existeProduto = ProdutosEmpresa.Any(p => p.Nome == produto.Nome && p.Categoria == produto.Categoria && p.Preco == produto.Preco);
+            bool existeProduto = ProdutosEmpresa.Any(p => p.Nome == produto.Nome && p.Categoria == produto.Categoria);
 
             if (existeId && existeProduto || !existeId && !existeProduto || !existeId && existeProduto)
             {
                 if (!existeProduto)
                 {
                     ProdutosEmpresa.Add(produto);
-                    QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)] = quantidadeCadastro;
+                    QntdEstoque[(produto.Nome, produto.Categoria)] = quantidadeCadastro;
                 }
                 else
                 {
-                    QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)] += quantidadeCadastro;
+                    QntdEstoque[(produto.Nome, produto.Categoria)] += quantidadeCadastro;
                 }
             }
 
             return (ProdutosEmpresa, existeId, existeProduto, quantidadeCadastro);
         }
 
-        public bool AtualizarEstoque(string Nome, string Categoria, double Preco, int Quantidade)
+        public bool AtualizarEstoque(string Nome, string Categoria, int Quantidade)
         {
-            var chave = (Nome, Categoria, Preco);
+            var chave = (Nome, Categoria);
 
             bool estoqueDisponivel = false;
 
             if (QntdEstoque[chave] >= Quantidade)
             {
-                QntdEstoque[(Nome, Categoria, Preco)] -= Quantidade;
+                QntdEstoque[(Nome, Categoria)] -= Quantidade;
                 Console.WriteLine($"\nEstoque atualizado! {Quantidade} unidade(s) de {Nome} - {Categoria} foram removidos(as) do estoque");
                 Console.WriteLine(QntdEstoque[chave] > 0 ? $"Restaram {QntdEstoque[chave]} unidade(s) desse produto no estoque" : $"Não resta mais nenhuma unidade disponível desse produto em estoque");
 
@@ -220,52 +220,52 @@ namespace projeto.classes_exercicios_2
             }
         }
 
-        //public void ListarProdutosPorCategoria()
-        //{
-        //    if (ProdutosEmpresa.Count == 0)
-        //    {
-        //        Console.WriteLine("Não há nenhum produto cadastrado");
-        //    }
+        public void ListarProdutosPorCategoria()
+        {
+            if (ProdutosEmpresa.Count == 0)
+            {
+                Console.WriteLine("Não há nenhum produto cadastrado");
+            }
 
-        //    else
-        //    {
-        //        Dictionary<string, double> TotalPreco = new Dictionary<string, double>();
-        //        double totalPrecoGeral = 0;
+            else
+            {
+                Dictionary<string, double> TotalPreco = new Dictionary<string, double>();
+                double totalPrecoGeral = 0;
 
-        //        var listaProdutos = ObterInfosProdutos();
+                var listaProdutos = ObterInfosProdutos();
 
-        //        foreach (var produto in listaProdutos)
-        //        {
-        //            if (TotalPreco.ContainsKey(produto.Categoria))
-        //            {
-        //                TotalPreco[produto.Categoria] += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]);
-        //            }
+                foreach (var produto in listaProdutos)
+                {
+                    if (TotalPreco.ContainsKey(produto.Categoria))
+                    {
+                        TotalPreco[produto.Categoria] += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria)]);
+                    }
 
-        //            else
-        //            {
-        //                TotalPreco.Add(produto.Categoria, (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]));
-        //            }
+                    else
+                    {
+                        TotalPreco.Add(produto.Categoria, (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria)]));
+                    }
 
-        //            totalPrecoGeral += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria, produto.Preco)]);
-        //        }
+                    totalPrecoGeral += (produto.Preco * QntdEstoque[(produto.Nome, produto.Categoria)]);
+                }
 
-        //        Console.WriteLine("Relatório de Produtos Agrupados por Categoria:\n");
+                Console.WriteLine("Relatório de Produtos Agrupados por Categoria:\n");
 
-        //        foreach (var categoria in TotalPreco.Keys)
-        //        {
-        //            Console.WriteLine($"{categoria}");
+                foreach (var categoria in TotalPreco.Keys)
+                {
+                    Console.WriteLine($"{categoria}");
 
-        //            foreach (var produto in listaProdutos.Where(p => p.Categoria == categoria))
-        //            {
-        //                Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Preço: {produto.Preco:F2} - " +
-        //                    ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
-        //            }
+                    foreach (var produto in listaProdutos.Where(p => p.Categoria == categoria))
+                    {
+                        Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Preço: {produto.Preco:F2} - " +
+                            ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
+                    }
 
-        //            Console.WriteLine($"Preço Total da Categoria: R${TotalPreco[categoria]:F2}\n");
-        //        }
+                    Console.WriteLine($"Preço Total da Categoria: R${TotalPreco[categoria]:F2}\n");
+                }
 
-        //        Console.WriteLine($"Total Geral dos Preços dos Produtos: R${totalPrecoGeral:F2}");
-        //    }
-        //}
+                Console.WriteLine($"Total Geral dos Preços dos Produtos: R${totalPrecoGeral:F2}");
+            }
+        }
     }
 }

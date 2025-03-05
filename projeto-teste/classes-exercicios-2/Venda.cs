@@ -53,7 +53,7 @@ namespace projeto.classes_exercicios_2
 
             if (!existeId)
             {
-                estoqueDisponivel = _produtoEmpresa.AtualizarEstoque(venda.ProdutoVendido, venda.Categoria, venda.Preco, venda.Quantidade);
+                estoqueDisponivel = _produtoEmpresa.AtualizarEstoque(venda.ProdutoVendido, venda.Categoria, venda.Quantidade);
 
                 if (estoqueDisponivel)
                 {
@@ -77,7 +77,7 @@ namespace projeto.classes_exercicios_2
                 foreach (var venda in VendasEmpresa)
                 {
                     Console.WriteLine($"Id: {venda.Id} - Nome: {venda.ProdutoVendido} - Categoria: {venda.Categoria} " + $"- Preço Unitário: {venda.Preco:F2} " +
-                        $"- Valor Total: {venda.ValorTotal:F2} - Comissão: {venda.Comissao} - Quantidade: {venda.Quantidade} - Data Venda: {venda.DataVenda} " +
+                        $"- Valor Total: {venda.ValorTotal:F2} - Comissão: {venda.Comissao} - Quantidade Vendida: {venda.Quantidade} - Data Venda: {venda.DataVenda} " +
                         $"- Vendido Por: {venda.VendidoPor}");
                 }
             }
@@ -119,7 +119,7 @@ namespace projeto.classes_exercicios_2
                     foreach (var venda in VendasEmpresa.Where(v => v.VendidoPor == funcionario))
                     {
                         Console.WriteLine($"Produto Vendido: {venda.ProdutoVendido} - Categoria: {venda.Categoria} - Id da Venda: {venda.Id} - Preço Unitário: {venda.Preco} " +
-                            $"- Valor Total: {venda.ValorTotal} - Quantidade Vendida: {venda.Quantidade} - Data: {venda.DataVenda}");
+                            $"- Valor Total: {venda.ValorTotal} - Comissão: {venda.Comissao} - Quantidade Vendida: {venda.Quantidade} - Data Venda: {venda.DataVenda}");
                     }
 
                     Console.WriteLine($"Comissão Total do Funcionário: R${TotalComissao[funcionario]:F2}\n");
