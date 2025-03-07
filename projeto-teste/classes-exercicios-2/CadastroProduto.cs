@@ -42,8 +42,7 @@ namespace projeto.classes_exercicios_2
                             Console.Write("Insira a quantidade de tipos de produtos diferentes que serão cadastrados: ");
                             int quantidadeGeral = Convert.ToInt32(Console.ReadLine());
 
-                            Console.WriteLine();
-                            Console.WriteLine("Todos os campos são obrigatórios serem preenchidos (Id, Nome, Categoria e Preço)");
+                            Console.WriteLine("\nTodos os campos são obrigatórios serem preenchidos (Id, Nome, Categoria e Preço)");
                             Console.WriteLine("Tanto o Id como o Preço tem que ser inserido apenas valores maiores que 0");
                             Console.WriteLine("O Id não pode ser igual ao Id de produtos diferentes que já existem, a menos que o produto cadastrado seja igual a algum que exista");
                             Console.WriteLine("Caso o produto cadastrado já exista, o Id anteriormente cadastrado será mantido e irá incrementar a quantidade disponível desse produto ");
@@ -119,7 +118,7 @@ namespace projeto.classes_exercicios_2
                     {
                         Console.Clear();
 
-                        Console.Write("Quantos produtos terão alterações de preços (insira apenas o número)? ");
+                        Console.Write("\nQuantos produtos terão alterações de preços (insira apenas o número)? ");
                         int quantidade = Convert.ToInt32(Console.ReadLine());
 
                         for (int i = 0; i < quantidade; i++)
@@ -127,6 +126,7 @@ namespace projeto.classes_exercicios_2
                             try
                             {
                                 Console.WriteLine($"\nProduto {i + 1}");
+
                                 Console.Write("Insira o nome do produto: ");
                                 string nome = Console.ReadLine();
                                 string nomeValidado = string.Join(" ", nome.ToLower().Split(' ').Select(n => char.ToUpper(n[0]) + n.Substring(1)));
@@ -184,7 +184,7 @@ namespace projeto.classes_exercicios_2
                     {
                         Console.Clear();
 
-                        Console.Write("Quantas categorias terão alterações de preços em seus respectivos produtos (insira apenas o número)? ");
+                        Console.Write("\nQuantas categorias terão alterações de preços em seus respectivos produtos (insira apenas o número)? ");
                         int quantidade = Convert.ToInt32(Console.ReadLine());
 
                         for (int i = 0; i < quantidade; i++)
@@ -247,21 +247,18 @@ namespace projeto.classes_exercicios_2
 
                     else if (opcao == 5)
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("Saindo do sistema...");
+                        Console.WriteLine("\nSaindo do sistema...");
                         Environment.Exit(0);
                     }
                 }
                 catch (System.FormatException)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("ERRO: Insira dados válidos");
+                    Console.WriteLine("\nERRO: Insira dados válidos");
                     Console.ReadKey();
                 }
                 catch (System.IndexOutOfRangeException)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("ERRO: Não deixe de preencher nenhum campo");
+                    Console.WriteLine("\nERRO: Não deixe de preencher nenhum campo");
                     Console.ReadKey();
                 }
             }

@@ -46,7 +46,7 @@ namespace projeto.classes_exercicios_2
                 Console.WriteLine("Funcionários: ");
                 foreach (var funcionario in FuncionariosEmpresa)
                 {
-                    Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
+                    Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}\n");
                 }
             }
         }
@@ -63,16 +63,19 @@ namespace projeto.classes_exercicios_2
                 if (ordenacao == "asc")
                 {
                     FuncionariosEmpresa = FuncionariosEmpresa.OrderBy(f => f.Sobrenome).ToList();
+                    ordenacao = "Ascendente";
                 }
                 
                 else if (ordenacao == "desc")
                 {
                     FuncionariosEmpresa = FuncionariosEmpresa.OrderByDescending(f => f.Sobrenome).ToList();
+                    ordenacao = "Descendente";
                 }
 
+                Console.WriteLine($"Sobrenome dos Funcionários ordenados de forma {ordenacao}:");
                 foreach (var funcionario in FuncionariosEmpresa)
                 {
-                    Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}");
+                    Console.WriteLine($"Nome Completo: {funcionario.Nome} {funcionario.Sobrenome} - Cargo: {funcionario.Cargo}\n");
                 }
             }
         }

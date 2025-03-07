@@ -37,15 +37,15 @@ namespace projeto.classes_exercicios_2
                             Console.Write("Insira a quantidade de funcionários que serão cadastrados: ");
                             int quantidade = Convert.ToInt32(Console.ReadLine());
 
-                            Console.WriteLine();
-                            Console.WriteLine("Todos os campos são obrigatórios serem preenchidos, pois só será considerado os funcionários que tiverem todos os campos preenchidos (Nome, Sobrenome e Cargo)");
-                            Console.WriteLine();
+                            Console.WriteLine("\nTodos os campos são obrigatórios serem preenchidos, pois só será considerado os funcionários que tiverem todos os campos preenchidos (Nome, Sobrenome e Cargo)");
 
                             List<Funcionario> FuncionariosCadastrados = new List<Funcionario>();
 
                             for (int i = 0; i < quantidade; i++)
                             {
-                                Console.Write($"Insira o Nome do {i + 1}º funcionário(a): ");
+                                Console.WriteLine($"\nFuncionário {i + 1}");
+
+                                Console.Write($"Insira o Nome do funcionário(a): ");
                                 string nome = Console.ReadLine();
                                 string nomeValidado = string.Join(" ", nome.ToLower().Split(' ').Select(n => char.ToUpper(n[0]) + n.Substring(1)));
 
@@ -63,13 +63,11 @@ namespace projeto.classes_exercicios_2
                                     FuncionariosCadastrados.Add(funcionario);
                                     funcionarioEmpresa.AdicionarFuncionarios(funcionario);
                                 }
-
-                                Console.WriteLine();
                             }
 
                             if (FuncionariosCadastrados.Count == 0)
                             {
-                                Console.WriteLine("Nenhum funcionário foi cadastrado, pois todos os campos devem ser preenchidos corretamente para considerar o cadastro");
+                                Console.WriteLine("\nNenhum funcionário foi cadastrado, pois todos os campos devem ser preenchidos corretamente para considerar o cadastro");
                                 Console.WriteLine("Pressione qualquer tecla para tentar novamente cadastrar os funcionários");
                                 Console.ReadKey();
                                 Console.Clear();
@@ -78,7 +76,7 @@ namespace projeto.classes_exercicios_2
 
                             else
                             {
-                                Console.WriteLine("Funcionários cadastrados com sucesso!");
+                                Console.WriteLine("\nFuncionários cadastrados com sucesso!");
                                 Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
                                 Console.ReadKey();
                                 break;
@@ -91,29 +89,25 @@ namespace projeto.classes_exercicios_2
 
                     else if (opcao == 3)
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("Saindo do sistema...");
+                        Console.WriteLine("\nSaindo do sistema...");
                         Environment.Exit(0);
                     }
 
                     else
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("ERRO: Opção inexistente, insira alguma das opções que estão disponíveis");
+                        Console.WriteLine("\nERRO: Opção inexistente, insira alguma das opções que estão disponíveis");
                         Console.ReadKey();
                         return;
                     }
                 }
                 catch (System.FormatException)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("ERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
+                    Console.WriteLine("\nERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
                     Console.ReadKey();
                 }
                 catch (System.IndexOutOfRangeException)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("ERRO: Não deixe de preencher nenhum campo");
+                    Console.WriteLine("\nERRO: Não deixe de preencher nenhum campo");
                     Console.ReadKey();
                 }
             }

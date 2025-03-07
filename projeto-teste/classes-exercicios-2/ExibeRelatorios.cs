@@ -49,15 +49,13 @@ namespace projeto.classes_exercicios_2
 
                     else if (opcao == 5)
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("Saindo do sistema...");
+                        Console.WriteLine("\nSaindo do sistema...");
                         Environment.Exit(0);
                     }
                 }
                 catch (System.FormatException)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("ERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
+                    Console.WriteLine("\nERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
                     Console.ReadKey();
                 }
             }

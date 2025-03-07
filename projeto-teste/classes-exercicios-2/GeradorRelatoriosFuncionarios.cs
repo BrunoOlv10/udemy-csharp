@@ -32,8 +32,7 @@ namespace projeto.classes_exercicios_2
                     {
                         Console.Clear();
                         funcionarioEmpresa.ListarFuncionarios();
-                        Console.WriteLine();
-                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.WriteLine("\nPressione qualquer tecla para voltar ao menu.");
                         Console.ReadKey();
                     }
 
@@ -42,8 +41,7 @@ namespace projeto.classes_exercicios_2
                         Console.Clear();
                         string ordenacao = "asc";
                         funcionarioEmpresa.OrdenarSobrenome(ordenacao);
-                        Console.WriteLine();
-                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.WriteLine("\nPressione qualquer tecla para voltar ao menu.");
                         Console.ReadKey();
                     }
 
@@ -52,8 +50,7 @@ namespace projeto.classes_exercicios_2
                         Console.Clear();
                         string ordenacao = "desc";
                         funcionarioEmpresa.OrdenarSobrenome(ordenacao);
-                        Console.WriteLine();
-                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.WriteLine("\nPressione qualquer tecla para voltar ao menu.");
                         Console.ReadKey();
                     }
 
@@ -61,8 +58,7 @@ namespace projeto.classes_exercicios_2
                     {
                         Console.Clear();
                         funcionarioEmpresa.ListarCargos();
-                        Console.WriteLine();
-                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.WriteLine("\nPressione qualquer tecla para voltar ao menu.");
                         Console.ReadKey();
                     }
 
@@ -71,23 +67,20 @@ namespace projeto.classes_exercicios_2
 
                     else if (opcao == 6)
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("Saindo do sistema...");
+                        Console.WriteLine("\nSaindo do sistema...");
                         Environment.Exit(0);
                     }
 
                     else
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("ERRO: Opção inexistente, insira alguma das opções que estão disponíveis");
+                        Console.WriteLine("\nERRO: Opção inexistente, insira alguma das opções que estão disponíveis");
                         Console.ReadKey();
                         return;
                     }
                 }
                 catch (System.FormatException)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("ERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
+                    Console.WriteLine("\nERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
                     Console.ReadKey();
                 }
             }

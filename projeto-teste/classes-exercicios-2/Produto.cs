@@ -101,12 +101,14 @@ namespace projeto.classes_exercicios_2
 
             else if (QntdEstoque[chave] == 0)
             {
+                Console.Clear();
                 Console.WriteLine($"\nEstoque insuficiente! Nenhuma unidade disponível de {Nome} - {Categoria}");
                 Console.ReadKey();
             }
 
             else
             {
+                Console.Clear();
                 Console.WriteLine($"\nEstoque insuficiente! Apenas {QntdEstoque[chave]} unidade(s) disponívei(s) de {Nome} - {Categoria}");
                 Console.ReadKey();
             }
@@ -186,7 +188,7 @@ namespace projeto.classes_exercicios_2
                 foreach (var produto in listaProdutos)
                 {
                     Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2} - " +
-                        ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
+                        ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}\n"));
                 }
             }
         }
@@ -205,17 +207,20 @@ namespace projeto.classes_exercicios_2
                 if (ordenacao == "asc")
                 {
                     listaProdutos = listaProdutos.OrderBy(p => p.Nome).ToList();
+                    ordenacao = "Ascendente";
                 }
 
                 else if (ordenacao == "desc")
                 {
                     listaProdutos = listaProdutos.OrderByDescending(p => p.Nome).ToList();
+                    ordenacao = "Descendente";
                 }
 
+                Console.WriteLine($"Nome dos Produtos ordenados de forma {ordenacao}:");
                 foreach (var produto in listaProdutos)
                 {
                     Console.WriteLine($"Id: {produto.Id} - Nome: {produto.Nome} - Categoria: {produto.Categoria} - Preço: {produto.Preco:F2} - " +
-                        ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}"));
+                        ((produto.Quantidade == 0) ? "Produto não disponível em estoque" : $"Quantidade Disponível: {produto.Quantidade}\n"));
                 }
             }
         }

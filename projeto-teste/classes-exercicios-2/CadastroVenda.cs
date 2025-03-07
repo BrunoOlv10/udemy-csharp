@@ -45,6 +45,9 @@ namespace projeto.classes_exercicios_2
 
                             for (int i = 0; i < quantidadeGeral; i++)
                             {
+                                verificarExisteId = false;
+                                verificarEstoqueDisponivel = false;
+
                                 Console.WriteLine($"\nVenda {i + 1}");
 
                                 Console.Write("Insira o Id da Venda: ");
@@ -62,9 +65,11 @@ namespace projeto.classes_exercicios_2
 
                                 if (produtoExistente == null)
                                 {
+                                    Console.Clear();
                                     Console.WriteLine("\nErro: Não existe esse produto no sistema. Por favor, cadastre ele antes de vender o mesmo");
                                     Console.WriteLine("Pressione qualquer tecla para tentar novamente.");
                                     Console.ReadKey();
+                                    i--;
                                     continue;
                                 }
 
@@ -107,10 +112,12 @@ namespace projeto.classes_exercicios_2
 
                                     if (existeId)
                                     {
+                                        Console.Clear();
                                         verificarExisteId = true;
                                         Console.WriteLine("\nErro: Já existe uma venda com esse Id!");
                                         Console.WriteLine("Pressione qualquer tecla para tentar novamente cadastrar a venda");
                                         Console.ReadKey();
+                                        i--;
                                         continue;
                                     }
 
@@ -130,7 +137,7 @@ namespace projeto.classes_exercicios_2
                                 continue;
                             }
 
-                            else if (!verificarExisteId && verificarEstoqueDisponivel)
+                            if (!verificarExisteId && verificarEstoqueDisponivel)
                             {
                                 Console.WriteLine("\nVendas cadastradas com sucesso!");
                                 Console.WriteLine("Pressione qualquer tecla para voltar");
@@ -145,21 +152,18 @@ namespace projeto.classes_exercicios_2
 
                     else if (opcao == 3)
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("Saindo do sistema...");
+                        Console.WriteLine("\nSaindo do sistema...");
                         Environment.Exit(0);
                     }
                 }
                 catch (System.FormatException)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("ERRO: Insira apenas valores numéricos e os que estão disponíveis");
+                    Console.WriteLine("\nERRO: Insira apenas valores numéricos e os que estão disponíveis");
                     Console.ReadKey();
                 }
                 catch (System.IndexOutOfRangeException)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("ERRO: Não deixe de preencher nenhum campo");
+                    Console.WriteLine("\nERRO: Não deixe de preencher nenhum campo");
                     Console.ReadKey();
                 }
             }

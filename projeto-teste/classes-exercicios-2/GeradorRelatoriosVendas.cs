@@ -29,8 +29,7 @@ namespace projeto.classes_exercicios_2
                     {
                         Console.Clear();
                         vendaEmpresa.ListarVendas();
-                        Console.WriteLine();
-                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.WriteLine("\nPressione qualquer tecla para voltar ao menu.");
                         Console.ReadKey();
                     }
 
@@ -38,8 +37,7 @@ namespace projeto.classes_exercicios_2
                     {
                         Console.Clear();
                         vendaEmpresa.ListarVendasComissõesPorFuncionario();
-                        Console.WriteLine();
-                        Console.WriteLine("Pressione qualquer tecla para voltar ao menu.");
+                        Console.WriteLine("\nPressione qualquer tecla para voltar ao menu.");
                         Console.ReadKey();
                     }
 
@@ -48,15 +46,13 @@ namespace projeto.classes_exercicios_2
 
                     else if (opcao == 4)
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("Saindo do sistema...");
+                        Console.WriteLine("\nSaindo do sistema...");
                         Environment.Exit(0);
                     }
                 }
                 catch (System.FormatException)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("ERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
+                    Console.WriteLine("\nERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
                     Console.ReadKey();
                 }
             }

@@ -38,22 +38,19 @@ namespace projeto.classes_exercicios_2
 
                     else if (opcao == 3)
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("Saindo do sistema...");
+                        Console.WriteLine("\nSaindo do sistema...");
                         break;
                     }
 
                     else
                     {
-                        Console.WriteLine();
-                        Console.WriteLine("ERRO: Opção inexistente, insira alguma das opções que estão disponíveis");
+                        Console.WriteLine("\nERRO: Opção inexistente, insira alguma das opções que estão disponíveis");
                         Console.ReadKey();
                     }
                 }
                 catch (System.FormatException)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine("ERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
+                    Console.WriteLine("\nERRO: Insira apenas valores numéricos e os que estão disponíveis nas opções do menu");
                     Console.ReadKey();
                 }
             }
